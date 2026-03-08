@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-pdf' },
   openGraph: {
-    title: 'Image to PDF — Free Online Converter | ToolHub',
+    title: 'Image to PDF — Free Online Converter | Free Image Tool Hub',
     description:
       'Convert JPG, PNG, WebP and other images to PDF instantly. Client-side processing — your files never leave your device.',
     url: 'https://toolhub.vercel.app/image-to-pdf',
@@ -28,7 +28,7 @@ const faqs: FAQ[] = [
   {
     question: 'What image formats can I convert to PDF?',
     answer:
-      'ToolHub supports all common browser-readable image formats including JPG, JPEG, PNG, WebP, GIF, and BMP. Simply upload your image and click Convert.',
+      'Free Image Tool Hub supports all common browser-readable image formats including JPG, JPEG, PNG, WebP, GIF, and BMP. Simply upload your image and click Convert.',
   },
   {
     question: 'Is my image uploaded to a server?',
@@ -72,7 +72,7 @@ export default function ImageToPdfPage() {
         <p className="text-neutral-600 leading-relaxed">
           Converting an image to PDF is one of the most common document tasks,
           whether you need to send a photo as a professional attachment, archive
-          a scanned receipt, or package graphics for printing. ToolHub makes
+          a scanned receipt, or package graphics for printing. Free Image Tool Hub makes
           this completely free and private — no account required, no file
           uploads, no watermarks.
         </p>

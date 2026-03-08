@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: ['convert image to jpg', 'png to jpg', 'webp to jpg', 'image to jpeg online', 'free jpg converter'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-jpg' },
   openGraph: {
-    title: 'Convert Image to JPG — Free | ToolHub',
+    title: 'Convert Image to JPG — Free | Free Image Tool Hub',
     description: 'Convert any image to JPG with custom quality settings. 100% browser-based.',
     url: 'https://toolhub.vercel.app/image-to-jpg',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
@@ -59,7 +59,7 @@ export default function ImageToJpgPage() {
           JPG (or JPEG) is the most widely supported image format on the web, optimised for photographs and images with gradual colour transitions. Converting to JPG reduces file size significantly compared to PNG or BMP, making it ideal for sharing photos, embedding images in documents, and web publishing.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
-          ToolHub uses the browser&apos;s built-in Canvas API to perform the conversion. When you upload an image, it is drawn onto an HTML canvas element at its original dimensions. The canvas then exports the image as a JPEG Blob using your chosen quality setting (1–100), where higher values preserve more detail at the cost of a larger file.
+          Free Image Tool Hub uses the browser&apos;s built-in Canvas API to perform the conversion. When you upload an image, it is drawn onto an HTML canvas element at its original dimensions. The canvas then exports the image as a JPEG Blob using your chosen quality setting (1–100), where higher values preserve more detail at the cost of a larger file.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
           The entire process happens locally in your browser — no file is sent to any server. This means instant conversion speeds regardless of your internet connection, and complete privacy for sensitive images. Once converted, you can download the JPG file directly to your device.

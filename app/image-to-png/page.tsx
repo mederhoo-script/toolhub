@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['convert image to png', 'jpg to png', 'webp to png', 'image converter png', 'free png converter'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-png' },
   openGraph: {
-    title: 'Convert Image to PNG — Free | ToolHub',
+    title: 'Convert Image to PNG — Free | Free Image Tool Hub',
     description: 'Convert any image to lossless PNG. Transparency preserved. 100% browser-based.',
     url: 'https://toolhub.vercel.app/image-to-png',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
@@ -58,7 +58,7 @@ export default function ImageToPngPage() {
           PNG (Portable Network Graphics) is the go-to format for images that require lossless quality and transparency support. Unlike JPEG, PNG does not discard any pixel information during compression, making it ideal for logos, screenshots, illustrations, and any image that will be further edited.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
-          When you upload an image, ToolHub draws it onto an HTML canvas element at its original dimensions. The canvas preserves any alpha channel (transparency) present in the source image. The output is then exported as a PNG Blob using the Canvas API&apos;s native PNG encoder, which applies lossless deflate compression.
+          When you upload an image, Free Image Tool Hub draws it onto an HTML canvas element at its original dimensions. The canvas preserves any alpha channel (transparency) present in the source image. The output is then exported as a PNG Blob using the Canvas API&apos;s native PNG encoder, which applies lossless deflate compression.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
           The conversion runs entirely in your browser — no server, no upload, no privacy risk. The result is available for instant download. Because PNG uses lossless compression, the output file will typically be larger than a JPEG of the same image, but the quality will be perfect.

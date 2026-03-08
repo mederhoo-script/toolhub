@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['resize image online', 'image resizer', 'change image size', 'resize photo online free', 'scale image'],
   alternates: { canonical: 'https://toolhub.vercel.app/resize-image' },
   openGraph: {
-    title: 'Resize Image Online — Free | ToolHub',
+    title: 'Resize Image Online — Free | Free Image Tool Hub',
     description: 'Resize images to any dimension with optional aspect ratio lock. 100% browser-based.',
     url: 'https://toolhub.vercel.app/resize-image',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
@@ -55,7 +55,7 @@ export default function ResizeImagePage() {
       <section className="mt-10">
         <h2 className="text-xl font-semibold text-neutral-800 mb-3">How it works</h2>
         <p className="text-neutral-600 leading-relaxed">
-          Resizing images is a fundamental task for web developers, designers, and content creators. Whether you need to meet a social media platform&apos;s required dimensions, optimise images for faster page loads, or prepare assets for print, ToolHub&apos;s image resizer handles it instantly in your browser.
+          Resizing images is a fundamental task for web developers, designers, and content creators. Whether you need to meet a social media platform&apos;s required dimensions, optimise images for faster page loads, or prepare assets for print, Free Image Tool Hub&apos;s image resizer handles it instantly in your browser.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
           When you upload an image, the tool automatically reads its original pixel dimensions and pre-fills the width and height fields. You can then enter your target dimensions. If aspect ratio lock is enabled, adjusting one dimension automatically recalculates the other to prevent distortion — so a landscape photo stays landscape, and a square icon stays square.

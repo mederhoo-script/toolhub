@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['image to text', 'ocr online', 'extract text from image', 'tesseract ocr', 'free ocr tool'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-text' },
   openGraph: {
-    title: 'Image to Text — OCR Online | ToolHub',
+    title: 'Image to Text — Free OCR Online | Free Image Tool Hub',
     description: 'Extract text from images using browser-based OCR. No upload, supports 9 languages.',
     url: 'https://toolhub.vercel.app/image-to-text',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
@@ -55,7 +55,7 @@ export default function ImageToTextPage() {
       <section className="mt-10">
         <h2 className="text-xl font-semibold text-neutral-800 mb-3">How it works</h2>
         <p className="text-neutral-600 leading-relaxed">
-          Optical Character Recognition (OCR) enables computers to &ldquo;read&rdquo; text from images, scanned documents, screenshots, and photographs. ToolHub&apos;s OCR tool is powered by Tesseract.js, a JavaScript port of the industry-standard Tesseract OCR engine originally developed by HP and now maintained by Google.
+          Optical Character Recognition (OCR) enables computers to &ldquo;read&rdquo; text from images, scanned documents, screenshots, and photographs. Free Image Tool Hub&apos;s OCR tool is powered by Tesseract.js, a JavaScript port of the industry-standard Tesseract OCR engine originally developed by HP and now maintained by Google.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
           When you select an image and click &ldquo;Extract Text&rdquo;, Tesseract.js runs entirely in your browser using a Web Worker thread. This means your image data never leaves your device — there are no server round-trips, no upload queues, and no privacy concerns. A language model is downloaded once and cached in your browser, so subsequent extractions in the same language are much faster.

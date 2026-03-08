@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['convert image to grayscale', 'grayscale image online', 'black and white image converter', 'desaturate image', 'free grayscale tool'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-grayscale' },
   openGraph: {
-    title: 'Convert Image to Grayscale — Free | ToolHub',
+    title: 'Convert Image to Grayscale — Free | Free Image Tool Hub',
     description: 'Remove colour from any image instantly. Browser-based, no upload required.',
     url: 'https://toolhub.vercel.app/image-to-grayscale',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
@@ -23,7 +23,7 @@ const faqs: FAQ[] = [
   },
   {
     question: 'How is grayscale calculated?',
-    answer: 'ToolHub uses the standard luminance formula: 0.299×Red + 0.587×Green + 0.114×Blue. This weights the green channel more heavily because the human eye is most sensitive to green light.',
+    answer: 'Free Image Tool Hub uses the standard luminance formula: 0.299×Red + 0.587×Green + 0.114×Blue. This weights the green channel more heavily because the human eye is most sensitive to green light.',
   },
   {
     question: 'What format is the output file?',
@@ -58,7 +58,7 @@ export default function ImageToGrayscalePage() {
           Grayscale images have many practical applications: they are used in medical imaging, artistic photography, document scanning, and as pre-processing steps for machine learning and OCR pipelines. Converting to grayscale can also reduce file sizes and remove distracting colour information to highlight texture and form.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
-          ToolHub performs the grayscale conversion using the Canvas API and the standard luminance formula. Your image is drawn onto a canvas, then each pixel&apos;s colour channels are read and replaced with a weighted average: 29.9% red, 58.7% green, and 11.4% blue. This weighting reflects the sensitivity of the human eye, which perceives green most strongly and blue least.
+          Free Image Tool Hub performs the grayscale conversion using the Canvas API and the standard luminance formula. Your image is drawn onto a canvas, then each pixel&apos;s colour channels are read and replaced with a weighted average: 29.9% red, 58.7% green, and 11.4% blue. This weighting reflects the sensitivity of the human eye, which perceives green most strongly and blue least.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
           The result is a true perceptual grayscale image rather than a simple average of the three channels. This produces more natural-looking shadows and highlights compared to a naive desaturation approach. The output is saved as a lossless PNG file, ensuring no additional quality loss.

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['convert image to webp', 'jpg to webp', 'png to webp', 'image to webp online', 'webp converter'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-webp' },
   openGraph: {
-    title: 'Convert Image to WebP — Free | ToolHub',
+    title: 'Convert Image to WebP — Free | Free Image Tool Hub',
     description: 'Convert any image to WebP for smaller file sizes. Adjust quality. 100% browser-based.',
     url: 'https://toolhub.vercel.app/image-to-webp',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
@@ -58,7 +58,7 @@ export default function ImageToWebpPage() {
           WebP is Google&apos;s modern image format designed specifically for the web. It achieves significantly smaller file sizes than JPEG and PNG while maintaining excellent visual quality, making it the recommended format for web images by Google&apos;s Lighthouse performance auditing tool.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
-          ToolHub converts images to WebP using the browser&apos;s Canvas API. Your image is drawn onto a canvas at its original dimensions, then exported using the <code>image/webp</code> MIME type with your chosen quality level. The conversion runs entirely in your browser — no image data is sent to any server.
+          Free Image Tool Hub converts images to WebP using the browser&apos;s Canvas API. Your image is drawn onto a canvas at its original dimensions, then exported using the <code>image/webp</code> MIME type with your chosen quality level. The conversion runs entirely in your browser — no image data is sent to any server.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
           The quality slider (1–100) controls the level of lossy compression applied. At quality 85, most images are visually indistinguishable from the original while being 30–40% smaller. The output WebP file is immediately available for download and ready to use on any modern website.

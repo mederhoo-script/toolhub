@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['image to favicon', 'favicon generator', 'create favicon online', 'ico converter', 'favicon from image'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-favicon' },
   openGraph: {
-    title: 'Image to Favicon Generator — Free | ToolHub',
+    title: 'Image to Favicon Generator — Free | Free Image Tool Hub',
     description: 'Create a favicon from any image in 16×16, 32×32, or 64×64 px. Browser-based, instant.',
     url: 'https://toolhub.vercel.app/image-to-favicon',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
@@ -55,7 +55,7 @@ export default function ImageToFaviconPage() {
       <section className="mt-10">
         <h2 className="text-xl font-semibold text-neutral-800 mb-3">How it works</h2>
         <p className="text-neutral-600 leading-relaxed">
-          A favicon is the small icon that appears in browser tabs, bookmark lists, and browser history. Having a recognisable favicon reinforces your brand identity and helps users identify your site among multiple open tabs. ToolHub&apos;s favicon generator creates a properly sized PNG from any image you upload.
+          A favicon is the small icon that appears in browser tabs, bookmark lists, and browser history. Having a recognisable favicon reinforces your brand identity and helps users identify your site among multiple open tabs. Free Image Tool Hub&apos;s favicon generator creates a properly sized PNG from any image you upload.
         </p>
         <p className="text-neutral-600 leading-relaxed mt-3">
           When you upload an image, the tool draws it onto an HTML canvas at your chosen size (16×16, 32×32, or 64×64 pixels). The image is scaled proportionally and centred on the canvas, so your icon is never distorted or cropped unexpectedly. The canvas is then exported as a PNG Blob using the Canvas API.

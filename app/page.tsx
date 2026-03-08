@@ -4,9 +4,9 @@ import AdBanner from '@/components/AdBanner';
 import HomeSearch from './HomeSearch';
 
 export const metadata: Metadata = {
-  title: 'Free Online Image Tools — Image Tool Hub',
+  title: 'Free Image Tool Hub — Free Online Image Tools',
   description:
-    'Image Tool Hub offers 10 free online image tools: compress, convert, resize, and transform images in your browser. No upload, no sign-up. Instant results.',
+    'Free Image Tool Hub: 10 free online image tools to compress, convert, resize, and transform images in your browser. No upload, no sign-up. Instant results.',
   keywords: [
     'free online image tools',
     'image converter',
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://toolhub.vercel.app' },
   openGraph: {
-    title: 'Free Online Image Tools — Image Tool Hub',
+    title: 'Free Image Tool Hub — Free Online Image Tools',
     description:
-      'Convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
+      'Free Image Tool Hub: convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
     url: 'https://toolhub.vercel.app',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
     type: 'website',
@@ -96,10 +96,10 @@ const tools = [
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Image Tool Hub',
+  name: 'Free Image Tool Hub',
   url: 'https://toolhub.vercel.app',
   description:
-    'Free online image tools: compress, convert, resize, and transform images in your browser.',
+    'Free Image Tool Hub: free online image tools to compress, convert, resize, and transform images in your browser.',
   potentialAction: {
     '@type': 'SearchAction',
     target: 'https://toolhub.vercel.app/?q={search_term_string}',
@@ -121,17 +121,18 @@ export default function HomePage() {
             <Link
               href="/"
               className="inline-flex items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-              aria-label="Image Tool Hub Home"
+              aria-label="Free Image Tool Hub Home"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo.svg"
-                alt="Image Tool Hub logo"
+                alt="Free Image Tool Hub logo"
                 width={32}
                 height={32}
+                loading="eager"
                 className="rounded-md"
               />
-              <span className="text-xl font-bold text-primary-600">Image Tool Hub</span>
+              <span className="text-xl font-bold text-primary-600">Free Image Tool Hub</span>
             </Link>
           </div>
         </header>
@@ -144,9 +145,10 @@ export default function HomePage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/logo.svg"
-                  alt="Image Tool Hub logo"
+                  alt="Free Image Tool Hub logo"
                   width={80}
                   height={80}
+                  loading="eager"
                   className="rounded-2xl shadow-md"
                 />
               </div>
@@ -182,16 +184,16 @@ export default function HomePage() {
           {/* SEO Intro Block */}
           <section className="max-w-3xl mx-auto px-4 pb-16">
             <h2 className="text-2xl font-bold text-neutral-900 mb-4">
-              Why use ToolHub for image processing?
+              Why use Free Image Tool Hub for image processing?
             </h2>
             <div className="space-y-4 text-neutral-600 leading-relaxed">
               <p>
-                ToolHub is a collection of ten powerful, free image tools
-                designed to run entirely in your browser. Unlike most online
-                image editors and converters, ToolHub never uploads your files
-                to a server. Every conversion, compression, and transformation
-                happens locally using modern browser APIs — the Canvas API,
-                Web Workers, and the FileReader API.
+                Free Image Tool Hub is a collection of ten powerful, completely
+                free image tools designed to run entirely in your browser. Unlike
+                most online image editors and converters, Free Image Tool Hub
+                never uploads your files to a server. Every conversion,
+                compression, and transformation happens locally using modern
+                browser APIs — the Canvas API, Web Workers, and the FileReader API.
               </p>
               <p>
                 This means your images are completely private. Whether you are
@@ -201,26 +203,27 @@ export default function HomePage() {
                 email, no watermarks, no limits.
               </p>
               <p>
-                Our image compression tool can reduce file sizes to a specific
-                KB target — useful for platforms with strict upload limits. The
-                OCR tool extracts text from images using Tesseract.js, the
-                same engine used by Google. The PDF converter wraps images in
-                properly formatted A4 or Letter documents in seconds.
+                Our free image compression tool can reduce file sizes to a
+                specific KB target — useful for platforms with strict upload
+                limits. The free OCR tool extracts text from images using
+                Tesseract.js, the same engine used by Google. The free PDF
+                converter wraps images in properly formatted A4 or Letter
+                documents in seconds.
               </p>
               <p>
-                ToolHub is built with Next.js 16 and runs at the edge for
-                lightning-fast page loads. Each tool page includes detailed
-                instructions, SEO-friendly content, and a FAQ section to help
-                you understand exactly how the tool works and when to use it.
-                All tools are mobile-friendly and accessible, with keyboard
-                navigation and screen reader support throughout.
+                Free Image Tool Hub is built with Next.js 16 and runs at the
+                edge for lightning-fast page loads. Each tool page includes
+                detailed instructions, SEO-friendly content, and a FAQ section
+                to help you understand exactly how the tool works and when to
+                use it. All tools are mobile-friendly and accessible, with
+                keyboard navigation and screen reader support throughout.
               </p>
               <p>
                 Whether you are a web developer optimising assets, a designer
                 preparing files for clients, a student submitting assignments,
                 or anyone who needs to work with images quickly and privately,
-                ToolHub has a tool for you. Bookmark this page and get
-                instant access to all ten tools any time you need them.
+                Free Image Tool Hub has a free tool for you. Bookmark this page
+                and get instant access to all ten tools any time you need them.
               </p>
             </div>
           </section>
@@ -229,7 +232,7 @@ export default function HomePage() {
         <footer className="border-t border-neutral-200 bg-white">
           <div className="max-w-5xl mx-auto px-4 py-8 text-center text-sm text-neutral-500">
             <p>
-              © {new Date().getFullYear()} ToolHub — Free Online Image Tools.
+              © {new Date().getFullYear()} Free Image Tool Hub — Free Online Image Tools.
               All processing happens in your browser.
             </p>
           </div>

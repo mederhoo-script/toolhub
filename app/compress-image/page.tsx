@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://toolhub.vercel.app/compress-image' },
   openGraph: {
-    title: 'Compress Image Online — Free | ToolHub',
+    title: 'Compress Image Online — Free | Free Image Tool Hub',
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
     url: 'https://toolhub.vercel.app/compress-image',
@@ -28,7 +28,7 @@ const faqs: FAQ[] = [
   {
     question: 'How does the image compression work?',
     answer:
-      'ToolHub uses the browser-image-compression library to reduce file size client-side. It progressively lowers quality and resolution until the output matches your target size.',
+      'Free Image Tool Hub uses the browser-image-compression library to reduce file size client-side. It progressively lowers quality and resolution until the output matches your target size.',
   },
   {
     question: 'Will compressing reduce image quality?',
@@ -71,7 +71,7 @@ export default function CompressImagePage() {
         </h2>
         <p className="text-neutral-600 leading-relaxed">
           Large image files are the number-one cause of slow-loading web pages
-          and bloated email attachments. ToolHub&apos;s image compressor lets
+          and bloated email attachments. Free Image Tool Hub&apos;s image compressor lets
           you set an exact target size — 50 KB, 100 KB, 200 KB, or a custom
           value — and delivers a compressed image that meets that target
           without manual trial and error.

@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Free Online Image Tools — ToolHub",
-    template: "%s | ToolHub",
+    default: "Free Image Tool Hub — Free Online Image Tools",
+    template: "%s | Free Image Tool Hub",
   },
   description:
-    "Free online image tools: compress, convert, resize, and transform images instantly in your browser. No uploads, no sign-up required.",
+    "Free Image Tool Hub: compress, convert, resize, and transform images instantly in your browser. No uploads, no sign-up required.",
   metadataBase: new URL("https://toolhub.vercel.app"),
 };
 
