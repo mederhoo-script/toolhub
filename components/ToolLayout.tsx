@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import AdBanner from './AdBanner';
 import FAQSection from './FAQSection';
 import { FAQ } from '@/types';
@@ -23,10 +24,18 @@ export default function ToolLayout({
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link
             href="/"
-            className="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors"
+            className="flex items-center gap-2 hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-md"
             aria-label="ToolHub Home"
           >
-            ToolHub
+            <Image
+              src="/logo.svg"
+              alt="ToolHub logo"
+              width={32}
+              height={32}
+              className="rounded-md"
+              priority
+            />
+            <span className="text-xl font-bold text-primary-600">ToolHub</span>
           </Link>
         </div>
       </header>

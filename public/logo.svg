@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="ToolHub logo">
+  <defs>
+    <linearGradient id="th-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <!-- Clip the scene content to the image frame -->
+    <clipPath id="th-scene">
+      <rect x="10.5" y="14" width="43" height="28.5" rx="2"/>
+    </clipPath>
+  </defs>
+
+  <!-- ① Rounded-square background -->
+  <rect width="64" height="64" rx="13" fill="url(#th-bg)"/>
+
+  <!-- ② Image frame border -->
+  <rect x="9" y="12.5" width="46" height="31" rx="3.5"
+        fill="white" fill-opacity="0.15" stroke="white" stroke-width="2.5"/>
+
+  <!-- ③ Scene content clipped to frame interior -->
+  <!-- Sun -->
+  <circle cx="44.5" cy="21" r="5" fill="white" clip-path="url(#th-scene)"/>
+  <!-- Back mountain -->
+  <polygon points="9,43.5  23,23  37,43.5"
+           fill="white" fill-opacity="0.5" clip-path="url(#th-scene)"/>
+  <!-- Front mountain -->
+  <polygon points="27,43.5  41.5,26  56,43.5"
+           fill="white" clip-path="url(#th-scene)"/>
+
+  <!-- ④ "Tools" indicator — two stacked pill lines below the frame -->
+  <rect x="11" y="49" width="42" height="3"   rx="1.5" fill="white" fill-opacity="0.9"/>
+  <rect x="18" y="55.5" width="28" height="3" rx="1.5" fill="white" fill-opacity="0.6"/>
+</svg>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-
+import Link from 'next/link';
+import Image from 'next/image';
 import AdBanner from '@/components/AdBanner';
 import HomeSearch from './HomeSearch';
 
@@ -118,7 +119,21 @@ export default function HomePage() {
       <div className="min-h-screen bg-neutral-50">
         <header className="bg-white border-b border-neutral-200 px-4 py-3">
           <div className="max-w-5xl mx-auto">
-            <span className="text-xl font-bold text-primary-600">ToolHub</span>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              aria-label="ToolHub Home"
+            >
+              <Image
+                src="/logo.svg"
+                alt="ToolHub logo"
+                width={32}
+                height={32}
+                className="rounded-md"
+                priority
+              />
+              <span className="text-xl font-bold text-primary-600">ToolHub</span>
+            </Link>
           </div>
         </header>
 
@@ -126,6 +141,16 @@ export default function HomePage() {
           {/* Hero */}
           <section className="bg-white border-b border-neutral-100 py-16 px-4 text-center">
             <div className="max-w-3xl mx-auto">
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/logo.svg"
+                  alt="ToolHub logo"
+                  width={80}
+                  height={80}
+                  className="rounded-2xl shadow-md"
+                  priority
+                />
+              </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 leading-tight">
                 Free Online Image Tools
               </h1>
