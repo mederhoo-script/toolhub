@@ -80,6 +80,16 @@ export default function ToolLayout({
             <a href="/image-to-grayscale" className="hover:text-primary-600">Grayscale</a>
             <a href="/resize-image" className="hover:text-primary-600">Resize Image</a>
             <a href="/image-to-favicon" className="hover:text-primary-600">Image to Favicon</a>
+            <a href="/image-to-svg" className="hover:text-primary-600">Image to SVG</a>
+            <a href="/image-to-qr" className="hover:text-primary-600">QR Code</a>
+            <a href="/image-to-color-palette" className="hover:text-primary-600">Color Palette</a>
+            <a href="/image-to-ascii" className="hover:text-primary-600">Image to ASCII</a>
+            <a href="/image-to-pixel-art" className="hover:text-primary-600">Pixel Art</a>
+            <a href="/image-to-icon" className="hover:text-primary-600">Image to Icon</a>
+            <a href="/image-to-bmp" className="hover:text-primary-600">Image to BMP</a>
+            <a href="/image-to-gif" className="hover:text-primary-600">Image to GIF</a>
+            <a href="/image-to-zip" className="hover:text-primary-600">Images to ZIP</a>
+            <a href="/image-to-html" className="hover:text-primary-600">Image to HTML</a>
           </nav>
         </div>
       </footer>

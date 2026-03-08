@@ -6,7 +6,7 @@ import HomeSearch from './HomeSearch';
 export const metadata: Metadata = {
   title: 'Free Image Tool Hub — Free Online Image Tools',
   description:
-    'Free Image Tool Hub: 10 free online image tools to compress, convert, resize, and transform images in your browser. No upload, no sign-up. Instant results.',
+    'Free Image Tool Hub: 20 free online image tools to compress, convert, resize, and transform images in your browser. No upload, no sign-up. Instant results.',
   keywords: [
     'free online image tools',
     'image converter',
@@ -18,12 +18,22 @@ export const metadata: Metadata = {
     'image to webp',
     'grayscale image',
     'favicon generator',
+    'image to svg',
+    'qr code generator',
+    'image color palette',
+    'image to ascii',
+    'pixel art generator',
+    'image to icon',
+    'image to bmp',
+    'image to gif',
+    'images to zip',
+    'image to html',
   ],
   alternates: { canonical: 'https://toolhub.vercel.app' },
   openGraph: {
     title: 'Free Image Tool Hub — Free Online Image Tools',
     description:
-      'Free Image Tool Hub: convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
+    'Free Image Tool Hub: convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
     url: 'https://toolhub.vercel.app',
     images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
     type: 'website',
@@ -90,6 +100,66 @@ const tools = [
     icon: '⭐',
     name: 'Image to Favicon',
     description: 'Generate 16×16, 32×32, or 64×64 favicon PNG from any image.',
+  },
+  {
+    href: '/image-to-svg',
+    icon: '🔷',
+    name: 'Image to SVG',
+    description: 'Embed any raster image in a self-contained SVG file for use in vector editors.',
+  },
+  {
+    href: '/image-to-qr',
+    icon: '📱',
+    name: 'QR Code Generator',
+    description: 'Generate a QR code from any text or URL. Download PNG or SVG.',
+  },
+  {
+    href: '/image-to-color-palette',
+    icon: '🎨',
+    name: 'Color Palette Extractor',
+    description: 'Extract dominant colors from any image. Copy HEX codes to clipboard.',
+  },
+  {
+    href: '/image-to-ascii',
+    icon: '🔤',
+    name: 'Image to ASCII Art',
+    description: 'Convert any image to ASCII text art. Download .txt or styled .html.',
+  },
+  {
+    href: '/image-to-pixel-art',
+    icon: '🕹️',
+    name: 'Image to Pixel Art',
+    description: 'Pixelate any image with nearest-neighbour scaling. Download PNG or WebP.',
+  },
+  {
+    href: '/image-to-icon',
+    icon: '🖼️',
+    name: 'Image to Icon Set',
+    description: 'Generate 16–512 px icons from any image. Download individual PNGs or ZIP.',
+  },
+  {
+    href: '/image-to-bmp',
+    icon: '🗂️',
+    name: 'Image to BMP',
+    description: 'Convert any image to an uncompressed 24-bit BMP file.',
+  },
+  {
+    href: '/image-to-gif',
+    icon: '✨',
+    name: 'Image to GIF',
+    description: 'Convert any image to a GIF with browser-side colour quantisation.',
+  },
+  {
+    href: '/image-to-zip',
+    icon: '📦',
+    name: 'Images to ZIP',
+    description: 'Package multiple images into a single ZIP archive for easy download.',
+  },
+  {
+    href: '/image-to-html',
+    icon: '🌐',
+    name: 'Image to HTML',
+    description: 'Export image as a Base64 HTML embed or an ASCII art HTML page.',
   },
 ];
 
@@ -188,7 +258,7 @@ export default function HomePage() {
             </h2>
             <div className="space-y-4 text-neutral-600 leading-relaxed">
               <p>
-                Free Image Tool Hub is a collection of ten powerful, completely
+                Free Image Tool Hub is a collection of twenty powerful, completely
                 free image tools designed to run entirely in your browser. Unlike
                 most online image editors and converters, Free Image Tool Hub
                 never uploads your files to a server. Every conversion,
