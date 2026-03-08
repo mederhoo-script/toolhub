@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import AdBanner from './AdBanner';
 import FAQSection from './FAQSection';
 import { FAQ } from '@/types';
@@ -25,17 +24,17 @@ export default function ToolLayout({
           <Link
             href="/"
             className="flex items-center gap-2 hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-md"
-            aria-label="ToolHub Home"
+            aria-label="Image Tool Hub Home"
           >
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/logo.svg"
-              alt="ToolHub logo"
+              alt="Image Tool Hub logo"
               width={32}
               height={32}
               className="rounded-md"
-              priority
             />
-            <span className="text-xl font-bold text-primary-600">ToolHub</span>
+            <span className="text-xl font-bold text-primary-600">Image Tool Hub</span>
           </Link>
         </div>
       </header>
@@ -66,7 +65,7 @@ export default function ToolLayout({
       <footer className="mt-16 border-t border-neutral-200 bg-white">
         <div className="max-w-5xl mx-auto px-4 py-8 text-center text-sm text-neutral-500">
           <p>
-            © {new Date().getFullYear()} ToolHub — Free Online Image Tools.
+            © {new Date().getFullYear()} Image Tool Hub — Free Online Image Tools.
             All processing happens in your browser.
           </p>
           <nav className="mt-4 flex flex-wrap justify-center gap-4 text-xs">

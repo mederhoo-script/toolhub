@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import AdBanner from '@/components/AdBanner';
 import HomeSearch from './HomeSearch';
 
 export const metadata: Metadata = {
-  title: 'Free Online Image Tools — ToolHub',
+  title: 'Free Online Image Tools — Image Tool Hub',
   description:
-    'ToolHub offers 10 free online image tools: compress, convert, resize, and transform images in your browser. No upload, no sign-up. Instant results.',
+    'Image Tool Hub offers 10 free online image tools: compress, convert, resize, and transform images in your browser. No upload, no sign-up. Instant results.',
   keywords: [
     'free online image tools',
     'image converter',
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://toolhub.vercel.app' },
   openGraph: {
-    title: 'Free Online Image Tools — ToolHub',
+    title: 'Free Online Image Tools — Image Tool Hub',
     description:
       'Convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
     url: 'https://toolhub.vercel.app',
@@ -97,7 +96,7 @@ const tools = [
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'ToolHub',
+  name: 'Image Tool Hub',
   url: 'https://toolhub.vercel.app',
   description:
     'Free online image tools: compress, convert, resize, and transform images in your browser.',
@@ -122,17 +121,17 @@ export default function HomePage() {
             <Link
               href="/"
               className="inline-flex items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-              aria-label="ToolHub Home"
+              aria-label="Image Tool Hub Home"
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/logo.svg"
-                alt="ToolHub logo"
+                alt="Image Tool Hub logo"
                 width={32}
                 height={32}
                 className="rounded-md"
-                priority
               />
-              <span className="text-xl font-bold text-primary-600">ToolHub</span>
+              <span className="text-xl font-bold text-primary-600">Image Tool Hub</span>
             </Link>
           </div>
         </header>
@@ -142,13 +141,13 @@ export default function HomePage() {
           <section className="bg-white border-b border-neutral-100 py-16 px-4 text-center">
             <div className="max-w-3xl mx-auto">
               <div className="flex justify-center mb-6">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/logo.svg"
-                  alt="ToolHub logo"
+                  alt="Image Tool Hub logo"
                   width={80}
                   height={80}
                   className="rounded-2xl shadow-md"
-                  priority
                 />
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 leading-tight">
