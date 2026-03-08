@@ -5,7 +5,7 @@ import { FAQ } from '@/types';
 
 export const metadata: Metadata = {
   title: 'Image Color Palette Extractor — Free Online Tool',
-  description: 'Extract the dominant colors from any image. View color swatches, copy HEX codes to clipboard. Free, browser-based, no upload required.',
+  description: 'Extract the dominant colours from any image. View colour swatches, copy HEX codes to clipboard. Free, browser-based, no upload required.',
   keywords: ['image color palette', 'extract colors from image', 'dominant colors', 'color picker', 'image palette extractor'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-color-palette' },
   openGraph: {
