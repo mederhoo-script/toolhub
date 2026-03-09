@@ -9,24 +9,34 @@ interface Tool {
   name: string;
   description: string;
   color?: string;
+  category?: string;
 }
 
 interface HomeSearchProps {
   tools: Tool[];
 }
 
+const CATEGORIES = ['All', 'Convert', 'Optimize', 'Extract', 'Generate', 'Export'] as const;
+type Category = (typeof CATEGORIES)[number];
+
 export default function HomeSearch({ tools }: HomeSearchProps) {
   const [query, setQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState<Category>('All');
 
-  const filtered = tools.filter(
-    (t) =>
+  const isSearching = query.trim().length > 0;
+
+  const filtered = tools.filter((t) => {
+    const matchesSearch =
       t.name.toLowerCase().includes(query.toLowerCase()) ||
-      t.description.toLowerCase().includes(query.toLowerCase())
-  );
+      t.description.toLowerCase().includes(query.toLowerCase());
+    const matchesCategory = activeCategory === 'All' || t.category === activeCategory;
+    return isSearching ? matchesSearch : matchesCategory;
+  });
 
   return (
     <>
-      <div className="mb-8">
+      {/* Search bar */}
+      <div className="mb-6">
         <label htmlFor="tool-search" className="sr-only">
           Search image tools
         </label>
@@ -55,6 +65,32 @@ export default function HomeSearch({ tools }: HomeSearchProps) {
           />
         </div>
       </div>
+
+      {/* Category tabs — hidden while searching */}
+      {!isSearching && (
+        <div className="flex flex-wrap justify-center gap-2 mb-8" role="tablist" aria-label="Filter tools by category">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat}
+              role="tab"
+              aria-selected={activeCategory === cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 ${
+                activeCategory === cat
+                  ? 'bg-primary-600 text-white border-primary-600 shadow-sm'
+                  : 'bg-white text-neutral-600 border-neutral-200 hover:border-primary-300 hover:text-primary-700'
+              }`}
+            >
+              {cat}
+              {cat === 'All' && (
+                <span className={`ml-1.5 text-xs ${activeCategory === cat ? 'text-primary-200' : 'text-neutral-400'}`}>
+                  {tools.length}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
 
       {filtered.length === 0 ? (
         <div className="text-center py-16">

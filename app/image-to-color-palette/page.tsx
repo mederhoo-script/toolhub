@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image Color Palette Extractor — Free | Free Image Tool Hub',
     description: 'Find the dominant colors in any image. Copy HEX values instantly.',
     url: 'https://toolhub.vercel.app/image-to-color-palette',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

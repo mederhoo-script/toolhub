@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
     url: 'https://toolhub.vercel.app/compress-image',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

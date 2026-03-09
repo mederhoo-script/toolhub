@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'QR Code Generator — Free | Free Image Tool Hub',
     description: 'Generate QR codes from any text or URL. Download PNG or SVG instantly.',
     url: 'https://toolhub.vercel.app/image-to-qr',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

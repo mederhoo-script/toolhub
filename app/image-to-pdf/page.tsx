@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description:
       'Convert JPG, PNG, WebP and other images to PDF instantly. Client-side processing — your files never leave your device.',
     url: 'https://toolhub.vercel.app/image-to-pdf',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

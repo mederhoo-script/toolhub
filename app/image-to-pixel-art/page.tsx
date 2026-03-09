@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to Pixel Art Converter — Free | Free Image Tool Hub',
     description: 'Turn any image into pixel art. Choose pixel size and download instantly.',
     url: 'https://toolhub.vercel.app/image-to-pixel-art',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

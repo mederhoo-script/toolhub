@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Convert Image to WebP — Free | Free Image Tool Hub',
     description: 'Convert any image to WebP for smaller file sizes. Adjust quality. 100% browser-based.',
     url: 'https://toolhub.vercel.app/image-to-webp',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

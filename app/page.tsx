@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description:
     'Free Image Tool Hub: convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
     url: 'https://toolhub.vercel.app',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
     type: 'website',
   },
 };
@@ -47,6 +47,7 @@ const tools = [
     name: 'Image to PDF',
     description: 'Convert any image to a PDF document. Supports A4 and Letter.',
     color: 'bg-red-50 text-red-600',
+    category: 'Convert',
   },
   {
     href: '/compress-image',
@@ -54,6 +55,7 @@ const tools = [
     name: 'Compress Image',
     description: 'Reduce file size to 50 KB, 100 KB, 200 KB, or a custom target.',
     color: 'bg-orange-50 text-orange-600',
+    category: 'Optimize',
   },
   {
     href: '/image-to-jpg',
@@ -61,6 +63,7 @@ const tools = [
     name: 'Image to JPG',
     description: 'Convert PNG, WebP, GIF to JPG with a custom quality slider.',
     color: 'bg-yellow-50 text-yellow-600',
+    category: 'Convert',
   },
   {
     href: '/image-to-png',
@@ -68,6 +71,7 @@ const tools = [
     name: 'Image to PNG',
     description: 'Convert to lossless PNG. Transparency and alpha channel preserved.',
     color: 'bg-blue-50 text-blue-600',
+    category: 'Convert',
   },
   {
     href: '/image-to-webp',
@@ -75,6 +79,7 @@ const tools = [
     name: 'Image to WebP',
     description: 'Convert to modern WebP for 30–50% smaller files on the web.',
     color: 'bg-green-50 text-green-600',
+    category: 'Convert',
   },
   {
     href: '/image-to-base64',
@@ -82,6 +87,7 @@ const tools = [
     name: 'Image to Base64',
     description: 'Encode any image as a Base64 data URL for HTML/CSS embedding.',
     color: 'bg-indigo-50 text-indigo-600',
+    category: 'Extract',
   },
   {
     href: '/image-to-text',
@@ -89,6 +95,7 @@ const tools = [
     name: 'Image to Text (OCR)',
     description: 'Extract text from images using Tesseract OCR. 9 languages.',
     color: 'bg-teal-50 text-teal-600',
+    category: 'Extract',
   },
   {
     href: '/image-to-grayscale',
@@ -96,6 +103,7 @@ const tools = [
     name: 'Convert to Grayscale',
     description: 'Remove colour and convert to black-and-white instantly.',
     color: 'bg-neutral-100 text-neutral-600',
+    category: 'Convert',
   },
   {
     href: '/resize-image',
@@ -103,6 +111,7 @@ const tools = [
     name: 'Resize Image',
     description: 'Set exact pixel dimensions with optional aspect ratio lock.',
     color: 'bg-cyan-50 text-cyan-600',
+    category: 'Optimize',
   },
   {
     href: '/image-to-favicon',
@@ -110,6 +119,7 @@ const tools = [
     name: 'Image to Favicon',
     description: 'Generate 16×16, 32×32, or 64×64 favicon PNG from any image.',
     color: 'bg-amber-50 text-amber-600',
+    category: 'Generate',
   },
   {
     href: '/image-to-svg',
@@ -117,6 +127,7 @@ const tools = [
     name: 'Image to SVG',
     description: 'Embed any raster image in a self-contained SVG file for use in vector editors.',
     color: 'bg-blue-50 text-blue-700',
+    category: 'Convert',
   },
   {
     href: '/image-to-qr',
@@ -124,6 +135,7 @@ const tools = [
     name: 'QR Code Generator',
     description: 'Generate a QR code from any text or URL. Download PNG or SVG.',
     color: 'bg-violet-50 text-violet-600',
+    category: 'Generate',
   },
   {
     href: '/image-to-color-palette',
@@ -131,6 +143,7 @@ const tools = [
     name: 'Color Palette Extractor',
     description: 'Extract dominant colors from any image. Copy HEX codes to clipboard.',
     color: 'bg-pink-50 text-pink-600',
+    category: 'Extract',
   },
   {
     href: '/image-to-ascii',
@@ -138,6 +151,7 @@ const tools = [
     name: 'Image to ASCII Art',
     description: 'Convert any image to ASCII text art. Download .txt or styled .html.',
     color: 'bg-lime-50 text-lime-700',
+    category: 'Extract',
   },
   {
     href: '/image-to-pixel-art',
@@ -145,6 +159,7 @@ const tools = [
     name: 'Image to Pixel Art',
     description: 'Pixelate any image with nearest-neighbour scaling. Download PNG or WebP.',
     color: 'bg-purple-50 text-purple-600',
+    category: 'Generate',
   },
   {
     href: '/image-to-icon',
@@ -152,6 +167,7 @@ const tools = [
     name: 'Image to Icon Set',
     description: 'Generate 16–512 px icons from any image. Download individual PNGs or ZIP.',
     color: 'bg-sky-50 text-sky-600',
+    category: 'Generate',
   },
   {
     href: '/image-to-bmp',
@@ -159,6 +175,7 @@ const tools = [
     name: 'Image to BMP',
     description: 'Convert any image to an uncompressed 24-bit BMP file.',
     color: 'bg-stone-50 text-stone-600',
+    category: 'Convert',
   },
   {
     href: '/image-to-gif',
@@ -166,6 +183,7 @@ const tools = [
     name: 'Image to GIF',
     description: 'Convert any image to a GIF with browser-side colour quantisation.',
     color: 'bg-fuchsia-50 text-fuchsia-600',
+    category: 'Convert',
   },
   {
     href: '/image-to-zip',
@@ -173,6 +191,7 @@ const tools = [
     name: 'Images to ZIP',
     description: 'Package multiple images into a single ZIP archive for easy download.',
     color: 'bg-orange-50 text-orange-700',
+    category: 'Export',
   },
   {
     href: '/image-to-html',
@@ -180,6 +199,7 @@ const tools = [
     name: 'Image to HTML',
     description: 'Export image as a Base64 HTML embed or an ASCII art HTML page.',
     color: 'bg-emerald-50 text-emerald-600',
+    category: 'Export',
   },
 ];
 

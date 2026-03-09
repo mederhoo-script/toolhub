@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to Icon Generator — Free | Free Image Tool Hub',
     description: 'Generate icon sets at 16–512 px from any image. Download ZIP or individual PNGs.',
     url: 'https://toolhub.vercel.app/image-to-icon',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

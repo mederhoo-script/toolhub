@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to SVG Converter — Free | Free Image Tool Hub',
     description: 'Wrap any raster image in a self-contained SVG file. Browser-based, instant, no upload needed.',
     url: 'https://toolhub.vercel.app/image-to-svg',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

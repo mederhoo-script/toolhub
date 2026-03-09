@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to Favicon Generator — Free | Free Image Tool Hub',
     description: 'Create a favicon from any image in 16×16, 32×32, or 64×64 px. Browser-based, instant.',
     url: 'https://toolhub.vercel.app/image-to-favicon',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 
