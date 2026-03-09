@@ -73,18 +73,29 @@ const COMPRESS_FORMATS = [
   'gif', 'bmp', 'tiff', 'heic', 'picture', 'screenshot', 'file',
 ] as const;
 
+/** Human-readable label for each format used in titles and descriptions. */
+function fmtLabel(fmt: string): string {
+  const ACRONYMS: Record<string, string> = {
+    jpg: 'JPG', jpeg: 'JPEG', png: 'PNG', webp: 'WebP',
+    gif: 'GIF', bmp: 'BMP', tiff: 'TIFF', heic: 'HEIC',
+  };
+  if (fmt in ACRONYMS) return ACRONYMS[fmt];
+  // Title-case everything else: image → Image, photo → Photo, etc.
+  return fmt.charAt(0).toUpperCase() + fmt.slice(1);
+}
+
 function compressKBPages(): SeoPage[] {
   const pages: SeoPage[] = [];
   for (const fmt of COMPRESS_FORMATS) {
     for (const kb of KB_SIZES) {
-      const fmtLabel = fmt === 'image' ? 'Image' : fmt.toUpperCase();
+      const label = fmtLabel(fmt);
       const slug = `compress-${fmt}-to-${kb}kb`;
       pages.push(
         makePage(
           slug,
-          `Compress ${fmtLabel} to ${kb}KB Online Free`,
-          `Compress ${fmtLabel} to ${kb}KB`,
-          `Reduce your ${fmtLabel} file size to ${kb}KB instantly in your browser. Free, no upload needed, no account required. Works with JPG, PNG, WebP and more.`,
+          `Compress ${label} to ${kb}KB Online Free`,
+          `Compress ${label} to ${kb}KB`,
+          `Reduce your ${label} file size to ${kb}KB instantly in your browser. Free, no upload needed, no account required. Works with JPG, PNG, WebP and more.`,
           [
             `compress ${fmt} to ${kb}kb`,
             `reduce ${fmt} size to ${kb}kb`,
@@ -95,19 +106,19 @@ function compressKBPages(): SeoPage[] {
             `resize ${fmt} file to ${kb}kb`,
           ],
           'compress-image',
-          `Need to get a ${fmtLabel} file down to exactly ${kb}KB? Drop your file into the tool above — it compresses in your browser in seconds with no quality compromise beyond what the target requires.`,
+          `Need to get a ${label} file down to exactly ${kb}KB? Drop your file into the tool above — it compresses in your browser in seconds with no quality compromise beyond what the target requires.`,
         ),
       );
     }
     for (const mb of MB_SIZES) {
-      const fmtLabel = fmt === 'image' ? 'Image' : fmt.toUpperCase();
+      const label = fmtLabel(fmt);
       const slug = `compress-${fmt}-to-${mb}mb`;
       pages.push(
         makePage(
           slug,
-          `Compress ${fmtLabel} to ${mb}MB Online Free`,
-          `Compress ${fmtLabel} to ${mb}MB`,
-          `Reduce your ${fmtLabel} file size to ${mb}MB instantly in your browser. Free, no account required.`,
+          `Compress ${label} to ${mb}MB Online Free`,
+          `Compress ${label} to ${mb}MB`,
+          `Reduce your ${label} file size to ${mb}MB instantly in your browser. Free, no account required.`,
           [
             `compress ${fmt} to ${mb}mb`,
             `reduce ${fmt} size to ${mb}mb`,
@@ -116,7 +127,7 @@ function compressKBPages(): SeoPage[] {
             `shrink ${fmt} to ${mb}mb`,
           ],
           'compress-image',
-          `Need a ${fmtLabel} under ${mb}MB? Drop it into the compressor above — it handles the math automatically so your file meets the ${mb}MB limit.`,
+          `Need a ${label} under ${mb}MB? Drop it into the compressor above — it handles the math automatically so your file meets the ${mb}MB limit.`,
         ),
       );
     }
@@ -310,14 +321,14 @@ function resizeDimensionPages(): SeoPage[] {
   const pages: SeoPage[] = [];
   for (const fmt of RESIZE_FORMATS) {
     for (const { w, h } of RESIZE_DIMENSIONS) {
-      const fmtLabel = fmt === 'image' ? 'Image' : fmt.toUpperCase();
+      const label = fmtLabel(fmt);
       const slug = `resize-${fmt}-to-${w}x${h}`;
       pages.push(
         makePage(
           slug,
-          `Resize ${fmtLabel} to ${w}×${h} Online Free`,
-          `Resize ${fmtLabel} to ${w}×${h} Pixels`,
-          `Resize your ${fmtLabel} to exactly ${w}×${h} pixels online for free. Browser-based, no upload, instant results.`,
+          `Resize ${label} to ${w}×${h} Online Free`,
+          `Resize ${label} to ${w}×${h} Pixels`,
+          `Resize your ${label} to exactly ${w}×${h} pixels online for free. Browser-based, no upload, instant results.`,
           [
             `resize ${fmt} to ${w}x${h}`,
             `resize image to ${w}x${h}`,
@@ -327,7 +338,7 @@ function resizeDimensionPages(): SeoPage[] {
             `resize photo to ${w}x${h}`,
           ],
           'resize-image',
-          `Need your ${fmtLabel} at exactly ${w}×${h} pixels? Upload it above, enter ${w} and ${h} as the target dimensions, and download the resized file instantly.`,
+          `Need your ${label} at exactly ${w}×${h} pixels? Upload it above, enter ${w} and ${h} as the target dimensions, and download the resized file instantly.`,
         ),
       );
     }
@@ -1432,6 +1443,239 @@ const HTML_PAGES: SeoPage[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Extra pages — additional platform, device, and use-case variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_COMPRESS_PAGES: SeoPage[] = [
+  makePage('compress-image-for-twitter', 'Compress Image for Twitter — Optimise for Twitter/X', 'Compress Image for Twitter', 'Compress images to Twitter\'s recommended size. Keep quality while reducing file size for faster tweets.', ['compress image for twitter', 'twitter image compressor', 'reduce image size for twitter', 'compress photo for twitter', 'twitter image size optimizer'], 'compress-image', 'Twitter recommends images under 5 MB. Compress your images to 500 KB–1 MB to ensure they upload and display quickly without recompression artifacts.'),
+  makePage('compress-image-for-facebook', 'Compress Image for Facebook — Optimise Photo Quality', 'Compress Image for Facebook', 'Compress images for Facebook to keep quality while meeting size limits. Free browser-based tool.', ['compress image for facebook', 'facebook image compressor', 'reduce image size for facebook', 'facebook photo compressor', 'optimise image for facebook'], 'compress-image', 'Facebook applies its own compression to every uploaded photo. Pre-compressing to ~500 KB lets you control the quality before Facebook re-encodes.'),
+  makePage('compress-image-for-linkedin', 'Compress Image for LinkedIn — Profile & Post Images', 'Compress Image for LinkedIn', 'Compress images for LinkedIn posts and profile photos. Free online tool, no upload required.', ['compress image for linkedin', 'linkedin image compressor', 'reduce image size for linkedin', 'compress photo for linkedin', 'linkedin image optimizer'], 'compress-image', 'LinkedIn recommends images under 8 MB for posts. Compress to ~500 KB for fast uploads and optimal display on the feed.'),
+  makePage('compress-image-for-tiktok', 'Compress Image for TikTok — Optimise Cover & Profile', 'Compress Image for TikTok', 'Compress images to meet TikTok\'s size requirements. Free browser-based compressor.', ['compress image for tiktok', 'tiktok image compressor', 'reduce image size for tiktok', 'compress photo for tiktok', 'tiktok profile picture compressor'], 'compress-image', 'TikTok profile pictures and cover images work best under 2 MB. Compress your images to ensure fast rendering across all devices.'),
+  makePage('compress-image-for-shopify', 'Compress Image for Shopify — Speed Up Your Store', 'Compress Image for Shopify', 'Compress product images for Shopify to improve page speed and Core Web Vitals. Free online tool.', ['compress image for shopify', 'shopify image compressor', 'shopify product image size', 'optimize image for shopify', 'shopify image optimization'], 'compress-image', 'Large product images slow down your Shopify store. Compress to under 200 KB each to hit Page Speed scores above 90 and improve conversion rates.'),
+  makePage('compress-image-for-wordpress', 'Compress Image for WordPress — Optimise Media Library', 'Compress Image for WordPress', 'Compress images before uploading to WordPress. Reduce file size for faster load times.', ['compress image for wordpress', 'wordpress image compressor', 'optimize image for wordpress', 'reduce image size wordpress', 'wordpress image optimization free'], 'compress-image', 'WordPress serves images as uploaded. Compressing before upload keeps your media library lean and ensures fast page loads without plugins.'),
+  makePage('compress-image-for-pinterest', 'Compress Image for Pinterest — Optimise Pin Images', 'Compress Image for Pinterest', 'Compress images for Pinterest pins. Optimise for fast loading while keeping visual quality.', ['compress image for pinterest', 'pinterest image compressor', 'reduce image size for pinterest', 'compress pin image', 'pinterest photo optimizer'], 'compress-image', 'Pinterest recommends images under 10 MB and under 10,000 pixels tall. Compress to 500 KB–1 MB for fast loading on the Pinterest feed.'),
+  makePage('bulk-compress-images-online', 'Bulk Compress Images Online — Free Batch Compressor', 'Bulk Compress Images Online', 'Compress multiple images at once online for free. Batch image compression in your browser.', ['bulk compress images online', 'batch image compressor', 'compress multiple images at once', 'batch compress photos free', 'compress images in bulk'], 'compress-image', 'Upload multiple files and compress them all to your target size in one go. No waiting for server uploads — everything runs locally in your browser.'),
+  makePage('compress-image-without-losing-quality', 'Compress Image Without Losing Quality — Free Tool', 'Compress Image Without Losing Quality', 'Compress images while preserving maximum visual quality. Smart compression keeps your images looking sharp.', ['compress image without losing quality', 'compress image no quality loss', 'lossless image compressor', 'high quality image compression', 'compress picture without reducing quality'], 'compress-image', 'Our compressor finds the highest quality setting that still meets your file-size target, minimising visible quality loss.'),
+  makePage('compress-image-to-passport-size', 'Compress Image to Passport Size — Free Online', 'Compress Image to Passport Size', 'Compress and resize photos to passport size (35×45 mm / 413×531 px). Free browser-based tool.', ['compress image to passport size', 'passport photo size reducer', 'resize photo to passport size', 'passport size photo compressor', 'compress passport photo online free'], 'compress-image', 'Many official portals require passport-size photos under 50–200 KB. This tool compresses and resizes your photo to the standard passport dimensions.'),
+];
+
+const EXTRA_RESIZE_PAGES: SeoPage[] = [
+  makePage('resize-image-for-twitter', 'Resize Image for Twitter — Correct Dimensions', 'Resize Image for Twitter', 'Resize images to Twitter\'s recommended dimensions. Free online resizer for Twitter posts and profiles.', ['resize image for twitter', 'twitter image dimensions', 'twitter photo resizer', 'resize photo for twitter', 'twitter image size'], 'resize-image', 'Twitter recommends 1200×675 px for shared images and 400×400 px for profile photos. Resize your images to these dimensions in one click.'),
+  makePage('resize-image-for-facebook', 'Resize Image for Facebook — Profile, Cover & Posts', 'Resize Image for Facebook', 'Resize images to Facebook\'s recommended sizes for profiles, covers, and posts. Free online tool.', ['resize image for facebook', 'facebook image dimensions', 'facebook photo resizer', 'resize photo for facebook', 'facebook cover photo size'], 'resize-image', 'Facebook profile photos are 170×170 px and cover photos 820×312 px. Use this tool to resize any image to these or other Facebook sizes instantly.'),
+  makePage('resize-image-for-instagram', 'Resize Image for Instagram — Square, Portrait & Stories', 'Resize Image for Instagram', 'Resize photos to Instagram\'s recommended sizes: 1080×1080, 1080×1350, or 1080×1920.', ['resize image for instagram', 'instagram image dimensions', 'resize photo for instagram', 'instagram image resizer', 'resize picture for instagram'], 'resize-image', 'Instagram crops images that don\'t match its supported aspect ratios. Resize your photo to 1080×1080 (square), 1080×1350 (portrait), or 1080×1920 (story) before uploading.'),
+  makePage('resize-image-for-linkedin', 'Resize Image for LinkedIn — Profile & Banner Sizes', 'Resize Image for LinkedIn', 'Resize images to LinkedIn\'s recommended profile and banner sizes. Free browser-based resizer.', ['resize image for linkedin', 'linkedin image dimensions', 'resize photo for linkedin', 'linkedin profile photo size', 'linkedin banner size'], 'resize-image', 'LinkedIn profile photos display at 400×400 px minimum and banners at 1584×396 px. Resize your images to these dimensions to look professional.'),
+  makePage('resize-image-for-youtube', 'Resize Image for YouTube — Thumbnails & Channel Art', 'Resize Image for YouTube', 'Resize images to YouTube thumbnail (1280×720) and channel art (2560×1440) sizes. Free online tool.', ['resize image for youtube', 'youtube thumbnail size', 'youtube channel art size', 'resize photo for youtube', 'youtube image resizer'], 'resize-image', 'YouTube thumbnails display best at 1280×720 px and channel art at 2560×1440 px. Resize your images to these exact dimensions for a professional look.'),
+  makePage('resize-image-for-tiktok', 'Resize Image for TikTok — Profile & Cover Sizes', 'Resize Image for TikTok', 'Resize images to TikTok\'s profile photo and cover sizes. Free browser-based image resizer.', ['resize image for tiktok', 'tiktok image dimensions', 'resize photo for tiktok', 'tiktok profile picture size', 'tiktok cover photo size'], 'resize-image', 'TikTok profile photos display at 200×200 px. Cover images for videos display at 1080×1920 px. Resize yours instantly.'),
+  makePage('resize-image-for-shopify', 'Resize Image for Shopify — Product & Banner Images', 'Resize Image for Shopify', 'Resize product images for Shopify stores. Optimise dimensions for faster page loads and better display.', ['resize image for shopify', 'shopify image size', 'resize product image shopify', 'shopify image dimensions', 'shopify product photo size'], 'resize-image', 'Shopify recommends 2048×2048 px product images for zoom functionality. Resize your images to consistent dimensions for a professional store appearance.'),
+  makePage('resize-image-for-wordpress', 'Resize Image for WordPress — Featured & Gallery', 'Resize Image for WordPress', 'Resize images before uploading to WordPress. Match your theme\'s recommended dimensions.', ['resize image for wordpress', 'wordpress image dimensions', 'resize photo for wordpress', 'wordpress featured image size', 'wordpress image resizer'], 'resize-image', 'WordPress themes have specific recommended image sizes for featured images, gallery thumbnails, and banners. Resize before upload to avoid automatic cropping.'),
+  makePage('resize-image-for-email', 'Resize Image for Email — Optimise for Newsletters', 'Resize Image for Email', 'Resize images for email newsletters. Keep images under 600 px wide for maximum email client compatibility.', ['resize image for email', 'email image dimensions', 'resize photo for email', 'email newsletter image size', 'resize image for gmail'], 'resize-image', 'Most email clients render best with images 600 px wide or less. Resize your images to fit email layouts and reduce attachment size simultaneously.'),
+  makePage('resize-image-for-print', 'Resize Image for Print — A4, Letter & Custom Sizes', 'Resize Image for Print', 'Resize images to print-ready dimensions at 300 DPI. Free online tool for A4, Letter and custom sizes.', ['resize image for print', 'print ready image resizer', 'resize photo for printing', 'resize image to 300 dpi', 'resize image for a4 print'], 'resize-image', 'Print-ready images at 300 DPI require specific pixel dimensions. An A4 page at 300 DPI is 2480×3508 px. Resize your image to match before sending to a printer.'),
+  makePage('resize-image-in-kb', 'Resize Image in KB — Reduce File Size to Target KB', 'Resize Image in KB', 'Resize images to reduce file size to a specific KB target. Free browser-based tool.', ['resize image in kb', 'resize image to kb', 'reduce image to kb', 'resize photo to specific size kb', 'resize image file size'], 'resize-image', 'Use the compress tool to hit an exact KB target, or use the resize tool to reduce pixel dimensions which indirectly reduces file size.'),
+  makePage('resize-image-proportionally', 'Resize Image Proportionally — Keep Aspect Ratio', 'Resize Image Proportionally', 'Resize images while maintaining the original aspect ratio. No stretching or distortion.', ['resize image proportionally', 'resize image keep aspect ratio', 'resize image without distortion', 'proportional image resizer', 'resize image maintain ratio'], 'resize-image', 'Enter just the width or just the height and the tool automatically calculates the other dimension to preserve your image\'s original proportions.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra JPG variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_JPG_PAGES: SeoPage[] = [
+  makePage('convert-png-to-jpg-online-free', 'Convert PNG to JPG Online Free — Fast PNG to JPEG', 'Convert PNG to JPG Online Free', 'Convert PNG images to JPG/JPEG format online for free. Reduces file size significantly.', ['convert png to jpg online free', 'png to jpg converter free', 'png to jpeg online', 'change png to jpg free', 'png to jpg no upload'], 'image-to-jpg', 'PNG is lossless but large. Converting to JPG can reduce file size by 70–90% with minimal visible quality loss, ideal for photos and web images.'),
+  makePage('convert-webp-to-jpg-online', 'Convert WebP to JPG Online — Free WebP to JPEG', 'Convert WebP to JPG Online', 'Convert WebP images to JPG/JPEG format online for free. Download a universally compatible JPEG.', ['convert webp to jpg online', 'webp to jpg converter', 'webp to jpeg online free', 'change webp to jpg', 'webp jpg converter free'], 'image-to-jpg', 'WebP isn\'t supported everywhere. Converting to JPG gives you a universally compatible image you can open, edit, and share anywhere.'),
+  makePage('convert-heic-to-jpg-online', 'Convert HEIC to JPG Online — Free iPhone Photo Converter', 'Convert HEIC to JPG Online', 'Convert HEIC photos from iPhone to JPG format online for free. Works instantly in your browser.', ['convert heic to jpg online', 'heic to jpg converter', 'heic to jpeg online free', 'iphone photo to jpg', 'heic jpg converter free'], 'image-to-jpg', 'iPhone photos in HEIC format aren\'t supported on most Windows PCs and web services. Convert to JPG for universal compatibility.'),
+  makePage('convert-gif-to-jpg-online', 'Convert GIF to JPG Online — Free GIF to JPEG Converter', 'Convert GIF to JPG Online', 'Convert GIF images to JPG format online for free. Extracts the first frame as a JPEG.', ['convert gif to jpg online', 'gif to jpg converter', 'gif to jpeg online free', 'change gif to jpg', 'gif frame to jpg'], 'image-to-jpg', 'Need a static JPEG from an animated GIF? This tool extracts the first frame and saves it as a high-quality JPEG.'),
+  makePage('convert-bmp-to-jpg-online', 'Convert BMP to JPG Online — Free BMP to JPEG Converter', 'Convert BMP to JPG Online', 'Convert BMP files to JPG format online for free. JPG is far smaller than BMP.', ['convert bmp to jpg online', 'bmp to jpg converter', 'bmp to jpeg online free', 'change bmp to jpg', 'bmp jpg converter free'], 'image-to-jpg', 'BMP is uncompressed and creates huge file sizes. Converting to JPG typically reduces file size by 90% with minimal visible quality loss.'),
+  makePage('convert-tiff-to-jpg-online', 'Convert TIFF to JPG Online — Free TIFF to JPEG', 'Convert TIFF to JPG Online', 'Convert TIFF images to JPG format online for free. TIFF to JPEG conversion in your browser.', ['convert tiff to jpg online', 'tiff to jpg converter', 'tiff to jpeg online free', 'change tiff to jpg', 'tiff jpg converter free'], 'image-to-jpg', 'TIFF files are very large and not widely supported online. Converting to JPG gives you a web-ready, universally compatible image.'),
+  makePage('jpg-converter-online', 'JPG Converter Online — Convert Any Image to JPG Free', 'JPG Converter Online', 'Free online JPG converter. Convert any image format to JPG/JPEG in your browser.', ['jpg converter online', 'online jpg converter', 'free jpg converter', 'convert image to jpg online', 'jpg conversion tool free'], 'image-to-jpg', 'Supports PNG, WebP, GIF, BMP, TIFF and other browser-readable formats. Upload your file and download a JPEG in one click.'),
+  makePage('reduce-jpg-file-size-online', 'Reduce JPG File Size Online — Free JPEG Size Reducer', 'Reduce JPG File Size Online', 'Reduce JPG file size online for free. Compress JPEG images to a specific KB or MB target.', ['reduce jpg file size online', 'reduce jpeg file size online free', 'shrink jpg file size', 'decrease jpg size online', 'make jpg smaller online'], 'image-to-jpg', 'Use the quality slider or set a specific file-size target. The tool automatically finds the best quality setting that keeps your JPG under the limit.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra PNG variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_PNG_PAGES: SeoPage[] = [
+  makePage('convert-heic-to-png-online', 'Convert HEIC to PNG Online — Free iPhone Photo to PNG', 'Convert HEIC to PNG Online', 'Convert HEIC photos from iPhone to PNG format online for free. Supports transparency.', ['convert heic to png online', 'heic to png converter', 'heic to png online free', 'iphone photo to png', 'heic png converter'], 'image-to-png', 'iPhone HEIC photos can be converted to PNG with transparency support. PNG is lossless and widely supported across all platforms.'),
+  makePage('convert-svg-to-png-online', 'Convert SVG to PNG Online — Free Vector to Raster', 'Convert SVG to PNG Online', 'Convert SVG vector images to PNG raster format online for free. Set custom output dimensions.', ['convert svg to png online', 'svg to png converter', 'svg to png online free', 'vector to png converter', 'svg png converter free'], 'image-to-png', 'SVG is vector-based and scales to any size. Converting to PNG creates a fixed-pixel raster image suitable for all image editors and sharing platforms.'),
+  makePage('convert-tiff-to-png-online', 'Convert TIFF to PNG Online — Free TIFF to PNG Converter', 'Convert TIFF to PNG Online', 'Convert TIFF images to PNG format online for free. Lossless conversion in your browser.', ['convert tiff to png online', 'tiff to png converter', 'tiff to png online free', 'change tiff to png', 'tiff png converter'], 'image-to-png', 'TIFF and PNG are both lossless formats. Converting TIFF to PNG produces a more web-compatible file while preserving every pixel.'),
+  makePage('reduce-png-file-size-online', 'Reduce PNG File Size Online — Free PNG Compressor', 'Reduce PNG File Size Online', 'Reduce PNG file size online for free without losing quality. Browser-based PNG optimizer.', ['reduce png file size online', 'reduce png size online free', 'shrink png file size', 'decrease png size online', 'make png smaller online'], 'image-to-png', 'PNG files can be reduced in size by converting to a more compressed format or optimising the colour palette. This tool handles it automatically.'),
+  makePage('png-to-jpg-online-free-no-watermark', 'PNG to JPG Online Free — No Watermark, No Sign-up', 'PNG to JPG Free No Watermark', 'Convert PNG to JPG online for free with no watermarks and no account required. Instant download.', ['png to jpg online free no watermark', 'convert png to jpg free no sign up', 'png jpg converter no watermark', 'free png to jpg no registration', 'png to jpg instant no limit'], 'image-to-png', 'No watermarks, no sign-up, no limits. Convert PNG to JPG directly in your browser and download the result immediately.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra WebP variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_WEBP_PAGES: SeoPage[] = [
+  makePage('convert-heic-to-webp-online', 'Convert HEIC to WebP Online — Free iPhone to WebP', 'Convert HEIC to WebP Online', 'Convert HEIC photos from iPhone to WebP format online for free. Smaller than JPG with better quality.', ['convert heic to webp online', 'heic to webp converter', 'heic to webp online free', 'iphone photo to webp', 'heic webp converter'], 'image-to-webp', 'HEIC is Apple\'s format; WebP is Google\'s. Converting to WebP gives you the best web compression while maintaining excellent visual quality.'),
+  makePage('convert-gif-to-webp-online', 'Convert GIF to WebP Online — Animated WebP Converter', 'Convert GIF to WebP Online', 'Convert GIF images to WebP format online for free. WebP is smaller and better quality.', ['convert gif to webp online', 'gif to webp converter', 'gif to webp online free', 'animated gif to webp', 'gif webp converter'], 'image-to-webp', 'WebP supports animation, just like GIF, but with far better compression. Converting GIF to animated WebP can reduce file size by up to 64%.'),
+  makePage('convert-bmp-to-webp-online', 'Convert BMP to WebP Online — Free Converter', 'Convert BMP to WebP Online', 'Convert BMP images to WebP format online for free. Achieve massive file size savings.', ['convert bmp to webp online', 'bmp to webp converter', 'bmp to webp online free', 'bmp webp converter free'], 'image-to-webp', 'BMP is uncompressed and can be hundreds of MBs. Converting to WebP can reduce file size by 95% or more while keeping excellent image quality.'),
+  makePage('webp-converter-online-free', 'WebP Converter Online Free — Convert Any Image to WebP', 'WebP Converter Online Free', 'Free online WebP converter. Convert JPG, PNG, GIF, BMP and more to WebP in your browser.', ['webp converter online free', 'online webp converter', 'free webp converter', 'convert image to webp online', 'image to webp tool'], 'image-to-webp', 'WebP is supported by all modern browsers and delivers 25–35% smaller files than JPG at the same quality. Convert any image to WebP for faster websites.'),
+  makePage('reduce-webp-file-size-online', 'Reduce WebP File Size Online — Free WebP Compressor', 'Reduce WebP File Size Online', 'Reduce WebP file size online for free. Compress WebP images to a specific KB or MB target.', ['reduce webp file size online', 'compress webp online free', 'shrink webp file size', 'decrease webp size online', 'webp compressor online'], 'image-to-webp', 'Even WebP files can be too large. This tool compresses WebP images to your exact file-size target while preserving as much quality as possible.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra PDF variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_PDF_PAGES: SeoPage[] = [
+  makePage('convert-multiple-images-to-pdf', 'Convert Multiple Images to PDF — Free Online Tool', 'Convert Multiple Images to PDF', 'Combine multiple images into a single PDF document online for free. Supports JPG, PNG, WebP and more.', ['convert multiple images to pdf', 'combine images to pdf free', 'merge images into pdf online', 'multiple photos to pdf free', 'images to pdf converter online'], 'image-to-pdf', 'Upload multiple images and they are combined into a single, multi-page PDF document — perfect for sharing photo collections, scanned documents, or portfolios.'),
+  makePage('convert-png-to-pdf-online', 'Convert PNG to PDF Online — Free PNG to PDF Converter', 'Convert PNG to PDF Online', 'Convert PNG images to PDF format online for free. Maintains quality and transparency.', ['convert png to pdf online', 'png to pdf converter', 'png to pdf online free', 'change png to pdf free', 'png pdf converter'], 'image-to-pdf', 'Converting a PNG to PDF creates a portable, universally viewable document. Ideal for submitting images as PDFs to forms, applications, and email attachments.'),
+  makePage('convert-webp-to-pdf-online', 'Convert WebP to PDF Online — Free Converter', 'Convert WebP to PDF Online', 'Convert WebP images to PDF format online for free. Browser-based, no upload required.', ['convert webp to pdf online', 'webp to pdf converter', 'webp to pdf online free', 'webp pdf converter free'], 'image-to-pdf', 'WebP images can be converted to PDF instantly in your browser. The resulting PDF preserves image dimensions and quality for professional sharing.'),
+  makePage('image-to-pdf-a4', 'Image to PDF A4 — Fit Image to A4 Page Online Free', 'Image to PDF A4 Online', 'Convert images to A4-sized PDF pages online for free. Automatically fits the image to A4 dimensions.', ['image to pdf a4', 'convert image to a4 pdf', 'image to pdf a4 size free', 'a4 pdf from image online', 'fit image to a4 pdf'], 'image-to-pdf', 'This tool converts your image to a PDF and fits it onto a standard A4 page (210×297 mm). Ideal for printing or submitting as a document.'),
+  makePage('jpg-to-pdf-online-free', 'JPG to PDF Online Free — Fast JPEG to PDF Converter', 'JPG to PDF Online Free', 'Convert JPG images to PDF format online for free. Merge multiple JPGs into one PDF or one per page.', ['jpg to pdf online free', 'jpeg to pdf online', 'convert jpg to pdf free', 'jpg pdf converter online', 'jpeg to pdf converter free'], 'image-to-pdf', 'Upload one or more JPGs and download a PDF in seconds. Each JPG becomes a page in the PDF, in the order you uploaded them.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra Grayscale variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_GRAYSCALE_PAGES: SeoPage[] = [
+  makePage('convert-png-to-grayscale-online', 'Convert PNG to Grayscale Online — Free Black & White', 'Convert PNG to Grayscale Online', 'Convert PNG images to grayscale (black & white) online for free. Preserves transparency.', ['convert png to grayscale online', 'png to grayscale free', 'png black and white converter', 'grayscale png online', 'png to bw online'], 'image-to-grayscale', 'Convert your PNG to a black-and-white grayscale image while keeping any transparent areas intact. Ideal for creating monochrome logos and icons.'),
+  makePage('convert-jpg-to-grayscale-online', 'Convert JPG to Grayscale Online — Free B&W Converter', 'Convert JPG to Grayscale Online', 'Convert JPEG images to grayscale online for free. One-click black-and-white conversion.', ['convert jpg to grayscale online', 'jpg to grayscale free', 'jpeg black and white converter', 'grayscale jpg online', 'jpg to bw converter'], 'image-to-grayscale', 'Remove all colour from your JPG image in one click. Grayscale photos have a timeless, professional look perfect for portraits and editorial photography.'),
+  makePage('make-image-black-and-white-online', 'Make Image Black and White Online — Free Tool', 'Make Image Black and White Online', 'Make any image black and white online for free. Works with JPG, PNG, WebP and more.', ['make image black and white online', 'image to black and white free', 'convert photo to black and white online', 'bw photo converter online', 'desaturate image online free'], 'image-to-grayscale', 'Upload any colour image and convert it to a beautiful black-and-white photo instantly. No design software needed.'),
+  makePage('desaturate-image-online-free', 'Desaturate Image Online Free — Remove Color', 'Desaturate Image Online Free', 'Remove all colour from an image online for free. Desaturate to grayscale instantly in your browser.', ['desaturate image online free', 'remove color from image online', 'desaturate photo online', 'image desaturator online', 'strip color from image online'], 'image-to-grayscale', 'Desaturating an image removes all colour information, leaving a pure grayscale result. Use it for artistic effects, printing, or accessibility testing.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra Base64 variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_BASE64_PAGES: SeoPage[] = [
+  makePage('convert-jpg-to-base64-online', 'Convert JPG to Base64 Online — Free JPEG Encoder', 'Convert JPG to Base64 Online', 'Convert JPG/JPEG images to Base64 encoded strings online for free.', ['convert jpg to base64 online', 'jpg to base64 encoder', 'jpeg to base64 online free', 'base64 encode jpg free', 'jpg base64 string online'], 'image-to-base64', 'Convert your JPEG to a Base64 string for use in CSS backgrounds, HTML img tags, or JSON payloads — all without needing a server to host the image.'),
+  makePage('convert-png-to-base64-online', 'Convert PNG to Base64 Online — Free PNG Encoder', 'Convert PNG to Base64 Online', 'Convert PNG images to Base64 encoded strings online for free. Copy the data URI instantly.', ['convert png to base64 online', 'png to base64 encoder', 'png to base64 online free', 'base64 encode png free', 'png base64 data uri'], 'image-to-base64', 'PNG with transparency can be embedded as a Base64 data URI in HTML or CSS. The transparent areas are preserved perfectly in the encoded output.'),
+  makePage('image-to-base64-data-uri', 'Image to Base64 Data URI — Free Online Converter', 'Image to Base64 Data URI', 'Convert any image to a Base64 data URI for embedding in HTML and CSS. Free browser-based tool.', ['image to base64 data uri', 'base64 data uri generator', 'image data uri encoder', 'base64 embed image css', 'base64 image embed html'], 'image-to-base64', 'Data URIs embed the image directly in your HTML or CSS, eliminating an HTTP request. Perfect for small icons, logos, and inline images in email templates.'),
+  makePage('base64-to-image-online', 'Base64 to Image Online — Decode Base64 to Image Free', 'Base64 to Image Online', 'Decode Base64 strings back to image files online for free. Paste your Base64 and download the image.', ['base64 to image online', 'decode base64 to image', 'base64 image decoder online', 'base64 to png online', 'base64 to jpg online'], 'image-to-base64', 'Paste a Base64 encoded image string and convert it back to a downloadable image file. Supports JPG, PNG, WebP and other encoded formats.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra Text (OCR) variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_TEXT_PAGES: SeoPage[] = [
+  makePage('extract-text-from-image-online', 'Extract Text from Image Online — Free OCR Tool', 'Extract Text from Image Online', 'Extract text from images online for free using OCR. Copy or download the recognised text.', ['extract text from image online', 'image text extractor online', 'ocr image to text free', 'extract words from image', 'read text from image online'], 'image-to-text', 'Upload any image containing text and the OCR engine will recognise and extract it into copyable, searchable text. Supports printed text in multiple languages.'),
+  makePage('convert-jpg-to-text-online', 'Convert JPG to Text Online — Free JPEG OCR', 'Convert JPG to Text Online', 'Convert JPG images to text online for free using OCR. Extract all text from JPEG photos.', ['convert jpg to text online', 'jpg to text converter', 'jpeg ocr online free', 'extract text from jpg', 'jpg text reader online'], 'image-to-text', 'Upload a JPG photo of a document, sign, or any printed text and download the recognised content as plain text.'),
+  makePage('convert-screenshot-to-text-online', 'Convert Screenshot to Text Online — Free OCR', 'Convert Screenshot to Text Online', 'Convert screenshots to editable text online for free. Copy text from any screenshot instantly.', ['convert screenshot to text online', 'screenshot to text free', 'screenshot ocr online', 'copy text from screenshot', 'extract text from screenshot online'], 'image-to-text', 'Take a screenshot of any text and convert it to editable, copyable content in seconds. Perfect for copying text from locked PDFs, images, or videos.'),
+  makePage('scan-document-to-text-online', 'Scan Document to Text Online — Free Document OCR', 'Scan Document to Text Online', 'Convert scanned document images to editable text online for free. Fast browser-based OCR.', ['scan document to text online', 'scanned document to text free', 'document ocr online', 'convert scan to text free', 'document to text converter online'], 'image-to-text', 'Digitise scanned documents by extracting all text content with OCR. The output can be copied, edited, and stored digitally — no manual re-typing needed.'),
+  makePage('ocr-online-free-no-limit', 'OCR Online Free No Limit — Unlimited Image to Text', 'OCR Online Free No Limit', 'Free unlimited online OCR. Convert images to text with no page limits, no sign-up, no watermarks.', ['ocr online free no limit', 'unlimited ocr free online', 'free ocr no registration', 'ocr tool no limit', 'free ocr software online'], 'image-to-text', 'No limits on the number of images you can process. Run OCR on as many images as you need, directly in your browser, with no account required.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra Favicon variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_FAVICON_PAGES: SeoPage[] = [
+  makePage('create-favicon-from-logo-online', 'Create Favicon from Logo Online — Free Tool', 'Create Favicon from Logo Online', 'Create a favicon from your logo online for free. Generate .ico and PNG favicons in all sizes.', ['create favicon from logo online', 'logo to favicon converter', 'favicon from logo free', 'generate favicon from image', 'make favicon from logo online'], 'image-to-favicon', 'Upload your logo and generate a favicon in all required sizes: 16×16, 32×32, 48×48, and 192×192 pixels. Download a complete favicon package for your website.'),
+  makePage('png-to-ico-converter-online-free', 'PNG to ICO Converter Online Free — Create .ico Files', 'PNG to ICO Converter Online Free', 'Convert PNG images to ICO format online for free. Create browser-compatible .ico favicon files.', ['png to ico converter online free', 'png to ico online', 'convert png to ico free', 'image to ico file online', 'make ico file from png'], 'image-to-favicon', 'ICO files can contain multiple image sizes in one file. Convert your PNG to ICO with all the standard favicon sizes included for maximum browser compatibility.'),
+  makePage('generate-apple-touch-icon-online', 'Generate Apple Touch Icon Online — Free iOS Icon Creator', 'Generate Apple Touch Icon Online', 'Generate Apple Touch Icon images for iOS and iPadOS. Create 180×180 px Apple touch icons from any image.', ['generate apple touch icon online', 'apple touch icon creator', 'ios icon generator online free', 'create apple touch icon', 'ios home screen icon maker'], 'image-to-favicon', 'Apple Touch Icons appear on iOS home screens and bookmarks. Generate a 180×180 px PNG from your logo or any image for perfect display on iPhones and iPads.'),
+  makePage('resize-image-to-16x16-favicon', 'Resize Image to 16×16 Favicon — Free Online Tool', 'Resize Image to 16×16 for Favicon', 'Resize any image to 16×16 pixels for a browser tab favicon. Free online favicon resizer.', ['resize image to 16x16 favicon', 'create 16x16 favicon online', 'image to 16x16 pixels free', 'favicon 16x16 generator', 'resize logo to favicon size'], 'image-to-favicon', 'The classic browser tab favicon is 16×16 pixels. Resize any image to this tiny size to create a recognisable favicon that displays in browser tabs and bookmarks.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra SVG variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_SVG_PAGES: SeoPage[] = [
+  makePage('convert-jpg-to-svg-online', 'Convert JPG to SVG Online — Free JPEG to Vector', 'Convert JPG to SVG Online', 'Convert JPG images to SVG vector format online for free. Create scalable graphics from photos.', ['convert jpg to svg online', 'jpg to svg converter', 'jpeg to svg online free', 'jpg to vector free online', 'image to svg converter free'], 'image-to-svg', 'Converting a JPG to SVG creates a scalable vector version that looks sharp at any size — ideal for logos, icons, and graphics that need to scale up without pixellation.'),
+  makePage('convert-png-to-svg-online', 'Convert PNG to SVG Online — Free PNG to Vector', 'Convert PNG to SVG Online', 'Convert PNG images to SVG vector format online for free. Perfect for logos and icons.', ['convert png to svg online', 'png to svg converter', 'png to svg online free', 'png to vector free online', 'convert png to svg free'], 'image-to-svg', 'PNG icons and logos can be converted to scalable SVG vectors. The resulting SVG scales to any size without pixellation, perfect for responsive web design.'),
+  makePage('trace-image-to-svg-online', 'Trace Image to SVG Online — Free Vector Tracing Tool', 'Trace Image to SVG Online', 'Trace bitmap images to SVG vector format online for free. Convert raster art to clean vectors.', ['trace image to svg online', 'bitmap to vector converter online free', 'image tracing online free', 'raster to vector converter free', 'auto trace image to svg'], 'image-to-svg', 'Image tracing converts pixel-based artwork into mathematically defined vector paths. The result is an SVG that scales perfectly to any size with no quality loss.'),
+  makePage('svg-converter-online-free', 'SVG Converter Online Free — Convert Image to SVG', 'SVG Converter Online Free', 'Free online SVG converter. Convert any image to SVG vector format in your browser.', ['svg converter online free', 'online svg converter', 'free svg converter', 'image to svg online', 'convert to svg free'], 'image-to-svg', 'Supports JPG, PNG, WebP, GIF, BMP and other browser-readable formats. Upload your image and download an SVG in one click.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra QR Code variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_QR_PAGES: SeoPage[] = [
+  makePage('generate-qr-code-for-url', 'Generate QR Code for URL — Free Link QR Generator', 'Generate QR Code for URL', 'Generate a QR code for any URL or website link online for free. Download as PNG or SVG.', ['generate qr code for url', 'qr code generator for link', 'url to qr code free', 'create qr code for website', 'qr code from url online'], 'image-to-qr', 'Create a scannable QR code that links to any URL. Anyone who scans it is taken directly to your website, product page, or landing page.'),
+  makePage('qr-code-generator-for-wifi', 'QR Code Generator for WiFi — Share WiFi Password', 'QR Code Generator for WiFi', 'Generate a QR code for your WiFi network online for free. Guests scan to connect instantly.', ['qr code generator for wifi', 'wifi qr code generator free', 'create wifi qr code online', 'share wifi via qr code', 'wifi password qr code generator'], 'image-to-qr', 'Create a WiFi QR code that lets guests connect to your network by simply scanning — no need to type a long password.'),
+  makePage('qr-code-generator-for-whatsapp', 'QR Code Generator for WhatsApp — Free Link QR', 'QR Code Generator for WhatsApp', 'Generate a WhatsApp QR code for your phone number online for free. Link directly to a WhatsApp chat.', ['qr code generator for whatsapp', 'whatsapp qr code generator', 'create whatsapp qr code online', 'whatsapp link qr code free', 'qr code for whatsapp number'], 'image-to-qr', 'Share your WhatsApp contact as a QR code. Anyone who scans it opens a chat with you directly, without needing to save your number first.'),
+  makePage('qr-code-generator-for-vcard', 'QR Code Generator for vCard — Digital Business Card', 'QR Code Generator for vCard', 'Generate a vCard QR code with your contact information online for free. Create a digital business card.', ['qr code generator for vcard', 'vcard qr code generator', 'contact qr code generator free', 'digital business card qr code', 'qr code with contact info'], 'image-to-qr', 'Create a QR code that, when scanned, instantly adds your contact details to the scanner\'s address book. Perfect for business cards and networking events.'),
+  makePage('qr-code-generator-for-instagram', 'QR Code for Instagram — Generate Instagram Profile QR', 'QR Code Generator for Instagram', 'Generate a QR code for your Instagram profile online for free. Print or share to gain followers.', ['qr code for instagram', 'instagram qr code generator', 'create instagram qr code free', 'instagram profile qr', 'instagram link qr code generator'], 'image-to-qr', 'Create a QR code that links directly to your Instagram profile. Print it on flyers, business cards, or packaging to drive followers from the physical world.'),
+  makePage('qr-code-with-logo-online-free', 'QR Code with Logo Online Free — Custom Branded QR', 'QR Code with Logo Online Free', 'Generate a QR code with your logo in the centre online for free. Create branded QR codes.', ['qr code with logo online free', 'custom qr code with logo', 'branded qr code generator free', 'qr code logo embed online', 'create qr code with image in center'], 'image-to-qr', 'Add your brand logo to the centre of a QR code for a professional, recognisable result. QR codes can accommodate a 30% logo overlay without losing scannability.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra Color Palette variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_COLOR_PALETTE_PAGES: SeoPage[] = [
+  makePage('extract-colors-from-image-online', 'Extract Colors from Image Online — Free Color Picker', 'Extract Colors from Image Online', 'Extract the dominant colours from any image online for free. Get hex, RGB, and HSL values.', ['extract colors from image online', 'color extractor from image', 'image color picker online', 'get colors from photo online', 'dominant color extractor online'], 'image-to-color-palette', 'Upload any image and instantly see its dominant colours with exact hex, RGB, and HSL values. Perfect for brand colour matching and design inspiration.'),
+  makePage('image-color-palette-generator', 'Image Color Palette Generator — Free Online Tool', 'Image Color Palette Generator', 'Generate a complete colour palette from any image. Extract up to 10 dominant colours with hex codes.', ['image color palette generator', 'color palette from image free', 'generate color palette from photo', 'image palette extractor', 'photo color palette tool online'], 'image-to-color-palette', 'Upload a photo or artwork and automatically generate a harmonious colour palette. Use the hex codes in your design tools, CSS, or brand guidelines.'),
+  makePage('get-hex-color-from-image-online', 'Get Hex Color from Image Online — Free Color Finder', 'Get Hex Color from Image Online', 'Click anywhere on an image to get the exact hex colour code. Free online colour picker.', ['get hex color from image online', 'hex color picker from image', 'image to hex code online', 'pick color from image online free', 'find hex code from photo'], 'image-to-color-palette', 'Upload your image and extract exact hex colour codes from any part of it. Perfect for matching brand colours, recreating palettes, and CSS styling.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra ASCII Art variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_ASCII_PAGES: SeoPage[] = [
+  makePage('convert-photo-to-ascii-art-online', 'Convert Photo to ASCII Art Online — Free Generator', 'Convert Photo to ASCII Art Online', 'Convert any photo to ASCII art online for free. Download as text, HTML or PNG.', ['convert photo to ascii art online', 'photo to ascii generator', 'image ascii art online free', 'picture to ascii art', 'photo ascii converter'], 'image-to-ascii', 'Upload any photo and turn it into ASCII art made entirely of text characters. Share it on social media or use it as a unique header in your text files.'),
+  makePage('text-art-generator-from-image', 'Text Art Generator from Image — Free Online Tool', 'Text Art Generator from Image', 'Generate text art from any image online for free. Convert pictures to character art.', ['text art generator from image', 'image to text art generator', 'picture to text art online', 'ascii text art generator from photo', 'convert image to text symbols'], 'image-to-ascii', 'Turn your favourite photos into impressive text art. The generator maps pixel brightness to ASCII characters to recreate the image using only keyboard symbols.'),
+  makePage('ascii-art-maker-online-free', 'ASCII Art Maker Online Free — Image to ASCII', 'ASCII Art Maker Online Free', 'Make ASCII art from images online for free. Adjustable width and character set.', ['ascii art maker online free', 'online ascii art maker', 'free ascii art generator', 'make ascii art from photo free', 'ascii generator online'], 'image-to-ascii', 'Customise the output width and character set to get the perfect ASCII art from your image. The larger the character width, the more detailed the result.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra Pixel Art variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_PIXEL_ART_PAGES: SeoPage[] = [
+  makePage('convert-image-to-pixel-art-online', 'Convert Image to Pixel Art Online — Free Pixelator', 'Convert Image to Pixel Art Online', 'Convert any image to pixel art online for free. Choose pixel grid size for 8-bit or 16-bit style.', ['convert image to pixel art online', 'image to pixel art converter', 'pixelate image online free', 'make pixel art from photo', 'photo to pixel art online'], 'image-to-pixel-art', 'Upload any image and apply a pixel art effect. Choose your grid size — smaller grids create fine pixel art; larger grids produce chunky 8-bit style sprites.'),
+  makePage('pixelate-image-online-free', 'Pixelate Image Online Free — Create Pixel Effect', 'Pixelate Image Online Free', 'Add a pixelation effect to any image online for free. Create a mosaic or pixel blur effect.', ['pixelate image online free', 'pixel effect image online', 'add pixelation to image free', 'mosaic image effect online', 'blur image with pixels'], 'image-to-pixel-art', 'Apply a pixelation filter to any image to create a stylised 8-bit look or censor sensitive details by blurring them with large pixels.'),
+  makePage('8-bit-image-converter-online', '8-Bit Image Converter Online — Free Retro Pixel Art', '8-Bit Image Converter Online', 'Convert any image to 8-bit retro pixel art style online for free. Classic video game aesthetic.', ['8 bit image converter online', '8bit image converter', 'retro pixel art converter', 'convert photo to 8 bit style', '8 bit photo effect online free'], 'image-to-pixel-art', 'Give any photo an authentic 8-bit retro look. The converter reduces the image to a low-resolution pixel grid with a limited colour palette reminiscent of classic video games.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra Icon variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_ICON_PAGES: SeoPage[] = [
+  makePage('create-app-icon-online-free', 'Create App Icon Online Free — iOS & Android', 'Create App Icon Online Free', 'Create app icons for iOS and Android online for free. Generate all required icon sizes from one image.', ['create app icon online free', 'app icon generator online', 'ios app icon creator', 'android app icon generator', 'app icon maker free'], 'image-to-icon', 'Upload your design and generate all required app icon sizes for iOS (1024×1024 down to 20×20) and Android (512×512 down to 36×36) in one go.'),
+  makePage('resize-image-to-icon-size-online', 'Resize Image to Icon Size Online — Free Icon Resizer', 'Resize Image to Icon Size Online', 'Resize any image to standard icon sizes (16, 32, 48, 64, 128, 256 px) online for free.', ['resize image to icon size online', 'icon size resizer online', 'image to icon size free', 'resize to 512x512 online', 'icon image resizer'], 'image-to-icon', 'Generate icons in every standard size from a single source image. Download individual sizes or a complete icon set ready for use in apps, websites, and operating systems.'),
+  makePage('convert-image-to-ico-file-online', 'Convert Image to ICO File Online — Free .ico Creator', 'Convert Image to ICO File Online', 'Convert any image to a Windows .ico file online for free. Multi-size ICO files for desktop apps.', ['convert image to ico file online', 'image to ico converter free', 'create ico file online', 'make ico file from image', 'icon ico generator online'], 'image-to-icon', 'ICO files are used for Windows application icons. Create a multi-resolution ICO file containing 16×16, 32×32, 48×48, and 256×256 pixel icons from any source image.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra BMP variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_BMP_PAGES: SeoPage[] = [
+  makePage('convert-jpg-to-bmp-online', 'Convert JPG to BMP Online — Free JPEG to BMP', 'Convert JPG to BMP Online', 'Convert JPEG images to BMP format online for free. Lossless BMP from any JPG.', ['convert jpg to bmp online', 'jpg to bmp converter', 'jpeg to bmp online free', 'change jpg to bmp', 'jpg bmp converter free'], 'image-to-bmp', 'BMP is an uncompressed lossless format widely supported on Windows. Convert your JPG to BMP when you need a pixel-perfect, uncompressed copy of your image.'),
+  makePage('convert-png-to-bmp-online', 'Convert PNG to BMP Online — Free PNG to BMP Converter', 'Convert PNG to BMP Online', 'Convert PNG images to BMP format online for free. Browser-based, no installation needed.', ['convert png to bmp online', 'png to bmp converter', 'png to bmp online free', 'change png to bmp', 'png bmp converter free'], 'image-to-bmp', 'Convert your PNG to BMP for use in applications that require the BMP format. The conversion is lossless, preserving all image data.'),
+  makePage('bmp-converter-online-free', 'BMP Converter Online Free — Convert Any Image to BMP', 'BMP Converter Online Free', 'Free online BMP converter. Convert any image format to BMP in your browser.', ['bmp converter online free', 'online bmp converter', 'free bmp converter', 'image to bmp online', 'convert to bmp free'], 'image-to-bmp', 'Supports JPG, PNG, WebP, GIF, and other browser-readable formats. Upload your file and download a BMP in one click — no installation required.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra GIF variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_GIF_PAGES: SeoPage[] = [
+  makePage('convert-jpg-to-gif-online', 'Convert JPG to GIF Online — Free JPEG to GIF', 'Convert JPG to GIF Online', 'Convert JPEG images to GIF format online for free. Create static GIFs from JPEG photos.', ['convert jpg to gif online', 'jpg to gif converter', 'jpeg to gif online free', 'change jpg to gif', 'jpg gif converter free'], 'image-to-gif', 'Converting a JPG to GIF creates a static GIF image. Note that GIF uses a 256-colour palette, so photos may show banding — it works best for simple graphics.'),
+  makePage('convert-png-to-gif-online', 'Convert PNG to GIF Online — Free PNG to GIF Converter', 'Convert PNG to GIF Online', 'Convert PNG images to GIF format online for free. Browser-based conversion in one click.', ['convert png to gif online', 'png to gif converter', 'png to gif online free', 'change png to gif', 'png gif converter free'], 'image-to-gif', 'Convert any PNG to GIF format instantly. GIF supports basic transparency (no alpha channel) and is widely supported for simple animations and web graphics.'),
+  makePage('create-gif-from-images-online', 'Create GIF from Images Online — Free Animated GIF Maker', 'Create GIF from Images Online Free', 'Create an animated GIF from multiple images online for free. Upload frames and set the speed.', ['create gif from images online', 'make animated gif from images free', 'image to gif animation online', 'gif maker from photos online', 'animated gif creator free'], 'image-to-gif', 'Upload multiple images in sequence, set the frame delay, and download a smooth animated GIF. Perfect for creating quick animations, memes, and demos.'),
+  makePage('gif-converter-online-free', 'GIF Converter Online Free — Convert Any Image to GIF', 'GIF Converter Online Free', 'Free online GIF converter. Convert any image format to GIF in your browser.', ['gif converter online free', 'online gif converter', 'free gif converter', 'image to gif online', 'convert to gif free'], 'image-to-gif', 'Supports JPG, PNG, WebP, BMP and other browser-readable formats. Convert to GIF instantly for use on forums, messaging apps, and web pages.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra ZIP variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_ZIP_PAGES: SeoPage[] = [
+  makePage('download-images-as-zip-online', 'Download Images as ZIP — Free Batch Image Downloader', 'Download Images as ZIP Online', 'Package and download multiple images as a ZIP archive online for free. Browser-based batch download.', ['download images as zip online', 'batch image download zip', 'package images as zip free', 'zip image downloader online', 'download multiple images zip'], 'image-to-zip', 'Upload multiple images and download them all as a single ZIP archive. Perfect for sharing image sets, delivering client photos, and backing up image libraries.'),
+  makePage('convert-images-to-zip-online', 'Convert Images to ZIP Online — Free Image Zipper', 'Convert Images to ZIP Online', 'Convert and compress multiple images into a ZIP archive online for free.', ['convert images to zip online', 'images to zip converter', 'zip images online free', 'compress images to zip', 'image zip creator online'], 'image-to-zip', 'Select any number of images and package them into a ZIP archive for easy sharing. The images are bundled as-is without additional compression.'),
+  makePage('batch-convert-images-and-download-zip', 'Batch Convert Images & Download ZIP — Free Online', 'Batch Convert Images & Download ZIP', 'Convert multiple images to a target format and download all results as a ZIP archive. Free online tool.', ['batch convert images download zip', 'batch image converter zip download', 'convert multiple images zip', 'bulk image converter free zip', 'batch image processing zip'], 'image-to-zip', 'Upload multiple images, convert them all at once, and download the converted files as a ZIP archive — saving time compared to converting one image at a time.'),
+];
+
+// ---------------------------------------------------------------------------
+// Extra HTML variants
+// ---------------------------------------------------------------------------
+
+const EXTRA_HTML_PAGES: SeoPage[] = [
+  makePage('convert-image-to-html-email', 'Convert Image to HTML Email — Inline Base64 Images', 'Convert Image to HTML Email', 'Convert images to inline Base64 HTML for email templates. No external hosting needed.', ['convert image to html email', 'inline image html email', 'base64 image html email', 'embed image in html email', 'image to inline html email free'], 'image-to-html', 'Inline images in HTML emails ensure they display even when remote image loading is blocked by email clients. Convert your images to Base64 data URIs for reliable email display.'),
+  makePage('embed-image-in-html-free-online', 'Embed Image in HTML Free Online — Base64 Data URI', 'Embed Image in HTML Online Free', 'Generate the HTML code to embed an image inline using Base64. No external server needed.', ['embed image in html free online', 'html image embed code generator', 'base64 image html code', 'inline image html generator free', 'image to html img tag online'], 'image-to-html', 'Get the complete <img> tag with Base64 data URI ready to paste into your HTML. The image loads without any external HTTP requests.'),
+  makePage('image-to-css-background-online', 'Image to CSS Background — Base64 Background Generator', 'Image to CSS Background Online', 'Convert an image to a CSS background-image property with Base64 data URI. Free online tool.', ['image to css background online', 'base64 css background generator', 'css background image base64', 'convert image to css code', 'image to background css free'], 'image-to-html', 'Generate the CSS background-image declaration with your image embedded as a Base64 data URI. Copy and paste directly into your stylesheet.'),
+];
+
+// ---------------------------------------------------------------------------
 // Assemble all pages
 // ---------------------------------------------------------------------------
 
@@ -1458,6 +1702,26 @@ const SEO_PAGES: SeoPage[] = [
   ...GIF_PAGES,
   ...ZIP_PAGES,
   ...HTML_PAGES,
+  ...EXTRA_COMPRESS_PAGES,
+  ...EXTRA_RESIZE_PAGES,
+  ...EXTRA_JPG_PAGES,
+  ...EXTRA_PNG_PAGES,
+  ...EXTRA_WEBP_PAGES,
+  ...EXTRA_PDF_PAGES,
+  ...EXTRA_GRAYSCALE_PAGES,
+  ...EXTRA_BASE64_PAGES,
+  ...EXTRA_TEXT_PAGES,
+  ...EXTRA_FAVICON_PAGES,
+  ...EXTRA_SVG_PAGES,
+  ...EXTRA_QR_PAGES,
+  ...EXTRA_COLOR_PALETTE_PAGES,
+  ...EXTRA_ASCII_PAGES,
+  ...EXTRA_PIXEL_ART_PAGES,
+  ...EXTRA_ICON_PAGES,
+  ...EXTRA_BMP_PAGES,
+  ...EXTRA_GIF_PAGES,
+  ...EXTRA_ZIP_PAGES,
+  ...EXTRA_HTML_PAGES,
 ];
 
 /** Map from slug → SeoPage for O(1) lookup */
