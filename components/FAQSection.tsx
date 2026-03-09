@@ -14,26 +14,8 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <section aria-labelledby="faq-heading">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-
       <h2
         id="faq-heading"
         className="text-2xl font-bold text-neutral-900 mb-6"

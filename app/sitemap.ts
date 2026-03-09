@@ -25,8 +25,8 @@ const tools = [
   '/image-to-html',
 ];
 
-/** Date the site was last meaningfully updated (keep this current when content changes) */
-const LAST_UPDATED = new Date('2025-01-01');
+/** Always reflect the current date so crawlers receive a fresh lastModified signal. */
+const LAST_UPDATED = new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const home: MetadataRoute.Sitemap[number] = {

@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  openGraph: {
+    title: "Free Image Tool Hub — Free Online Image Tools",
+    description:
+      "20 free online image tools: compress, convert, resize, and transform images in your browser. No uploads, no sign-up.",
+    url: "https://allimagetools.vercel.app",
+    siteName: "Free Image Tool Hub",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://allimagetools.vercel.app/og",
+        width: 1200,
+        height: 630,
+        alt: "Free Image Tool Hub — Free Online Image Tools",
+      },
+    ],
+  },
   twitter: {
     card: "summary_large_image",
     title: "Free Image Tool Hub — Free Online Image Tools",
@@ -35,7 +52,14 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "ToolHub",
+    title: "Free Image Tool Hub",
+  },
+  alternates: {
+    canonical: "https://allimagetools.vercel.app",
+    languages: {
+      "x-default": "https://allimagetools.vercel.app",
+      "en": "https://allimagetools.vercel.app",
+    },
   },
 };
 
