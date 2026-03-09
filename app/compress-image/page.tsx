@@ -13,14 +13,31 @@ export const metadata: Metadata = {
     'image compressor',
     'jpg compressor',
     'png compressor',
+    'compress image to 50kb',
+    'compress image to 100kb',
+    'reduce image file size online free',
+    'compress jpeg online without losing quality',
+    'compress png online free',
+    'image size reducer online',
+    'how to compress image online',
   ],
-  alternates: { canonical: 'https://toolhub.vercel.app/compress-image' },
+  alternates: { canonical: 'https://allimagetools.vercel.app/compress-image' },
   openGraph: {
     title: 'Compress Image Online — Free | Free Image Tool Hub',
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
-    url: 'https://toolhub.vercel.app/compress-image',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/compress-image',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Compress Image Online — Free | Free Image Tool Hub',
+    description:
+      'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -57,6 +74,7 @@ export default function CompressImagePage() {
     <ToolLayout
       title="Compress Image Online"
       description="Reduce your image file size to a target KB — instantly in your browser. No uploads, no account needed."
+      url="https://allimagetools.vercel.app/compress-image"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

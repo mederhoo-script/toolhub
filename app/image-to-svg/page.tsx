@@ -6,13 +6,22 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Image to SVG Converter — Free Online Tool',
   description: 'Convert any raster image (PNG, JPG, WebP) to a self-contained SVG file by embedding it inside an SVG <image> tag. Free, browser-based, no upload required.',
-  keywords: ['image to svg', 'convert image to svg', 'raster to svg', 'png to svg', 'jpg to svg', 'svg converter'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-svg' },
+  keywords: ['image to svg', 'convert image to svg', 'raster to svg', 'png to svg', 'jpg to svg', 'svg converter', 'embed image in svg', 'free svg converter online', 'photo to svg online', 'convert png to svg free', 'how to convert image to svg', 'svg image wrapper'],
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-svg' },
   openGraph: {
     title: 'Image to SVG Converter — Free | Free Image Tool Hub',
     description: 'Wrap any raster image in a self-contained SVG file. Browser-based, instant, no upload needed.',
-    url: 'https://toolhub.vercel.app/image-to-svg',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-svg',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image to SVG Converter — Free | Free Image Tool Hub',
+    description: 'Wrap any raster image in a self-contained SVG file. Browser-based, instant, no upload needed.',
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -40,6 +49,7 @@ export default function ImageToSvgPage() {
     <ToolLayout
       title="Image to SVG Converter"
       description="Wrap any raster image in a self-contained SVG file (embed mode). Free, instant, no upload required."
+      url="https://allimagetools.vercel.app/image-to-svg"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

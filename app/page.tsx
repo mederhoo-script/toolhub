@@ -9,34 +9,63 @@ export const metadata: Metadata = {
     'Free Image Tool Hub: 20 free online image tools to compress, convert, resize, and transform images in your browser. No upload, no sign-up. Instant results.',
   keywords: [
     'free online image tools',
-    'image converter',
-    'compress image',
-    'resize image',
-    'image to pdf',
-    'image to text',
-    'image to base64',
-    'image to webp',
-    'grayscale image',
-    'favicon generator',
-    'image to svg',
-    'qr code generator',
-    'image color palette',
-    'image to ascii',
-    'pixel art generator',
-    'image to icon',
-    'image to bmp',
-    'image to gif',
-    'images to zip',
-    'image to html',
+    'image converter online free',
+    'compress image online',
+    'resize image online free',
+    'image to pdf converter',
+    'image to text ocr',
+    'image to base64 encoder',
+    'convert image to webp',
+    'grayscale image converter',
+    'favicon generator online',
+    'image to svg converter',
+    'qr code generator free',
+    'image color palette extractor',
+    'image to ascii art',
+    'pixel art generator online',
+    'image to icon generator',
+    'image to bmp converter',
+    'image to gif converter',
+    'batch image to zip',
+    'image to html converter',
+    'jpg to png converter',
+    'png to jpg converter',
+    'webp converter online',
+    'compress jpg online',
+    'compress png online',
+    'reduce image file size',
+    'image resizer online',
+    'change image dimensions',
+    'ocr online free',
+    'extract text from image',
+    'base64 image encoder',
+    'convert photo to pdf',
+    'convert image to black and white',
+    'create favicon from image',
+    'image pixel art converter',
+    'browser based image editor',
+    'free image processing tools',
+    'no upload image converter',
+    'private image converter',
+    'image format converter',
   ],
-  alternates: { canonical: 'https://toolhub.vercel.app' },
+  alternates: { canonical: 'https://allimagetools.vercel.app' },
   openGraph: {
     title: 'Free Image Tool Hub — Free Online Image Tools',
     description:
     'Free Image Tool Hub: convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
-    url: 'https://toolhub.vercel.app',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app',
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
     type: 'website',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Image Tool Hub — Free Online Image Tools',
+    description:
+      '20 free online image tools: compress, convert, resize, and transform images instantly in your browser. No uploads, no sign-up.',
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -230,14 +259,40 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Free Image Tool Hub',
-  url: 'https://toolhub.vercel.app',
+  url: 'https://allimagetools.vercel.app',
   description:
     'Free Image Tool Hub: free online image tools to compress, convert, resize, and transform images in your browser.',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://toolhub.vercel.app/?q={search_term_string}',
+    target: 'https://allimagetools.vercel.app/?q={search_term_string}',
     'query-input': 'required name=search_term_string',
   },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Free Image Tool Hub',
+  url: 'https://allimagetools.vercel.app',
+  logo: 'https://allimagetools.vercel.app/logo.svg',
+  description:
+    'Free Image Tool Hub provides 20 free browser-based image tools including compression, conversion, resizing, OCR, and more.',
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Free Online Image Tools',
+  description: 'A collection of 20 free browser-based image processing tools.',
+  url: 'https://allimagetools.vercel.app',
+  numberOfItems: tools.length,
+  itemListElement: tools.map((tool, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: tool.name,
+    description: tool.description,
+    url: `https://allimagetools.vercel.app${tool.href}`,
+  })),
 };
 
 export default function HomePage() {
@@ -246,6 +301,14 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
 
       <div className="min-h-screen bg-neutral-50">

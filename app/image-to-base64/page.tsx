@@ -6,13 +6,22 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Image to Base64 Encoder — Free Online Tool',
   description: 'Convert any image to a Base64 data URL string instantly. Copy and embed images directly in HTML, CSS, or JavaScript. No upload needed.',
-  keywords: ['image to base64', 'base64 encoder', 'image to data url', 'base64 image online', 'encode image base64'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-base64' },
+  keywords: ['image to base64', 'base64 encoder', 'image to data url', 'base64 image online', 'encode image base64', 'convert image to base64 string', 'png to base64', 'jpg to base64', 'base64 image css', 'embed image in html base64', 'base64 data url generator', 'how to encode image base64'],
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-base64' },
   openGraph: {
     title: 'Image to Base64 Encoder — Free | Free Image Tool Hub',
     description: 'Encode any image as a Base64 data URL. Copy and use in HTML, CSS, or JSON.',
-    url: 'https://toolhub.vercel.app/image-to-base64',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-base64',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image to Base64 Encoder — Free | Free Image Tool Hub',
+    description: 'Encode any image as a Base64 data URL. Copy and use in HTML, CSS, or JSON.',
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -44,6 +53,7 @@ export default function ImageToBase64Page() {
     <ToolLayout
       title="Image to Base64 Encoder"
       description="Convert any image to a Base64 data URL. Copy and embed directly in HTML, CSS, or JavaScript. Instant, free, browser-based."
+      url="https://allimagetools.vercel.app/image-to-base64"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

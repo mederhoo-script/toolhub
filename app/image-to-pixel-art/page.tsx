@@ -6,13 +6,22 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Image to Pixel Art Converter — Free Online Tool',
   description: 'Convert any photo or image to pixel art. Choose pixel size, keep aspect ratio, and download as PNG or WebP. Free, browser-based, no upload required.',
-  keywords: ['image to pixel art', 'pixelate image', 'pixel art generator', 'pixelated image', '8-bit image converter'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-pixel-art' },
+  keywords: ['image to pixel art', 'pixelate image', 'pixel art generator', 'pixelated image', '8-bit image converter', 'convert photo to pixel art online free', 'pixelate photo online', '8bit art maker', 'retro pixel art from image', 'pixel art maker free', 'how to pixelate image online', 'pixelation filter online'],
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-pixel-art' },
   openGraph: {
     title: 'Image to Pixel Art Converter — Free | Free Image Tool Hub',
     description: 'Turn any image into pixel art. Choose pixel size and download instantly.',
-    url: 'https://toolhub.vercel.app/image-to-pixel-art',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-pixel-art',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image to Pixel Art Converter — Free | Free Image Tool Hub',
+    description: 'Turn any image into pixel art. Choose pixel size and download instantly.',
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -40,6 +49,7 @@ export default function ImageToPixelArtPage() {
     <ToolLayout
       title="Image to Pixel Art Converter"
       description="Convert any image to pixel art with one click. Choose pixel grid size and output scale. Download PNG or WebP."
+      url="https://allimagetools.vercel.app/image-to-pixel-art"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

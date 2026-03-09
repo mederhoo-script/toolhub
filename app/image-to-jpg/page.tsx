@@ -7,13 +7,22 @@ export const metadata: Metadata = {
   title: 'Convert Image to JPG — Free Online Converter',
   description:
     'Convert PNG, WebP, GIF, BMP and other images to JPG format instantly. Adjust quality with a slider. No upload, runs in browser.',
-  keywords: ['convert image to jpg', 'png to jpg', 'webp to jpg', 'image to jpeg online', 'free jpg converter'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-jpg' },
+  keywords: ['convert image to jpg', 'png to jpg', 'webp to jpg', 'image to jpeg online', 'free jpg converter', 'gif to jpg', 'bmp to jpg', 'convert photo to jpeg online free', 'image to jpg no upload', 'png to jpeg converter', 'how to convert image to jpg', 'jpg quality reducer'],
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-jpg' },
   openGraph: {
     title: 'Convert Image to JPG — Free | Free Image Tool Hub',
     description: 'Convert any image to JPG with custom quality settings. 100% browser-based.',
-    url: 'https://toolhub.vercel.app/image-to-jpg',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-jpg',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Convert Image to JPG — Free | Free Image Tool Hub',
+    description: 'Convert any image to JPG with custom quality settings. 100% browser-based.',
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -45,6 +54,7 @@ export default function ImageToJpgPage() {
     <ToolLayout
       title="Convert Image to JPG"
       description="Convert PNG, WebP, and other image formats to JPG with custom quality. Free, instant, browser-based."
+      url="https://allimagetools.vercel.app/image-to-jpg"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

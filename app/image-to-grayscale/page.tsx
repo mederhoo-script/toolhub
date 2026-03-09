@@ -6,13 +6,22 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Convert Image to Grayscale — Free Online Tool',
   description: 'Convert any colour image to grayscale instantly in your browser. No uploads, no sign-up. Free online grayscale converter.',
-  keywords: ['convert image to grayscale', 'grayscale image online', 'black and white image converter', 'desaturate image', 'free grayscale tool'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-grayscale' },
+  keywords: ['convert image to grayscale', 'grayscale image online', 'black and white image converter', 'desaturate image', 'free grayscale tool', 'convert photo to black and white online free', 'remove color from image', 'grayscale filter online', 'jpg to grayscale', 'png to black and white', 'how to make image black and white online', 'greyscale image converter'],
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-grayscale' },
   openGraph: {
     title: 'Convert Image to Grayscale — Free | Free Image Tool Hub',
     description: 'Remove colour from any image instantly. Browser-based, no upload required.',
-    url: 'https://toolhub.vercel.app/image-to-grayscale',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-grayscale',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Convert Image to Grayscale — Free | Free Image Tool Hub',
+    description: 'Remove colour from any image instantly. Browser-based, no upload required.',
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -44,6 +53,7 @@ export default function ImageToGrayscalePage() {
     <ToolLayout
       title="Convert Image to Grayscale"
       description="Remove colour from any image and convert it to grayscale instantly. Free, browser-based, no upload required."
+      url="https://allimagetools.vercel.app/image-to-grayscale"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

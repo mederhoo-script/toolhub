@@ -6,13 +6,22 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Convert Image to WebP — Free Online Converter',
   description: 'Convert JPG, PNG, GIF to WebP format online. Smaller file sizes with excellent quality. Browser-based, no upload required.',
-  keywords: ['convert image to webp', 'jpg to webp', 'png to webp', 'image to webp online', 'webp converter'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-webp' },
+  keywords: ['convert image to webp', 'jpg to webp', 'png to webp', 'image to webp online', 'webp converter', 'gif to webp', 'webp format converter free', 'convert photo to webp', 'reduce image size webp', 'modern image format converter', 'how to convert to webp', 'webp image compression'],
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-webp' },
   openGraph: {
     title: 'Convert Image to WebP — Free | Free Image Tool Hub',
     description: 'Convert any image to WebP for smaller file sizes. Adjust quality. 100% browser-based.',
-    url: 'https://toolhub.vercel.app/image-to-webp',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-webp',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Convert Image to WebP — Free | Free Image Tool Hub',
+    description: 'Convert any image to WebP for smaller file sizes. Adjust quality. 100% browser-based.',
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -44,6 +53,7 @@ export default function ImageToWebpPage() {
     <ToolLayout
       title="Convert Image to WebP"
       description="Convert JPG, PNG, and other images to modern WebP format. Smaller files, same quality. Free, instant, browser-based."
+      url="https://allimagetools.vercel.app/image-to-webp"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">
