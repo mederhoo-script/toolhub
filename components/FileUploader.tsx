@@ -69,10 +69,12 @@ export default function FileUploader({
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
-        className={`min-h-48 flex flex-col items-center justify-center border-2 border-dashed rounded-xl p-8 cursor-pointer transition-colors ${
+        className={`relative min-h-52 flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-8 cursor-pointer transition-all duration-200 ${
           isDragging
-            ? 'border-primary-500 bg-primary-50'
-            : 'border-neutral-300 bg-neutral-50 hover:border-primary-400 hover:bg-primary-50'
+            ? 'border-primary-400 bg-primary-50 scale-[1.01]'
+            : preview
+            ? 'border-primary-200 bg-primary-50/40 hover:border-primary-400 hover:bg-primary-50'
+            : 'border-neutral-200 bg-neutral-50 hover:border-primary-300 hover:bg-primary-50/30'
         }`}
       >
         <input
@@ -86,46 +88,51 @@ export default function FileUploader({
         />
 
         {preview ? (
-          <div className="flex flex-col items-center gap-3">
-            <div className="relative w-32 h-32">
+          <div className="flex flex-col items-center gap-4">
+            <div className="relative w-36 h-36 rounded-xl overflow-hidden ring-2 ring-primary-200 shadow-md">
               <Image
                 src={preview}
                 alt={`Preview of ${fileName}`}
                 fill
-                className="object-contain rounded-lg"
+                className="object-contain"
                 unoptimized
               />
             </div>
-            <p className="text-sm text-neutral-600 text-center break-all max-w-xs">
-              {fileName}
-            </p>
-            <p className="text-xs text-primary-600 font-medium">
-              Click or drag to replace
-            </p>
+            <div className="text-center">
+              <p className="text-sm font-medium text-neutral-700 break-all max-w-xs">
+                {fileName}
+              </p>
+              <p className="text-xs text-primary-600 mt-1 font-medium">
+                Click or drag to replace
+              </p>
+            </div>
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-3 text-center">
-            <svg
-              className="w-12 h-12 text-neutral-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
+          <div className="flex flex-col items-center gap-4 text-center">
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-colors ${isDragging ? 'bg-primary-100' : 'bg-neutral-100'}`}>
+              <svg
+                className={`w-8 h-8 transition-colors ${isDragging ? 'text-primary-500' : 'text-neutral-400'}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
             <div>
-              <p className="text-base font-medium text-neutral-700">
-                Drop your image here, or{' '}
-                <span className="text-primary-600">browse</span>
+              <p className="text-base font-semibold text-neutral-700">
+                {isDragging ? 'Drop your image here' : (
+                  <>Drop your image here, or{' '}<span className="text-primary-600">browse</span></>
+                )}
               </p>
-              <p className="text-sm text-neutral-500 mt-1">
-                Max size: {maxSizeMB}MB
+              <p className="text-sm text-neutral-400 mt-1">
+                Supports PNG, JPG, WebP, GIF, BMP · Max {maxSizeMB}MB
               </p>
             </div>
           </div>
@@ -133,9 +140,12 @@ export default function FileUploader({
       </div>
 
       {error && (
-        <p role="alert" className="mt-2 text-sm text-red-600 font-medium">
-          {error}
-        </p>
+        <div role="alert" className="mt-3 flex items-center gap-2 px-4 py-2.5 bg-red-50 border border-red-200 rounded-xl">
+          <svg className="w-4 h-4 text-red-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p className="text-sm text-red-600 font-medium">{error}</p>
+        </div>
       )}
     </div>
   );

@@ -26,7 +26,7 @@ export default function DownloadButton({
       onClick={handleDownload}
       disabled={disabled || !fileUrl}
       aria-label={`Download ${fileName}`}
-      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-white bg-primary-600 hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-primary-600 hover:bg-primary-700 active:bg-primary-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
     >
       {disabled ? (
         <>
@@ -68,7 +68,7 @@ export default function DownloadButton({
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
             />
           </svg>
-          Download
+          Download {fileName.split('.').pop()?.toUpperCase() ?? ''}
         </>
       )}
     </button>
