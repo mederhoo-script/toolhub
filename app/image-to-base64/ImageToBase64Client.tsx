@@ -4,6 +4,7 @@ import { useState } from 'react';
 import FileUploader from '@/components/FileUploader';
 import ToolNavigation from '@/components/ToolNavigation';
 import { toBase64 } from '@/lib/imageToBase64';
+import ErrorAlert from '@/components/ErrorAlert';
 
 export default function ImageToBase64Client() {
   const [processing, setProcessing] = useState(false);
@@ -47,11 +48,7 @@ export default function ImageToBase64Client() {
         </p>
       )}
 
-      {error && (
-        <p role="alert" className="mt-3 text-sm text-red-600">
-          {error}
-        </p>
-      )}
+      <ErrorAlert error={error} />
 
       {result && (
         <div className="mt-6 space-y-3">

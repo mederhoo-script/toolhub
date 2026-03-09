@@ -45,7 +45,11 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="bg-white border border-neutral-200 rounded-xl overflow-hidden"
+            className={`border rounded-xl overflow-hidden transition-colors ${
+              openIndex === index
+                ? 'bg-primary-50 border-primary-200'
+                : 'bg-white border-neutral-200 hover:border-neutral-300'
+            }`}
           >
             <button
               type="button"
@@ -53,25 +57,25 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
               aria-controls={`faq-answer-${index}`}
               id={`faq-question-${index}`}
               onClick={() => toggle(index)}
-              className="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-neutral-800 hover:bg-neutral-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
+              className="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-neutral-800 hover:bg-black/[0.02] transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
             >
-              <span>{faq.question}</span>
-              <svg
-                className={`w-5 h-5 text-neutral-500 flex-shrink-0 ml-3 transition-transform ${
-                  openIndex === index ? 'rotate-180' : ''
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+              <span className="pr-4">{faq.question}</span>
+              <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all ${openIndex === index ? 'bg-primary-600 text-white rotate-180' : 'bg-neutral-100 text-neutral-500'}`}>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </span>
             </button>
 
             <div
@@ -79,7 +83,7 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
               role="region"
               aria-labelledby={`faq-question-${index}`}
               hidden={openIndex !== index}
-              className="px-5 pb-4 text-neutral-600 leading-relaxed"
+              className="px-5 pb-5 text-neutral-600 leading-relaxed text-sm"
             >
               {faq.answer}
             </div>

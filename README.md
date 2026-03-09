@@ -1,59 +1,153 @@
-# ToolHub — Free Online Image Tools
+# Free Image Tool Hub
 
-A production-ready Next.js 16 web application with 20 browser-based image processing tools.
+A production-ready **Next.js 16** web application with **20 browser-based image processing tools** — all processing happens client-side, with zero file uploads and no sign-up required.
 
-## Tools
+🌐 **Live:** [toolhub.vercel.app](https://toolhub.vercel.app)
 
-### Original Tools
-- **Image to PDF** — Convert images to A4/Letter PDF documents
-- **Compress Image** — Reduce file size to a target KB (50/100/200/custom)
-- **Image to JPG** — Convert with adjustable quality slider
-- **Image to PNG** — Lossless conversion, transparency preserved
-- **Image to WebP** — Modern format, 30–50% smaller than JPG/PNG
-- **Image to Base64** — Encode as data URL for HTML/CSS embedding
-- **Image to Text (OCR)** — Extract text using Tesseract.js, 9 languages
-- **Convert to Grayscale** — Remove colour from any image
-- **Resize Image** — Set exact dimensions with aspect ratio lock
-- **Image to Favicon** — Generate 16×16, 32×32, or 64×64 PNG favicons
+---
 
-### New Tools
-- **Image to SVG** — Embed any raster image in a self-contained SVG file (embed mode)
-- **QR Code Generator** — Generate QR codes from text/URL; download PNG or SVG
-- **Color Palette Extractor** — Extract dominant colours from any image; copy HEX codes
-- **Image to ASCII Art** — Convert images to ASCII text art; download .txt or styled .html
-- **Image to Pixel Art** — Pixelate images with nearest-neighbour scaling; download PNG/WebP
-- **Image to Icon Set** — Generate 16–512 px icon PNGs; download individually or as ZIP
-- **Image to BMP** — Convert to uncompressed 24-bit BMP using a pure-JS encoder
-- **Image to GIF** — Convert to static GIF with median-cut colour quantisation and LZW encoding
-- **Images to ZIP** — Batch-package multiple images into a single ZIP archive
-- **Image to HTML** — Export as Base64 HTML embed or ASCII art HTML page
+## ✨ Features
 
-## Tech Stack
+- 🔒 **100% Private** — images never leave your device
+- ⚡ **Instant Results** — no server queues, no waiting
+- 🆓 **Always Free** — no account, no watermarks, no limits
+- 📱 **Works Everywhere** — mobile-friendly, accessible, keyboard-navigable
+- 🔍 **Search & Filter** — find tools by name or category in seconds
 
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript (strict mode)
-- **Styling**: TailwindCSS v4
-- **Libraries**: jsPDF, browser-image-compression, Tesseract.js, qrcode, jszip, Canvas API
+---
 
-## Getting Started
+## 🛠 Tools
+
+### Convert
+| Tool | Description |
+|------|-------------|
+| [Image to PDF](/image-to-pdf) | Convert to A4 or Letter PDF |
+| [Image to JPG](/image-to-jpg) | Convert with adjustable quality slider |
+| [Image to PNG](/image-to-png) | Lossless, transparency preserved |
+| [Image to WebP](/image-to-webp) | 30–50% smaller than JPG/PNG |
+| [Image to SVG](/image-to-svg) | Embed raster image in a self-contained SVG |
+| [Image to BMP](/image-to-bmp) | Uncompressed 24-bit BMP |
+| [Image to GIF](/image-to-gif) | Static GIF with median-cut quantisation |
+| [Convert to Grayscale](/image-to-grayscale) | Remove colour instantly |
+
+### Optimize
+| Tool | Description |
+|------|-------------|
+| [Compress Image](/compress-image) | Reduce to 50/100/200 KB or a custom target |
+| [Resize Image](/resize-image) | Exact dimensions with aspect ratio lock |
+
+### Extract
+| Tool | Description |
+|------|-------------|
+| [Image to Text (OCR)](/image-to-text) | Extract text using Tesseract.js (9 languages) |
+| [Image to Base64](/image-to-base64) | Encode as data URL for HTML/CSS embedding |
+| [Color Palette Extractor](/image-to-color-palette) | Extract dominant colours; copy HEX codes |
+| [Image to ASCII Art](/image-to-ascii) | Convert to ASCII text art; download .txt or .html |
+
+### Generate
+| Tool | Description |
+|------|-------------|
+| [QR Code Generator](/image-to-qr) | Generate QR codes from text/URL; download PNG or SVG |
+| [Image to Favicon](/image-to-favicon) | Generate 16×16, 32×32, 64×64 favicon PNGs |
+| [Image to Icon Set](/image-to-icon) | Generate 16–512 px icons; download individually or as ZIP |
+| [Image to Pixel Art](/image-to-pixel-art) | Pixelate images with nearest-neighbour scaling |
+
+### Export
+| Tool | Description |
+|------|-------------|
+| [Images to ZIP](/image-to-zip) | Package multiple images into a single ZIP archive |
+| [Image to HTML](/image-to-html) | Export as Base64 HTML embed or ASCII art HTML page |
+
+---
+
+## 🏗 Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Language | TypeScript (strict mode) |
+| Styling | Tailwind CSS v4 |
+| PDF | jsPDF |
+| Compression | browser-image-compression |
+| OCR | Tesseract.js |
+| QR | qrcode |
+| ZIP | JSZip |
+| Image ops | Canvas API, FileReader API, Web Workers |
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Key Features
+```bash
+# Production build
+npm run build
+npm start
+```
 
-- All processing happens **client-side** — no file uploads, no server
-- **Privacy-first**: images never leave your device
-- SEO-optimised with `generateMetadata()`, OpenGraph, and JSON-LD schemas
-- Accessible: ARIA labels, keyboard navigation, screen reader support
-- Mobile-responsive with TailwindCSS
+---
 
-## Limitations
+## 📁 Project Structure
 
-- **Image to SVG**: embed mode only (vectorization is not implemented)
-- **Image to GIF**: static single-frame GIF only; animated GIF from multiple images is not supported
-- **GIF size**: large images are automatically downscaled to max 256×256 px before GIF encoding
+```
+app/
+  page.tsx              # Home page with hero, feature strip, tool grid
+  layout.tsx            # Root layout with metadata
+  not-found.tsx         # Custom 404 page
+  globals.css           # Tailwind theme + utility classes
+  HomeSearch.tsx        # Client: search + category filter for tools
+  [tool-slug]/
+    page.tsx            # Tool page with metadata + FAQs
+    [Tool]Client.tsx    # Client component with actual tool logic
+
+components/
+  ToolLayout.tsx        # Shared layout for all tool pages
+  FileUploader.tsx      # Drag-and-drop file upload component
+  DownloadButton.tsx    # Styled download button
+  ActionButton.tsx      # Primary action button (process/convert)
+  ErrorAlert.tsx        # Styled error message component
+  FAQSection.tsx        # Accordion FAQ with JSON-LD schema
+  AdBanner.tsx          # Ad placeholder
+  ToolNavigation.tsx    # Horizontal tool pill navigation
+
+lib/
+  convertFormat.ts      # JPG / PNG / WebP / Grayscale via Canvas
+  compressImage.ts      # browser-image-compression wrapper
+  resizeImage.ts        # Canvas-based resize
+  imageTopdf.ts         # jsPDF wrapper
+  imageToText.ts        # Tesseract.js OCR
+  imageToBase64.ts      # FileReader data URL
+  imageToQr.ts          # qrcode library
+  imageToSvg.ts         # SVG embed generator
+  imageToFavicon.ts     # Canvas resize to favicon sizes
+  imageToColorPalette.ts# K-means dominant colour extraction
+  imageToAscii.ts       # ASCII art renderer
+  imageToPixelArt.ts    # Nearest-neighbour pixelation
+  imageToIcon.ts        # Multi-size icon generator
+  imageToBmp.ts         # Pure-JS 24-bit BMP encoder
+  imageToGif.ts         # Median-cut GIF encoder + LZW
+  imageToZip.ts         # JSZip multi-image packer
+  imageToHtml.ts        # HTML embed / ASCII HTML export
+
+public/
+  logo.svg              # App logo
+  og-default.svg        # Open Graph social sharing image
+```
+
+---
+
+## ⚠️ Known Limitations
+
+- **Image to SVG**: embed mode only (no rasterization/vectorization)
+- **Image to GIF**: static single-frame GIF; no multi-frame animation support
+- **GIF size**: large images auto-downscaled to max 256×256 px before encoding
+

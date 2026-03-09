@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Convert Image to JPG — Free | Free Image Tool Hub',
     description: 'Convert any image to JPG with custom quality settings. 100% browser-based.',
     url: 'https://toolhub.vercel.app/image-to-jpg',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

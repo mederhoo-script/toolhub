@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Resize Image Online — Free | Free Image Tool Hub',
     description: 'Resize images to any dimension with optional aspect ratio lock. 100% browser-based.',
     url: 'https://toolhub.vercel.app/resize-image',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to Text — Free OCR Online | Free Image Tool Hub',
     description: 'Extract text from images using browser-based OCR. No upload, supports 9 languages.',
     url: 'https://toolhub.vercel.app/image-to-text',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

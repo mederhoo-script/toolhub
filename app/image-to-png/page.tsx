@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Convert Image to PNG — Free | Free Image Tool Hub',
     description: 'Convert any image to lossless PNG. Transparency preserved. 100% browser-based.',
     url: 'https://toolhub.vercel.app/image-to-png',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

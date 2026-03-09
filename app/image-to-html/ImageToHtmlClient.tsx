@@ -5,6 +5,7 @@ import FileUploader from '@/components/FileUploader';
 import ToolNavigation from '@/components/ToolNavigation';
 import { imageToHtmlEmbed, asciiToHtmlDoc } from '@/lib/imageToHtml';
 import { imageToAscii } from '@/lib/imageToAscii';
+import ErrorAlert from '@/components/ErrorAlert';
 
 type ExportMode = 'base64' | 'ascii';
 
@@ -97,17 +98,13 @@ export default function ImageToHtmlClient() {
         <button
           onClick={handleConvert}
           disabled={!file || processing}
-          className="px-6 py-2 rounded-lg bg-primary-600 text-white font-semibold hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 active:bg-primary-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         >
           {processing ? 'Converting…' : 'Export as HTML'}
         </button>
       </div>
 
-      {error && (
-        <p role="alert" className="mt-3 text-sm text-red-600">
-          {error}
-        </p>
-      )}
+      <ErrorAlert error={error} />
 
       {preview && (
         <div className="mt-6">

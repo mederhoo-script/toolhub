@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to GIF Converter — Free | Free Image Tool Hub',
     description: 'Convert any image to GIF format instantly. Browser-based, no upload.',
     url: 'https://toolhub.vercel.app/image-to-gif',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

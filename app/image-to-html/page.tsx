@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to HTML Converter — Free | Free Image Tool Hub',
     description: 'Export image as HTML: Base64 embed or ASCII art HTML. Browser-based, instant.',
     url: 'https://toolhub.vercel.app/image-to-html',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Convert Image to Grayscale — Free | Free Image Tool Hub',
     description: 'Remove colour from any image instantly. Browser-based, no upload required.',
     url: 'https://toolhub.vercel.app/image-to-grayscale',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

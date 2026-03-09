@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to Base64 Encoder — Free | Free Image Tool Hub',
     description: 'Encode any image as a Base64 data URL. Copy and use in HTML, CSS, or JSON.',
     url: 'https://toolhub.vercel.app/image-to-base64',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

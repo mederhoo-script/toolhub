@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to BMP Converter — Free | Free Image Tool Hub',
     description: 'Convert any image to a BMP file instantly. Browser-based, no upload.',
     url: 'https://toolhub.vercel.app/image-to-bmp',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

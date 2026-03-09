@@ -19,11 +19,12 @@ export default function ToolLayout({
 }: ToolLayoutProps) {
   return (
     <div className="min-h-screen bg-neutral-50">
-      <header className="bg-white border-b border-neutral-200 px-4 py-3">
+      {/* Header */}
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-neutral-200 px-4 py-3 shadow-sm">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2 hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-md"
+            className="flex items-center gap-2.5 hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-md"
             aria-label="Free Image Tool Hub Home"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -33,9 +34,20 @@ export default function ToolLayout({
               width={32}
               height={32}
               loading="eager"
-              className="rounded-md"
+              className="rounded-lg"
             />
-            <span className="text-xl font-bold text-primary-600">Free Image Tool Hub</span>
+            <span className="text-base font-bold text-neutral-900">
+              Free Image<span className="text-primary-600"> Tool Hub</span>
+            </span>
+          </Link>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            All Tools
           </Link>
         </div>
       </header>
@@ -44,9 +56,13 @@ export default function ToolLayout({
         <AdBanner variant="leaderboard" />
 
         <div className="mt-8">
-          <h1 className="text-3xl font-bold text-neutral-900 mb-2">{title}</h1>
-          <p className="text-neutral-600 text-lg mb-8">{description}</p>
+          {/* Page title block */}
+          <div className="mb-6">
+            <h1 className="text-3xl font-bold text-neutral-900 leading-tight">{title}</h1>
+            <p className="text-neutral-500 text-base mt-2 leading-relaxed">{description}</p>
+          </div>
 
+          {/* Tool card */}
           <div className="bg-white rounded-2xl shadow-sm border border-neutral-200 p-6 md:p-8">
             {children}
           </div>
@@ -63,34 +79,43 @@ export default function ToolLayout({
         </div>
       </main>
 
-      <footer className="mt-16 border-t border-neutral-200 bg-white">
-        <div className="max-w-5xl mx-auto px-4 py-8 text-center text-sm text-neutral-500">
-          <p>
-            © {new Date().getFullYear()} Free Image Tool Hub — Free Online Image Tools.
-            All processing happens in your browser.
-          </p>
-          <nav className="mt-4 flex flex-wrap justify-center gap-4 text-xs">
-            <a href="/image-to-pdf" className="hover:text-primary-600">Image to PDF</a>
-            <a href="/compress-image" className="hover:text-primary-600">Compress Image</a>
-            <a href="/image-to-jpg" className="hover:text-primary-600">Image to JPG</a>
-            <a href="/image-to-png" className="hover:text-primary-600">Image to PNG</a>
-            <a href="/image-to-webp" className="hover:text-primary-600">Image to WebP</a>
-            <a href="/image-to-base64" className="hover:text-primary-600">Image to Base64</a>
-            <a href="/image-to-text" className="hover:text-primary-600">Image to Text</a>
-            <a href="/image-to-grayscale" className="hover:text-primary-600">Grayscale</a>
-            <a href="/resize-image" className="hover:text-primary-600">Resize Image</a>
-            <a href="/image-to-favicon" className="hover:text-primary-600">Image to Favicon</a>
-            <a href="/image-to-svg" className="hover:text-primary-600">Image to SVG</a>
-            <a href="/image-to-qr" className="hover:text-primary-600">QR Code</a>
-            <a href="/image-to-color-palette" className="hover:text-primary-600">Color Palette</a>
-            <a href="/image-to-ascii" className="hover:text-primary-600">Image to ASCII</a>
-            <a href="/image-to-pixel-art" className="hover:text-primary-600">Pixel Art</a>
-            <a href="/image-to-icon" className="hover:text-primary-600">Image to Icon</a>
-            <a href="/image-to-bmp" className="hover:text-primary-600">Image to BMP</a>
-            <a href="/image-to-gif" className="hover:text-primary-600">Image to GIF</a>
-            <a href="/image-to-zip" className="hover:text-primary-600">Images to ZIP</a>
-            <a href="/image-to-html" className="hover:text-primary-600">Image to HTML</a>
+      <footer className="mt-16 border-t border-neutral-200 bg-neutral-900">
+        <div className="max-w-5xl mx-auto px-4 py-10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+            <Link href="/" className="inline-flex items-center gap-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="logo" width={26} height={26} className="rounded-md" />
+              <span className="text-white font-semibold text-sm">Free Image Tool Hub</span>
+            </Link>
+            <p className="text-neutral-400 text-xs">
+              All processing happens locally in your browser. Your images stay private.
+            </p>
+          </div>
+          <nav className="flex flex-wrap gap-x-4 gap-y-2 mb-6">
+            <a href="/image-to-pdf" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to PDF</a>
+            <a href="/compress-image" className="text-neutral-400 hover:text-white text-xs transition-colors">Compress Image</a>
+            <a href="/image-to-jpg" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to JPG</a>
+            <a href="/image-to-png" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to PNG</a>
+            <a href="/image-to-webp" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to WebP</a>
+            <a href="/image-to-base64" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to Base64</a>
+            <a href="/image-to-text" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to Text</a>
+            <a href="/image-to-grayscale" className="text-neutral-400 hover:text-white text-xs transition-colors">Grayscale</a>
+            <a href="/resize-image" className="text-neutral-400 hover:text-white text-xs transition-colors">Resize Image</a>
+            <a href="/image-to-favicon" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to Favicon</a>
+            <a href="/image-to-svg" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to SVG</a>
+            <a href="/image-to-qr" className="text-neutral-400 hover:text-white text-xs transition-colors">QR Code</a>
+            <a href="/image-to-color-palette" className="text-neutral-400 hover:text-white text-xs transition-colors">Color Palette</a>
+            <a href="/image-to-ascii" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to ASCII</a>
+            <a href="/image-to-pixel-art" className="text-neutral-400 hover:text-white text-xs transition-colors">Pixel Art</a>
+            <a href="/image-to-icon" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to Icon</a>
+            <a href="/image-to-bmp" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to BMP</a>
+            <a href="/image-to-gif" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to GIF</a>
+            <a href="/image-to-zip" className="text-neutral-400 hover:text-white text-xs transition-colors">Images to ZIP</a>
+            <a href="/image-to-html" className="text-neutral-400 hover:text-white text-xs transition-colors">Image to HTML</a>
           </nav>
+          <div className="border-t border-neutral-800 pt-6 text-center text-xs text-neutral-500">
+            © {new Date().getFullYear()} Free Image Tool Hub — Free Online Image Tools.
+          </div>
         </div>
       </footer>
     </div>

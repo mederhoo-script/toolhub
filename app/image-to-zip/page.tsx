@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Images to ZIP — Batch Download | Free Image Tool Hub',
     description: 'Package multiple images into a ZIP archive instantly. Browser-based, no upload.',
     url: 'https://toolhub.vercel.app/image-to-zip',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 

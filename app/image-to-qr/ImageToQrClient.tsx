@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ToolNavigation from '@/components/ToolNavigation';
 import { generateQrPng, generateQrSvg, QRErrorLevel } from '@/lib/imageToQr';
+import ErrorAlert from '@/components/ErrorAlert';
 
 const SIZES = [256, 512, 1024] as const;
 const ERROR_LEVELS: { label: string; value: QRErrorLevel }[] = [
@@ -122,17 +123,13 @@ export default function ImageToQrClient() {
         <button
           onClick={handleGenerate}
           disabled={processing}
-          className="px-6 py-2 rounded-lg bg-primary-600 text-white font-semibold hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 active:bg-primary-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         >
           {processing ? 'Generating…' : 'Generate QR Code'}
         </button>
       </div>
 
-      {error && (
-        <p role="alert" className="mt-3 text-sm text-red-600">
-          {error}
-        </p>
-      )}
+      <ErrorAlert error={error} />
 
       {pngDataUrl && (
         <div className="mt-6 space-y-4">

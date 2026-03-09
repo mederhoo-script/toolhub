@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Image to ASCII Art Converter — Free | Free Image Tool Hub',
     description: 'Turn any image into ASCII art. Download .txt or .html instantly.',
     url: 'https://toolhub.vercel.app/image-to-ascii',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.png' }],
+    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
   },
 };
 
