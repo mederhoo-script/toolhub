@@ -54,6 +54,13 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Free Image Tool Hub",
   },
+  alternates: {
+    canonical: "https://allimagetools.vercel.app",
+    languages: {
+      "x-default": "https://allimagetools.vercel.app",
+      "en": "https://allimagetools.vercel.app",
+    },
+  },
 };
 
 export const viewport: Viewport = {

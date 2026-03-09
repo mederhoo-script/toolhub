@@ -28,6 +28,16 @@ const MORE_TOOLS = [
   { href: '/image-to-qr', name: 'QR Code Generator', icon: '📱' },
   { href: '/image-to-base64', name: 'Image to Base64', icon: '💻' },
   { href: '/image-to-grayscale', name: 'Grayscale Converter', icon: '⬛' },
+  { href: '/image-to-favicon', name: 'Image to Favicon', icon: '⭐' },
+  { href: '/image-to-svg', name: 'Image to SVG', icon: '🔷' },
+  { href: '/image-to-color-palette', name: 'Color Palette', icon: '🎨' },
+  { href: '/image-to-ascii', name: 'Image to ASCII', icon: '🔤' },
+  { href: '/image-to-pixel-art', name: 'Pixel Art', icon: '🕹️' },
+  { href: '/image-to-icon', name: 'Image to Icon Set', icon: '🖼️' },
+  { href: '/image-to-bmp', name: 'Image to BMP', icon: '🗂️' },
+  { href: '/image-to-gif', name: 'Image to GIF', icon: '✨' },
+  { href: '/image-to-zip', name: 'Images to ZIP', icon: '📦' },
+  { href: '/image-to-html', name: 'Image to HTML', icon: '🌐' },
 ];
 
 export default function ToolLayout({
@@ -45,8 +55,16 @@ export default function ToolLayout({
     applicationCategory: 'MultimediaApplication',
     applicationSubCategory: 'ImageApplication',
     operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript. Supported in all modern browsers.',
     datePublished: SITE_DATE_PUBLISHED,
     dateModified: SITE_DATE_MODIFIED,
+    featureList: [
+      'No file upload — 100% browser-based processing',
+      'No account or sign-up required',
+      'Completely free with no watermarks',
+      'Works on desktop and mobile',
+      'Instant results using modern browser APIs',
+    ],
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -60,6 +78,7 @@ export default function ToolLayout({
   };
   if (url) {
     softwareSchema.url = url;
+    softwareSchema.image = `https://allimagetools.vercel.app/og?title=${encodeURIComponent(title)}`;
   }
 
   const breadcrumbSchema = url
@@ -83,8 +102,53 @@ export default function ToolLayout({
       }
     : null;
 
-  // Show up to 8 "More Tools" links, excluding the current page
-  const moreTools = MORE_TOOLS.filter((t) => !url || !url.endsWith(t.href)).slice(0, 8);
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to use ${title} online for free`,
+    description,
+    totalTime: 'PT1M',
+    tool: [{ '@type': 'HowToTool', name: title }],
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Upload your image',
+        text: 'Click the upload area or drag and drop your image file onto the tool. JPG, PNG, WebP, GIF, and other common formats are supported.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'Adjust settings',
+        text: 'Configure the available options to match your requirements. A live preview shows changes instantly.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Download the result',
+        text: 'Click the Download button to save the processed image directly to your device. Your file is never uploaded to any server.',
+      },
+    ],
+  };
+
+  const faqPageSchema =
+    faqs && faqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
+  // Show up to 12 "More Tools" links, excluding the current page
+  const moreTools = MORE_TOOLS.filter((t) => !url || !url.endsWith(t.href)).slice(0, 12);
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -96,6 +160,16 @@ export default function ToolLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      {faqPageSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
         />
       )}
       {/* Header */}
@@ -178,7 +252,7 @@ export default function ToolLayout({
               More Free Image Tools
             </h2>
             <nav aria-label="More image tools">
-              <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                 {moreTools.map((tool) => (
                   <li key={tool.href}>
                     <Link

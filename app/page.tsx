@@ -302,6 +302,10 @@ const webPageSchema = {
   dateModified: new Date().toISOString().split('T')[0],
   inLanguage: 'en-US',
   isPartOf: { '@type': 'WebSite', url: 'https://allimagetools.vercel.app' },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.hero-description'],
+  },
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -413,7 +417,7 @@ export default function HomePage() {
                 Free Online{' '}
                 <span className="gradient-text">Image Tools</span>
               </h1>
-              <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="hero-description mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
                 Convert, compress, resize, and transform images — instantly in
                 your browser. No uploads, no sign-up, completely free.
               </p>
@@ -546,6 +550,72 @@ export default function HomePage() {
                 Free Image Tool Hub has a free tool for you. Bookmark this page
                 and get instant access to all twenty tools any time you need them.
               </p>
+            </div>
+          </section>
+
+          {/* Tool-category SEO section */}
+          <section className="border-t border-neutral-100 bg-white">
+            <div className="max-w-3xl mx-auto px-4 py-16 space-y-10">
+              <div>
+                <h2 className="text-xl font-bold text-neutral-900 mb-3">Convert images to any format</h2>
+                <p className="text-neutral-600 leading-relaxed text-sm">
+                  Need to convert an image? Free Image Tool Hub covers every common format: convert images to{' '}
+                  <a href="/image-to-jpg" className="text-primary-600 hover:underline">JPG</a>,{' '}
+                  <a href="/image-to-png" className="text-primary-600 hover:underline">PNG</a>,{' '}
+                  <a href="/image-to-webp" className="text-primary-600 hover:underline">WebP</a>,{' '}
+                  <a href="/image-to-gif" className="text-primary-600 hover:underline">GIF</a>,{' '}
+                  <a href="/image-to-bmp" className="text-primary-600 hover:underline">BMP</a>, and{' '}
+                  <a href="/image-to-svg" className="text-primary-600 hover:underline">SVG</a> with one click.
+                  WebP delivers 30–50% smaller files than JPG at equivalent quality — ideal for reducing web page weight and improving Core Web Vitals scores.
+                  Converting to PNG preserves transparency and alpha channels perfectly.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-neutral-900 mb-3">Compress and optimize images for the web</h2>
+                <p className="text-neutral-600 leading-relaxed text-sm">
+                  Large images slow down websites and hurt SEO. Use the free{' '}
+                  <a href="/compress-image" className="text-primary-600 hover:underline">image compressor</a>{' '}
+                  to shrink file sizes to a precise KB target (50 KB, 100 KB, 200 KB, or custom) without manual trial and error.
+                  The{' '}
+                  <a href="/resize-image" className="text-primary-600 hover:underline">image resizer</a>{' '}
+                  lets you set exact pixel dimensions with optional aspect-ratio lock — perfect for social media, e-commerce product images, and responsive web assets.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-neutral-900 mb-3">Extract information from images</h2>
+                <p className="text-neutral-600 leading-relaxed text-sm">
+                  Extract useful data from any image without uploading it to a cloud service.
+                  The{' '}
+                  <a href="/image-to-text" className="text-primary-600 hover:underline">OCR tool</a>{' '}
+                  reads text from photos, screenshots, and scanned documents using Tesseract.js with support for 9 languages.
+                  The{' '}
+                  <a href="/image-to-color-palette" className="text-primary-600 hover:underline">color palette extractor</a>{' '}
+                  identifies the dominant colors in any image and copies their HEX codes to your clipboard.
+                  The{' '}
+                  <a href="/image-to-base64" className="text-primary-600 hover:underline">Base64 encoder</a>{' '}
+                  converts images to data URLs ready to embed directly in HTML or CSS.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-neutral-900 mb-3">Generate icons, favicons, QR codes, and more</h2>
+                <p className="text-neutral-600 leading-relaxed text-sm">
+                  Free Image Tool Hub includes a full suite of creative tools.
+                  Generate a{' '}
+                  <a href="/image-to-favicon" className="text-primary-600 hover:underline">favicon</a>{' '}
+                  in 16×16, 32×32, or 64×64 px from any image.
+                  Create a complete{' '}
+                  <a href="/image-to-icon" className="text-primary-600 hover:underline">icon set</a>{' '}
+                  in 16 to 512 px sizes for app and web development.
+                  Generate a{' '}
+                  <a href="/image-to-qr" className="text-primary-600 hover:underline">QR code</a>{' '}
+                  from any text or URL and download it as PNG or SVG.
+                  Convert any photo into{' '}
+                  <a href="/image-to-pixel-art" className="text-primary-600 hover:underline">pixel art</a>{' '}
+                  or{' '}
+                  <a href="/image-to-ascii" className="text-primary-600 hover:underline">ASCII art</a>{' '}
+                  in seconds — all free, all in your browser.
+                </p>
+              </div>
             </div>
           </section>
         </main>
