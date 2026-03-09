@@ -14,6 +14,16 @@ const tools = [
   { href: '/image-to-grayscale', label: 'Grayscale' },
   { href: '/resize-image', label: 'Resize' },
   { href: '/image-to-favicon', label: 'To Favicon' },
+  { href: '/image-to-svg', label: 'To SVG' },
+  { href: '/image-to-qr', label: 'QR Code' },
+  { href: '/image-to-color-palette', label: 'Color Palette' },
+  { href: '/image-to-ascii', label: 'To ASCII' },
+  { href: '/image-to-pixel-art', label: 'Pixel Art' },
+  { href: '/image-to-icon', label: 'To Icon' },
+  { href: '/image-to-bmp', label: 'To BMP' },
+  { href: '/image-to-gif', label: 'To GIF' },
+  { href: '/image-to-zip', label: 'To ZIP' },
+  { href: '/image-to-html', label: 'To HTML' },
 ];
 
 export default function ToolNavigation() {
