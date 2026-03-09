@@ -62,12 +62,19 @@ function makePage(
 // ---------------------------------------------------------------------------
 
 const KB_SIZES = [
-  5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50,
-  60, 70, 75, 80, 90, 100, 110, 120, 130, 150,
-  160, 175, 200, 220, 250, 300, 350, 400, 450,
-  500, 600, 700, 800, 1000,
+  // Sub-20 KB — passport photos, icons, tiny web images
+  2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+  // 20–100 KB — email attachments, form uploads, thumbnails
+  20, 22, 24, 25, 26, 28, 30, 32, 35, 38, 40, 42, 45, 48, 50,
+  55, 60, 64, 65, 70, 75, 80, 85, 90, 95, 100,
+  // 100–300 KB — general web images, social posts
+  105, 110, 115, 120, 125, 128, 130, 140, 145, 150,
+  155, 160, 165, 170, 175, 180, 190, 200, 210, 220, 230, 240, 250, 256, 260, 270, 280, 290, 300,
+  // 300 KB–1 MB — high-quality web & product images
+  320, 330, 340, 350, 360, 380, 400, 420, 430, 450, 480,
+  500, 512, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000,
 ];
-const MB_SIZES = [1, 2, 3, 4, 5];
+const MB_SIZES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50];
 const COMPRESS_FORMATS = [
   'image', 'jpg', 'jpeg', 'png', 'photo', 'webp',
   'gif', 'bmp', 'tiff', 'heic', 'picture', 'screenshot', 'file',
@@ -291,29 +298,37 @@ const COMPRESS_GENERAL: SeoPage[] = [
 // ---------------------------------------------------------------------------
 
 const RESIZE_DIMENSIONS = [
-  // Square sizes
-  { w: 100, h: 100 }, { w: 150, h: 150 }, { w: 200, h: 200 }, { w: 250, h: 250 },
-  { w: 300, h: 300 }, { w: 400, h: 400 }, { w: 500, h: 500 }, { w: 600, h: 600 },
-  { w: 800, h: 800 }, { w: 1000, h: 1000 }, { w: 1200, h: 1200 },
-  { w: 512, h: 512 }, { w: 2000, h: 2000 }, { w: 3000, h: 3000 },
-  // Standard landscape
-  { w: 640, h: 480 }, { w: 800, h: 600 }, { w: 1024, h: 768 }, { w: 1280, h: 720 },
-  { w: 1280, h: 960 }, { w: 1366, h: 768 }, { w: 1600, h: 900 }, { w: 1920, h: 1080 },
-  { w: 2560, h: 1440 }, { w: 3840, h: 2160 },
-  { w: 400, h: 300 }, { w: 600, h: 400 }, { w: 3000, h: 2000 },
+  // Square sizes — icons, avatars, thumbnails
+  { w: 16,   h: 16   }, { w: 32,   h: 32   }, { w: 48,   h: 48   }, { w: 64,   h: 64   },
+  { w: 96,   h: 96   }, { w: 100,  h: 100  }, { w: 128,  h: 128  }, { w: 150,  h: 150  },
+  { w: 200,  h: 200  }, { w: 256,  h: 256  }, { w: 250,  h: 250  }, { w: 300,  h: 300  },
+  { w: 400,  h: 400  }, { w: 500,  h: 500  }, { w: 512,  h: 512  }, { w: 600,  h: 600  },
+  { w: 800,  h: 800  }, { w: 1000, h: 1000 }, { w: 1024, h: 1024 }, { w: 1200, h: 1200 },
+  { w: 2000, h: 2000 }, { w: 2048, h: 2048 }, { w: 3000, h: 3000 }, { w: 4096, h: 4096 },
+  // Standard landscape — screens, presentations
+  { w: 320,  h: 240  }, { w: 480,  h: 320  }, { w: 640,  h: 480  }, { w: 800,  h: 600  },
+  { w: 1024, h: 768  }, { w: 1280, h: 720  }, { w: 1280, h: 800  }, { w: 1280, h: 960  },
+  { w: 1366, h: 768  }, { w: 1440, h: 900  }, { w: 1600, h: 900  }, { w: 1680, h: 1050 },
+  { w: 1920, h: 1080 }, { w: 1920, h: 1440 }, { w: 2560, h: 1440 }, { w: 2560, h: 1600 },
+  { w: 3840, h: 2160 }, { w: 400,  h: 300  }, { w: 600,  h: 400  }, { w: 3000, h: 2000 },
+  { w: 1280, h: 1024 }, { w: 1920, h: 1200 }, { w: 854,  h: 480  }, { w: 640,  h: 360  },
   // Social media landscape
-  { w: 1200, h: 628 }, { w: 1500, h: 500 }, { w: 1200, h: 675 },
-  { w: 820, h: 312 }, { w: 1584, h: 396 }, { w: 960, h: 540 },
-  // Social media portrait
-  { w: 1080, h: 1920 }, { w: 720, h: 1280 }, { w: 1000, h: 1500 },
-  // Social profile / icon
-  { w: 1080, h: 1080 }, { w: 170, h: 170 },
-  // Print sizes (at 300 dpi)
-  { w: 2480, h: 3508 }, { w: 3508, h: 2480 }, { w: 1748, h: 2480 },
-  { w: 1800, h: 1200 }, { w: 2100, h: 1500 }, { w: 2400, h: 3000 },
-  { w: 413, h: 531 },
+  { w: 1200, h: 628  }, { w: 1200, h: 630  }, { w: 1500, h: 500  }, { w: 1200, h: 675  },
+  { w: 820,  h: 312  }, { w: 1584, h: 396  }, { w: 960,  h: 540  },
+  { w: 1080, h: 608  }, { w: 600,  h: 315  }, { w: 800,  h: 418  }, { w: 1080, h: 1080 },
+  // Social media portrait / stories
+  { w: 1080, h: 1920 }, { w: 720,  h: 1280 }, { w: 1000, h: 1500 }, { w: 1080, h: 1350 },
+  { w: 400,  h: 500  },
+  // Profile photos / avatars
+  { w: 170,  h: 170  }, { w: 180,  h: 180  },
+  // Print sizes (300 DPI)
+  { w: 2480, h: 3508 }, { w: 3508, h: 2480 }, { w: 1748, h: 2480 }, { w: 1240, h: 1754 },
+  { w: 1800, h: 1200 }, { w: 2100, h: 1500 }, { w: 2400, h: 3000 }, { w: 413,  h: 531  },
+  { w: 595,  h: 842  }, { w: 794,  h: 1123 }, { w: 3307, h: 4677 },
   // Ad banner sizes
-  { w: 300, h: 250 }, { w: 728, h: 90 }, { w: 160, h: 600 },
+  { w: 300,  h: 250  }, { w: 728,  h: 90   }, { w: 160,  h: 600  },
+  { w: 300,  h: 600  }, { w: 320,  h: 50   }, { w: 970,  h: 250  },
+  { w: 468,  h: 60   }, { w: 336,  h: 280  }, { w: 320,  h: 480  },
 ];
 const RESIZE_FORMATS = ['image', 'jpg', 'jpeg', 'png', 'photo', 'webp', 'gif', 'bmp'] as const;
 
@@ -339,6 +354,42 @@ function resizeDimensionPages(): SeoPage[] {
           ],
           'resize-image',
           `Need your ${label} at exactly ${w}×${h} pixels? Upload it above, enter ${w} and ${h} as the target dimensions, and download the resized file instantly.`,
+        ),
+      );
+    }
+  }
+  return pages;
+}
+
+// ---------------------------------------------------------------------------
+// Resize Image — percentage-based pages
+// ---------------------------------------------------------------------------
+
+const RESIZE_PERCENTAGES = [10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90] as const;
+
+function resizePercentagePages(): SeoPage[] {
+  const pages: SeoPage[] = [];
+  for (const fmt of RESIZE_FORMATS) {
+    for (const pct of RESIZE_PERCENTAGES) {
+      const label = fmtLabel(fmt);
+      const slug = `resize-${fmt}-by-${pct}-percent`;
+      const factor = pct === 50 ? 'half' : pct === 25 ? 'quarter' : pct === 75 ? 'three-quarters' : `${pct}%`;
+      pages.push(
+        makePage(
+          slug,
+          `Resize ${label} to ${pct}% — Scale Image by ${pct} Percent Free`,
+          `Resize ${label} to ${pct}%`,
+          `Scale your ${label} to ${pct}% of its original size online for free. Browser-based, no upload required.`,
+          [
+            `resize ${fmt} to ${pct} percent`,
+            `scale image to ${pct}%`,
+            `resize image by ${pct} percent`,
+            `reduce image to ${factor}`,
+            `${pct}% image resizer`,
+            `shrink ${fmt} to ${pct} percent`,
+          ],
+          'resize-image',
+          `Enter your image, set the scale to ${pct}%, and the tool automatically calculates the new dimensions. A ${pct}% resize maintains the original aspect ratio perfectly.`,
         ),
       );
     }
@@ -1676,6 +1727,99 @@ const EXTRA_HTML_PAGES: SeoPage[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Format-conversion matrix
+// Programmatically generates "convert {src} to {target}" pages for every
+// source-format × conversion-tool combination that isn't already covered.
+// ---------------------------------------------------------------------------
+
+type ConversionTool = {
+  key: ToolKey;
+  targetSlug: string;   // e.g. "jpg"
+  targetLabel: string;  // e.g. "JPG"
+};
+
+const CONVERSION_TOOLS: ConversionTool[] = [
+  { key: 'image-to-jpg',         targetSlug: 'jpg',     targetLabel: 'JPG'     },
+  { key: 'image-to-png',         targetSlug: 'png',     targetLabel: 'PNG'     },
+  { key: 'image-to-webp',        targetSlug: 'webp',    targetLabel: 'WebP'    },
+  { key: 'image-to-pdf',         targetSlug: 'pdf',     targetLabel: 'PDF'     },
+  { key: 'image-to-gif',         targetSlug: 'gif',     targetLabel: 'GIF'     },
+  { key: 'image-to-bmp',         targetSlug: 'bmp',     targetLabel: 'BMP'     },
+  { key: 'image-to-svg',         targetSlug: 'svg',     targetLabel: 'SVG'     },
+  { key: 'image-to-base64',      targetSlug: 'base64',  targetLabel: 'Base64'  },
+  { key: 'image-to-grayscale',   targetSlug: 'grayscale', targetLabel: 'Grayscale' },
+  { key: 'image-to-favicon',     targetSlug: 'ico',     targetLabel: 'ICO'     },
+  { key: 'image-to-ascii',       targetSlug: 'ascii',   targetLabel: 'ASCII'   },
+  { key: 'image-to-icon',        targetSlug: 'icon',    targetLabel: 'Icon'    },
+  { key: 'image-to-html',        targetSlug: 'html',    targetLabel: 'HTML'    },
+];
+
+const CONVERSION_SOURCES = [
+  { slug: 'jpg',        label: 'JPG'        },
+  { slug: 'jpeg',       label: 'JPEG'       },
+  { slug: 'png',        label: 'PNG'        },
+  { slug: 'webp',       label: 'WebP'       },
+  { slug: 'gif',        label: 'GIF'        },
+  { slug: 'bmp',        label: 'BMP'        },
+  { slug: 'tiff',       label: 'TIFF'       },
+  { slug: 'heic',       label: 'HEIC'       },
+  { slug: 'avif',       label: 'AVIF'       },
+  { slug: 'svg',        label: 'SVG'        },
+  { slug: 'pdf',        label: 'PDF'        },
+  { slug: 'raw',        label: 'RAW'        },
+];
+
+/** Slugs already covered by manual EXTRA_* arrays — skip these to avoid duplicates. */
+const CONVERSION_SKIP = new Set([
+  'convert-png-to-jpg-online', 'convert-webp-to-jpg-online', 'convert-heic-to-jpg-online',
+  'convert-gif-to-jpg-online', 'convert-bmp-to-jpg-online', 'convert-tiff-to-jpg-online',
+  'convert-heic-to-png-online', 'convert-svg-to-png-online', 'convert-tiff-to-png-online',
+  'convert-heic-to-webp-online', 'convert-gif-to-webp-online', 'convert-bmp-to-webp-online',
+  'convert-png-to-pdf-online', 'convert-webp-to-pdf-online',
+  'convert-jpg-to-svg-online', 'convert-png-to-svg-online',
+  'convert-jpg-to-bmp-online', 'convert-png-to-bmp-online',
+  'convert-jpg-to-gif-online', 'convert-png-to-gif-online',
+  'convert-jpg-to-base64-online', 'convert-png-to-base64-online',
+  'convert-jpg-to-grayscale-online', 'convert-png-to-grayscale-online',
+]);
+
+function conversionMatrixPages(): SeoPage[] {
+  const pages: SeoPage[] = [];
+  for (const tool of CONVERSION_TOOLS) {
+    for (const src of CONVERSION_SOURCES) {
+      // Skip converting a format to itself
+      if (src.slug === tool.targetSlug) continue;
+      // Skip where target and source are near-identical (jpg ↔ jpeg)
+      if ((src.slug === 'jpg' && tool.targetSlug === 'jpeg') ||
+          (src.slug === 'jpeg' && tool.targetSlug === 'jpg')) continue;
+
+      const slug = `convert-${src.slug}-to-${tool.targetSlug}-online`;
+      if (CONVERSION_SKIP.has(slug)) continue;
+
+      pages.push(
+        makePage(
+          slug,
+          `Convert ${src.label} to ${tool.targetLabel} Online Free`,
+          `Convert ${src.label} to ${tool.targetLabel} Online`,
+          `Convert ${src.label} images to ${tool.targetLabel} format online for free. Fast, browser-based, no upload required.`,
+          [
+            `convert ${src.slug} to ${tool.targetSlug} online`,
+            `${src.slug} to ${tool.targetSlug} converter`,
+            `${src.slug} to ${tool.targetSlug} online free`,
+            `change ${src.slug} to ${tool.targetSlug}`,
+            `${src.slug} ${tool.targetSlug} converter free`,
+            `free ${src.slug} to ${tool.targetSlug} converter`,
+          ],
+          tool.key,
+          `Upload your ${src.label} file and convert it to ${tool.targetLabel} instantly in your browser. No account required, no server upload — your file stays on your device.`,
+        ),
+      );
+    }
+  }
+  return pages;
+}
+
+// ---------------------------------------------------------------------------
 // Assemble all pages
 // ---------------------------------------------------------------------------
 
@@ -1683,6 +1827,7 @@ const SEO_PAGES: SeoPage[] = [
   ...compressKBPages(),
   ...COMPRESS_GENERAL,
   ...resizeDimensionPages(),
+  ...resizePercentagePages(),
   ...RESIZE_GENERAL,
   ...JPG_PAGES,
   ...PNG_PAGES,
@@ -1722,6 +1867,7 @@ const SEO_PAGES: SeoPage[] = [
   ...EXTRA_GIF_PAGES,
   ...EXTRA_ZIP_PAGES,
   ...EXTRA_HTML_PAGES,
+  ...conversionMatrixPages(),
 ];
 
 /** Map from slug → SeoPage for O(1) lookup */
