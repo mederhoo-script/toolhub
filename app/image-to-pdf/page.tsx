@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToPdfClient from './ImageToPdfClient';
 import { FAQ } from '@/types';
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     description:
       'Convert JPG, PNG, WebP and other images to PDF instantly. Client-side processing — your files never leave your device.',
     url: 'https://allimagetools.vercel.app/image-to-pdf',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Image to PDF — Free Online Converter')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Image to PDF — Free Online Converter | Free Image Tool Hub',
     description:
       'Convert JPG, PNG, WebP and other images to PDF instantly. Client-side processing — your files never leave your device.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Image to PDF — Free Online Converter').url],
   },
 };
 

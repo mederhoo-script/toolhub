@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToGrayscaleClient from './ImageToGrayscaleClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Convert Image to Grayscale — Free | Free Image Tool Hub',
     description: 'Remove colour from any image instantly. Browser-based, no upload required.',
     url: 'https://allimagetools.vercel.app/image-to-grayscale',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Convert Image to Grayscale — Free Online Tool')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Convert Image to Grayscale — Free | Free Image Tool Hub',
     description: 'Remove colour from any image instantly. Browser-based, no upload required.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Convert Image to Grayscale — Free Online Tool').url],
   },
 };
 

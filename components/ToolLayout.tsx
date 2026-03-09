@@ -12,6 +12,24 @@ interface ToolLayoutProps {
   url?: string;
 }
 
+/** Canonical date the site launched — used in structured data */
+const SITE_DATE_PUBLISHED = '2024-01-01';
+/** Approximate last-updated date for structured data */
+const SITE_DATE_MODIFIED = '2025-01-01';
+
+const MORE_TOOLS = [
+  { href: '/compress-image', name: 'Compress Image', icon: '🗜️' },
+  { href: '/image-to-pdf', name: 'Image to PDF', icon: '📄' },
+  { href: '/image-to-webp', name: 'Image to WebP', icon: '⚡' },
+  { href: '/image-to-jpg', name: 'Image to JPG', icon: '🖼️' },
+  { href: '/image-to-png', name: 'Image to PNG', icon: '🔵' },
+  { href: '/resize-image', name: 'Resize Image', icon: '📐' },
+  { href: '/image-to-text', name: 'Image to Text (OCR)', icon: '🔍' },
+  { href: '/image-to-qr', name: 'QR Code Generator', icon: '📱' },
+  { href: '/image-to-base64', name: 'Image to Base64', icon: '💻' },
+  { href: '/image-to-grayscale', name: 'Grayscale Converter', icon: '⬛' },
+];
+
 export default function ToolLayout({
   title,
   description,
@@ -27,7 +45,8 @@ export default function ToolLayout({
     applicationCategory: 'MultimediaApplication',
     applicationSubCategory: 'ImageApplication',
     operatingSystem: 'Any',
-    datePublished: '2024-01-01',
+    datePublished: SITE_DATE_PUBLISHED,
+    dateModified: SITE_DATE_MODIFIED,
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -63,6 +82,9 @@ export default function ToolLayout({
         ],
       }
     : null;
+
+  // Show up to 8 "More Tools" links, excluding the current page
+  const moreTools = MORE_TOOLS.filter((t) => !url || !url.endsWith(t.href)).slice(0, 8);
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -144,6 +166,33 @@ export default function ToolLayout({
           <div className="mt-10">
             <FAQSection faqs={faqs} />
           </div>
+        )}
+
+        {/* More Tools — internal linking */}
+        {moreTools.length > 0 && (
+          <section aria-labelledby="more-tools-heading" className="mt-10">
+            <h2
+              id="more-tools-heading"
+              className="text-lg font-bold text-neutral-900 mb-4"
+            >
+              More Free Image Tools
+            </h2>
+            <nav aria-label="More image tools">
+              <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {moreTools.map((tool) => (
+                  <li key={tool.href}>
+                    <Link
+                      href={tool.href}
+                      className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-neutral-200 hover:border-primary-300 hover:text-primary-700 text-sm text-neutral-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                    >
+                      <span aria-hidden="true">{tool.icon}</span>
+                      {tool.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </section>
         )}
 
         <div className="mt-10">

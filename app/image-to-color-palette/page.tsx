@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToColorPaletteClient from './ImageToColorPaletteClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Image Color Palette Extractor — Free | Free Image Tool Hub',
     description: 'Find the dominant colors in any image. Copy HEX values instantly.',
     url: 'https://allimagetools.vercel.app/image-to-color-palette',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Image Color Palette Extractor — Free Online Tool')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Image Color Palette Extractor — Free | Free Image Tool Hub',
     description: 'Find the dominant colors in any image. Copy HEX values instantly.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Image Color Palette Extractor — Free Online Tool').url],
   },
 };
 

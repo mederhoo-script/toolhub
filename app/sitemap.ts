@@ -25,19 +25,20 @@ const tools = [
   '/image-to-html',
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+/** Date the site was last meaningfully updated (keep this current when content changes) */
+const LAST_UPDATED = new Date('2025-01-01');
 
+export default function sitemap(): MetadataRoute.Sitemap {
   const home: MetadataRoute.Sitemap[number] = {
     url: BASE_URL,
-    lastModified: now,
+    lastModified: LAST_UPDATED,
     changeFrequency: 'weekly',
     priority: 1,
   };
 
   const toolRoutes: MetadataRoute.Sitemap = tools.map((path) => ({
     url: `${BASE_URL}${path}`,
-    lastModified: now,
+    lastModified: LAST_UPDATED,
     changeFrequency: 'monthly',
     priority: 0.8,
   }));

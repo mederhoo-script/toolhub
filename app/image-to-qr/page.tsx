@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToQrClient from './ImageToQrClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'QR Code Generator — Free | Free Image Tool Hub',
     description: 'Generate QR codes from any text or URL. Download PNG or SVG instantly.',
     url: 'https://allimagetools.vercel.app/image-to-qr',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('QR Code Generator — Free Online Tool')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'QR Code Generator — Free | Free Image Tool Hub',
     description: 'Generate QR codes from any text or URL. Download PNG or SVG instantly.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('QR Code Generator — Free Online Tool').url],
   },
 };
 

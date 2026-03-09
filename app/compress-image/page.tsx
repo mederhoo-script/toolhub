@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import CompressImageClient from './CompressImageClient';
 import { FAQ } from '@/types';
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
     url: 'https://allimagetools.vercel.app/compress-image',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Compress Image Online — Reduce File Size Free')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Compress Image Online — Free | Free Image Tool Hub',
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Compress Image Online — Reduce File Size Free').url],
   },
 };
 

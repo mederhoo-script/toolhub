@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToTextClient from './ImageToTextClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Image to Text — Free OCR Online | Free Image Tool Hub',
     description: 'Extract text from images using browser-based OCR. No upload, supports 9 languages.',
     url: 'https://allimagetools.vercel.app/image-to-text',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Image to Text — OCR Online Free')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Image to Text — Free OCR Online | Free Image Tool Hub',
     description: 'Extract text from images using browser-based OCR. No upload, supports 9 languages.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Image to Text — OCR Online Free').url],
   },
 };
 

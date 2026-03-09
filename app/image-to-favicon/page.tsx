@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToFaviconClient from './ImageToFaviconClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Image to Favicon Generator — Free | Free Image Tool Hub',
     description: 'Create a favicon from any image in 16×16, 32×32, or 64×64 px. Browser-based, instant.',
     url: 'https://allimagetools.vercel.app/image-to-favicon',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Image to Favicon Generator — Free Online Tool')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Image to Favicon Generator — Free | Free Image Tool Hub',
     description: 'Create a favicon from any image in 16×16, 32×32, or 64×64 px. Browser-based, instant.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Image to Favicon Generator — Free Online Tool').url],
   },
 };
 
