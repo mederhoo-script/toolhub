@@ -61,9 +61,17 @@ function makePage(
 // Compress Image — size-targeted pages
 // ---------------------------------------------------------------------------
 
-const KB_SIZES = [10, 15, 20, 25, 30, 40, 50, 60, 75, 80, 100, 120, 150, 200, 250, 300, 400, 500];
-const MB_SIZES = [1, 2, 5];
-const COMPRESS_FORMATS = ['image', 'jpg', 'jpeg', 'png', 'photo', 'webp'] as const;
+const KB_SIZES = [
+  5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 45, 50,
+  60, 70, 75, 80, 90, 100, 110, 120, 130, 150,
+  160, 175, 200, 220, 250, 300, 350, 400, 450,
+  500, 600, 700, 800, 1000,
+];
+const MB_SIZES = [1, 2, 3, 4, 5];
+const COMPRESS_FORMATS = [
+  'image', 'jpg', 'jpeg', 'png', 'photo', 'webp',
+  'gif', 'bmp', 'tiff', 'heic', 'picture', 'screenshot', 'file',
+] as const;
 
 function compressKBPages(): SeoPage[] {
   const pages: SeoPage[] = [];
@@ -272,16 +280,31 @@ const COMPRESS_GENERAL: SeoPage[] = [
 // ---------------------------------------------------------------------------
 
 const RESIZE_DIMENSIONS = [
+  // Square sizes
   { w: 100, h: 100 }, { w: 150, h: 150 }, { w: 200, h: 200 }, { w: 250, h: 250 },
   { w: 300, h: 300 }, { w: 400, h: 400 }, { w: 500, h: 500 }, { w: 600, h: 600 },
   { w: 800, h: 800 }, { w: 1000, h: 1000 }, { w: 1200, h: 1200 },
+  { w: 512, h: 512 }, { w: 2000, h: 2000 }, { w: 3000, h: 3000 },
+  // Standard landscape
   { w: 640, h: 480 }, { w: 800, h: 600 }, { w: 1024, h: 768 }, { w: 1280, h: 720 },
   { w: 1280, h: 960 }, { w: 1366, h: 768 }, { w: 1600, h: 900 }, { w: 1920, h: 1080 },
   { w: 2560, h: 1440 }, { w: 3840, h: 2160 },
-  { w: 1200, h: 628 }, { w: 1080, h: 1080 }, { w: 1080, h: 1920 },
-  { w: 1500, h: 500 }, { w: 720, h: 1280 }, { w: 400, h: 300 }, { w: 600, h: 400 },
+  { w: 400, h: 300 }, { w: 600, h: 400 }, { w: 3000, h: 2000 },
+  // Social media landscape
+  { w: 1200, h: 628 }, { w: 1500, h: 500 }, { w: 1200, h: 675 },
+  { w: 820, h: 312 }, { w: 1584, h: 396 }, { w: 960, h: 540 },
+  // Social media portrait
+  { w: 1080, h: 1920 }, { w: 720, h: 1280 }, { w: 1000, h: 1500 },
+  // Social profile / icon
+  { w: 1080, h: 1080 }, { w: 170, h: 170 },
+  // Print sizes (at 300 dpi)
+  { w: 2480, h: 3508 }, { w: 3508, h: 2480 }, { w: 1748, h: 2480 },
+  { w: 1800, h: 1200 }, { w: 2100, h: 1500 }, { w: 2400, h: 3000 },
+  { w: 413, h: 531 },
+  // Ad banner sizes
+  { w: 300, h: 250 }, { w: 728, h: 90 }, { w: 160, h: 600 },
 ];
-const RESIZE_FORMATS = ['image', 'jpg', 'jpeg', 'png', 'photo'] as const;
+const RESIZE_FORMATS = ['image', 'jpg', 'jpeg', 'png', 'photo', 'webp', 'gif', 'bmp'] as const;
 
 function resizeDimensionPages(): SeoPage[] {
   const pages: SeoPage[] = [];
