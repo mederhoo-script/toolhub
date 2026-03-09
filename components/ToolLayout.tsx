@@ -15,7 +15,7 @@ interface ToolLayoutProps {
 /** Canonical date the site launched — used in structured data */
 const SITE_DATE_PUBLISHED = '2024-01-01';
 /** Approximate last-updated date for structured data */
-const SITE_DATE_MODIFIED = '2025-01-01';
+const SITE_DATE_MODIFIED = new Date().toISOString().split('T')[0];
 
 const MORE_TOOLS = [
   { href: '/compress-image', name: 'Compress Image', icon: '🗜️' },

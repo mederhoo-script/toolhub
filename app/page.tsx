@@ -262,6 +262,9 @@ const websiteSchema = {
   url: 'https://allimagetools.vercel.app',
   description:
     'Free Image Tool Hub: free online image tools to compress, convert, resize, and transform images in your browser.',
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  inLanguage: 'en-US',
   potentialAction: {
     '@type': 'SearchAction',
     target: {
@@ -277,9 +280,39 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Free Image Tool Hub',
   url: 'https://allimagetools.vercel.app',
-  logo: 'https://allimagetools.vercel.app/logo.svg',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://allimagetools.vercel.app/logo.svg',
+    width: 512,
+    height: 512,
+  },
   description:
     'Free Image Tool Hub provides 20 free browser-based image tools including compression, conversion, resizing, OCR, and more.',
+  foundingDate: '2024-01-01',
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Free Image Tool Hub — Free Online Image Tools',
+  url: 'https://allimagetools.vercel.app',
+  description:
+    'Free Image Tool Hub: 20 free online image tools to compress, convert, resize, and transform images in your browser. No upload, no sign-up. Instant results.',
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  inLanguage: 'en-US',
+  isPartOf: { '@type': 'WebSite', url: 'https://allimagetools.vercel.app' },
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://allimagetools.vercel.app',
+      },
+    ],
+  },
 };
 
 const itemListSchema = {
@@ -308,6 +341,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
       <script
         type="application/ld+json"
