@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   title: 'Image to ASCII Art Converter — Free Online Tool',
   description: 'Convert any image to ASCII art. Choose character width, character set density, and colored output. Download as .txt or .html. Free and browser-based.',
   keywords: ['image to ascii', 'ascii art generator', 'image to text art', 'ascii converter', 'photo to ascii', 'convert image to ascii art online free', 'ascii art maker', 'picture to ascii art', 'html ascii art', 'text art generator from image', 'how to convert image to ascii', 'ascii art download'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-ascii' },
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-ascii' },
   openGraph: {
     title: 'Image to ASCII Art Converter — Free | Free Image Tool Hub',
     description: 'Turn any image into ASCII art. Download .txt or .html instantly.',
-    url: 'https://toolhub.vercel.app/image-to-ascii',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-ascii',
+    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Image to ASCII Art Converter — Free | Free Image Tool Hub',
     description: 'Turn any image into ASCII art. Download .txt or .html instantly.',
-    images: ['https://toolhub.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og-default.svg'],
   },
 };
 
@@ -46,7 +46,7 @@ export default function ImageToAsciiPage() {
     <ToolLayout
       title="Image to ASCII Art Converter"
       description="Convert any image to ASCII art. Choose width, character density, and colored mode. Download as .txt or .html."
-      url="https://toolhub.vercel.app/image-to-ascii"
+      url="https://allimagetools.vercel.app/image-to-ascii"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

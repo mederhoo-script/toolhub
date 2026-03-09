@@ -21,20 +21,20 @@ export const metadata: Metadata = {
     'image size reducer online',
     'how to compress image online',
   ],
-  alternates: { canonical: 'https://toolhub.vercel.app/compress-image' },
+  alternates: { canonical: 'https://allimagetools.vercel.app/compress-image' },
   openGraph: {
     title: 'Compress Image Online — Free | Free Image Tool Hub',
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
-    url: 'https://toolhub.vercel.app/compress-image',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/compress-image',
+    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Compress Image Online — Free | Free Image Tool Hub',
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
-    images: ['https://toolhub.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og-default.svg'],
   },
 };
 
@@ -71,7 +71,7 @@ export default function CompressImagePage() {
     <ToolLayout
       title="Compress Image Online"
       description="Reduce your image file size to a target KB — instantly in your browser. No uploads, no account needed."
-      url="https://toolhub.vercel.app/compress-image"
+      url="https://allimagetools.vercel.app/compress-image"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

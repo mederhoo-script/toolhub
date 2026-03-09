@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   title: 'Image to Icon Generator — Free Online Tool',
   description: 'Generate a multi-size icon set (16, 32, 48, 64, 128, 256, 512 px) from any image. Download individual PNGs or all sizes in a ZIP. Free and browser-based.',
   keywords: ['image to icon', 'icon generator', 'app icon generator', 'png icon set', 'icon from image', 'multi size icon generator', 'ios icon generator online', 'android icon generator', 'png icon maker', 'how to make app icon online', 'icon pack generator free', 'image to multiple icon sizes'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-icon' },
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-icon' },
   openGraph: {
     title: 'Image to Icon Generator — Free | Free Image Tool Hub',
     description: 'Generate icon sets at 16–512 px from any image. Download ZIP or individual PNGs.',
-    url: 'https://toolhub.vercel.app/image-to-icon',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-icon',
+    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Image to Icon Generator — Free | Free Image Tool Hub',
     description: 'Generate icon sets at 16–512 px from any image. Download ZIP or individual PNGs.',
-    images: ['https://toolhub.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og-default.svg'],
   },
 };
 
@@ -46,7 +46,7 @@ export default function ImageToIconPage() {
     <ToolLayout
       title="Image to Icon Generator"
       description="Generate a full icon set at 16, 32, 48, 64, 128, 256, and 512 px from any image. Download individual PNGs or a ZIP bundle."
-      url="https://toolhub.vercel.app/image-to-icon"
+      url="https://allimagetools.vercel.app/image-to-icon"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

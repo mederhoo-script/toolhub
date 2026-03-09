@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://toolhub.vercel.app';
+const BASE_URL = 'https://allimagetools.vercel.app';
 
 const tools = [
   '/compress-image',

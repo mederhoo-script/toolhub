@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   title: 'Image to Text — OCR Online Free',
   description: 'Extract text from any image using OCR technology powered by Tesseract.js. Supports 9 languages. Instant, private, browser-based.',
   keywords: ['image to text', 'ocr online', 'extract text from image', 'tesseract ocr', 'free ocr tool', 'optical character recognition online', 'scan image to text', 'photo to text converter', 'read text from image online', 'ocr multiple languages', 'free online ocr no upload', 'how to extract text from image'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-text' },
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-text' },
   openGraph: {
     title: 'Image to Text — Free OCR Online | Free Image Tool Hub',
     description: 'Extract text from images using browser-based OCR. No upload, supports 9 languages.',
-    url: 'https://toolhub.vercel.app/image-to-text',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-text',
+    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Image to Text — Free OCR Online | Free Image Tool Hub',
     description: 'Extract text from images using browser-based OCR. No upload, supports 9 languages.',
-    images: ['https://toolhub.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og-default.svg'],
   },
 };
 
@@ -50,7 +50,7 @@ export default function ImageToTextPage() {
     <ToolLayout
       title="Image to Text — OCR Online"
       description="Extract text from any image using AI-powered OCR. Supports 9 languages. Your images never leave your device."
-      url="https://toolhub.vercel.app/image-to-text"
+      url="https://allimagetools.vercel.app/image-to-text"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

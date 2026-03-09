@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     'private image converter',
     'image format converter',
   ],
-  alternates: { canonical: 'https://toolhub.vercel.app' },
+  alternates: { canonical: 'https://allimagetools.vercel.app' },
   openGraph: {
     title: 'Free Image Tool Hub — Free Online Image Tools',
     description:
     'Free Image Tool Hub: convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
-    url: 'https://toolhub.vercel.app',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app',
+    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
     type: 'website',
   },
   twitter: {
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: 'Free Image Tool Hub — Free Online Image Tools',
     description:
       '20 free online image tools: compress, convert, resize, and transform images instantly in your browser. No uploads, no sign-up.',
-    images: ['https://toolhub.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og-default.svg'],
   },
 };
 
@@ -257,12 +257,12 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Free Image Tool Hub',
-  url: 'https://toolhub.vercel.app',
+  url: 'https://allimagetools.vercel.app',
   description:
     'Free Image Tool Hub: free online image tools to compress, convert, resize, and transform images in your browser.',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://toolhub.vercel.app/?q={search_term_string}',
+    target: 'https://allimagetools.vercel.app/?q={search_term_string}',
     'query-input': 'required name=search_term_string',
   },
 };

@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   title: 'Resize Image Online — Free Image Resizer',
   description: 'Resize any image to exact dimensions in your browser. Lock aspect ratio, set custom width and height. No upload required.',
   keywords: ['resize image online', 'image resizer', 'change image size', 'resize photo online free', 'scale image', 'reduce image dimensions', 'crop and resize image online', 'how to resize image online', 'resize jpg online free', 'resize png online free', 'image width height changer', 'aspect ratio resize image'],
-  alternates: { canonical: 'https://toolhub.vercel.app/resize-image' },
+  alternates: { canonical: 'https://allimagetools.vercel.app/resize-image' },
   openGraph: {
     title: 'Resize Image Online — Free | Free Image Tool Hub',
     description: 'Resize images to any dimension with optional aspect ratio lock. 100% browser-based.',
-    url: 'https://toolhub.vercel.app/resize-image',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/resize-image',
+    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Resize Image Online — Free | Free Image Tool Hub',
     description: 'Resize images to any dimension with optional aspect ratio lock. 100% browser-based.',
-    images: ['https://toolhub.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og-default.svg'],
   },
 };
 
@@ -50,7 +50,7 @@ export default function ResizeImagePage() {
     <ToolLayout
       title="Resize Image Online"
       description="Resize any image to exact pixel dimensions. Optional aspect ratio lock prevents distortion. Free, instant, browser-based."
-      url="https://toolhub.vercel.app/resize-image"
+      url="https://allimagetools.vercel.app/resize-image"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

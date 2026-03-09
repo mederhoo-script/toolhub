@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   title: 'Image to Favicon Generator — Free Online Tool',
   description: 'Convert any image to a favicon in 16×16, 32×32, or 64×64 PNG format. Instant browser-based favicon generator. No upload required.',
   keywords: ['image to favicon', 'favicon generator', 'create favicon online', 'ico converter', 'favicon from image', 'free favicon generator', 'favicon png generator', '16x16 favicon', '32x32 favicon', 'website icon generator', 'how to create a favicon', 'favicon maker online free'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-favicon' },
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-favicon' },
   openGraph: {
     title: 'Image to Favicon Generator — Free | Free Image Tool Hub',
     description: 'Create a favicon from any image in 16×16, 32×32, or 64×64 px. Browser-based, instant.',
-    url: 'https://toolhub.vercel.app/image-to-favicon',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-favicon',
+    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Image to Favicon Generator — Free | Free Image Tool Hub',
     description: 'Create a favicon from any image in 16×16, 32×32, or 64×64 px. Browser-based, instant.',
-    images: ['https://toolhub.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og-default.svg'],
   },
 };
 
@@ -50,7 +50,7 @@ export default function ImageToFaviconPage() {
     <ToolLayout
       title="Image to Favicon Generator"
       description="Convert any image to a browser favicon at 16×16, 32×32, or 64×64 pixels. Free, instant, no upload needed."
-      url="https://toolhub.vercel.app/image-to-favicon"
+      url="https://allimagetools.vercel.app/image-to-favicon"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

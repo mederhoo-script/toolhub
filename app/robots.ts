@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://toolhub.vercel.app/sitemap.xml',
-    host: 'https://toolhub.vercel.app',
+    sitemap: 'https://allimagetools.vercel.app/sitemap.xml',
+    host: 'https://allimagetools.vercel.app',
   };
 }

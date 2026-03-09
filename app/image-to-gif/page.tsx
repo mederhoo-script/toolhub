@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   title: 'Image to GIF Converter — Free Online Tool',
   description: 'Convert any image (PNG, JPG, WebP) to a GIF file. Browser-based GIF encoder with colour quantisation. Free, no upload required.',
   keywords: ['image to gif', 'convert image to gif', 'png to gif', 'jpg to gif', 'gif converter', 'webp to gif', 'free gif converter online', 'convert photo to gif', 'how to convert image to gif', 'gif maker from image', 'gif image format converter', 'browser gif encoder'],
-  alternates: { canonical: 'https://toolhub.vercel.app/image-to-gif' },
+  alternates: { canonical: 'https://allimagetools.vercel.app/image-to-gif' },
   openGraph: {
     title: 'Image to GIF Converter — Free | Free Image Tool Hub',
     description: 'Convert any image to GIF format instantly. Browser-based, no upload.',
-    url: 'https://toolhub.vercel.app/image-to-gif',
-    images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+    url: 'https://allimagetools.vercel.app/image-to-gif',
+    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Image to GIF Converter — Free | Free Image Tool Hub',
     description: 'Convert any image to GIF format instantly. Browser-based, no upload.',
-    images: ['https://toolhub.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og-default.svg'],
   },
 };
 
@@ -46,7 +46,7 @@ export default function ImageToGifPage() {
     <ToolLayout
       title="Image to GIF Converter"
       description="Convert any image to a GIF file. Browser-based colour quantisation and GIF encoding. Free and instant."
-      url="https://toolhub.vercel.app/image-to-gif"
+      url="https://allimagetools.vercel.app/image-to-gif"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">
