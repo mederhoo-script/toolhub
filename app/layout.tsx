@@ -10,6 +10,28 @@ export const metadata: Metadata = {
   description:
     "Free Image Tool Hub: compress, convert, resize, and transform images instantly in your browser. No uploads, no sign-up required.",
   metadataBase: new URL("https://toolhub.vercel.app"),
+  authors: [{ name: "Free Image Tool Hub", url: "https://toolhub.vercel.app" }],
+  creator: "Free Image Tool Hub",
+  publisher: "Free Image Tool Hub",
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Image Tool Hub — Free Online Image Tools",
+    description:
+      "20 free online image tools: compress, convert, resize, and transform images in your browser. No uploads, no sign-up.",
+    images: ["https://toolhub.vercel.app/og-default.svg"],
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

@@ -6,13 +6,19 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'QR Code Generator — Free Online Tool',
   description: 'Generate a QR code from any text or URL. Choose size and error correction level. Download as PNG or SVG. Free, browser-based, no upload required.',
-  keywords: ['qr code generator', 'text to qr code', 'url to qr code', 'qr code png', 'free qr code'],
+  keywords: ['qr code generator', 'text to qr code', 'url to qr code', 'qr code png', 'free qr code', 'generate qr code online free', 'qr code maker', 'qr code from url', 'create qr code for website', 'free qr code generator no signup', 'qr code svg download', 'how to generate qr code'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-qr' },
   openGraph: {
     title: 'QR Code Generator — Free | Free Image Tool Hub',
     description: 'Generate QR codes from any text or URL. Download PNG or SVG instantly.',
     url: 'https://toolhub.vercel.app/image-to-qr',
     images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'QR Code Generator — Free | Free Image Tool Hub',
+    description: 'Generate QR codes from any text or URL. Download PNG or SVG instantly.',
+    images: ['https://toolhub.vercel.app/og-default.svg'],
   },
 };
 
@@ -40,6 +46,7 @@ export default function ImageToQrPage() {
     <ToolLayout
       title="QR Code Generator"
       description="Generate a downloadable QR code from any text or URL. Choose size and error correction level. Free and instant."
+      url="https://toolhub.vercel.app/image-to-qr"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

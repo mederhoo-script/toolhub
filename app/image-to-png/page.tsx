@@ -6,13 +6,19 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Convert Image to PNG — Free Online Converter',
   description: 'Convert JPG, WebP, GIF, BMP to PNG format instantly in your browser. Preserves transparency. No upload required.',
-  keywords: ['convert image to png', 'jpg to png', 'webp to png', 'image converter png', 'free png converter'],
+  keywords: ['convert image to png', 'jpg to png', 'webp to png', 'image converter png', 'free png converter', 'gif to png', 'bmp to png', 'convert photo to png online free', 'png with transparency', 'lossless image converter', 'how to convert jpg to png', 'png image converter online'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-png' },
   openGraph: {
     title: 'Convert Image to PNG — Free | Free Image Tool Hub',
     description: 'Convert any image to lossless PNG. Transparency preserved. 100% browser-based.',
     url: 'https://toolhub.vercel.app/image-to-png',
     images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Convert Image to PNG — Free | Free Image Tool Hub',
+    description: 'Convert any image to lossless PNG. Transparency preserved. 100% browser-based.',
+    images: ['https://toolhub.vercel.app/og-default.svg'],
   },
 };
 
@@ -44,6 +50,7 @@ export default function ImageToPngPage() {
     <ToolLayout
       title="Convert Image to PNG"
       description="Convert JPG, WebP, and other formats to lossless PNG instantly. Transparency is preserved. Free, no upload."
+      url="https://toolhub.vercel.app/image-to-png"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

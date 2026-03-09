@@ -6,13 +6,19 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Images to ZIP — Batch Download Free Online Tool',
   description: 'Upload multiple images and download them all as a single ZIP archive. Free, browser-based batch image packaging with no upload to any server.',
-  keywords: ['images to zip', 'batch download images', 'zip image files', 'compress images zip', 'image archive'],
+  keywords: ['images to zip', 'batch download images', 'zip image files', 'compress images zip', 'image archive', 'bulk image download zip', 'package images online free', 'multiple images to zip online', 'image zip file creator', 'how to zip images online', 'batch image archiver', 'download images as zip'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-zip' },
   openGraph: {
     title: 'Images to ZIP — Batch Download | Free Image Tool Hub',
     description: 'Package multiple images into a ZIP archive instantly. Browser-based, no upload.',
     url: 'https://toolhub.vercel.app/image-to-zip',
     images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Images to ZIP — Batch Download | Free Image Tool Hub',
+    description: 'Package multiple images into a ZIP archive instantly. Browser-based, no upload.',
+    images: ['https://toolhub.vercel.app/og-default.svg'],
   },
 };
 
@@ -40,6 +46,7 @@ export default function ImageToZipPage() {
     <ToolLayout
       title="Images to ZIP"
       description="Select multiple images and download them as a single ZIP archive. Free, instant, no upload required."
+      url="https://toolhub.vercel.app/image-to-zip"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

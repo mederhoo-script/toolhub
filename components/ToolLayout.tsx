@@ -9,6 +9,7 @@ interface ToolLayoutProps {
   description: string;
   children: ReactNode;
   faqs?: FAQ[];
+  url?: string;
 }
 
 export default function ToolLayout({
@@ -16,9 +17,31 @@ export default function ToolLayout({
   description,
   children,
   faqs,
+  url,
 }: ToolLayoutProps) {
+  const softwareSchema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: title,
+    description,
+    applicationCategory: 'MultimediaApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  };
+  if (url) {
+    softwareSchema.url = url;
+  }
+
   return (
     <div className="min-h-screen bg-neutral-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-neutral-200 px-4 py-3 shadow-sm">
         <div className="max-w-5xl mx-auto flex items-center justify-between">

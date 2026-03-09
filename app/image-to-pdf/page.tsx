@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     'jpg to pdf',
     'png to pdf',
     'free online image to pdf',
+    'webp to pdf',
+    'photo to pdf converter',
+    'convert picture to pdf online free',
+    'image to pdf no upload',
+    'browser based image to pdf',
+    'a4 pdf from image',
+    'how to convert image to pdf online',
   ],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-pdf' },
   openGraph: {
@@ -21,6 +28,13 @@ export const metadata: Metadata = {
       'Convert JPG, PNG, WebP and other images to PDF instantly. Client-side processing — your files never leave your device.',
     url: 'https://toolhub.vercel.app/image-to-pdf',
     images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image to PDF — Free Online Converter | Free Image Tool Hub',
+    description:
+      'Convert JPG, PNG, WebP and other images to PDF instantly. Client-side processing — your files never leave your device.',
+    images: ['https://toolhub.vercel.app/og-default.svg'],
   },
 };
 
@@ -57,6 +71,7 @@ export default function ImageToPdfPage() {
     <ToolLayout
       title="Image to PDF"
       description="Convert any image to a PDF document instantly, right in your browser. No uploads, no sign-up."
+      url="https://toolhub.vercel.app/image-to-pdf"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

@@ -6,13 +6,19 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Image to BMP Converter — Free Online Tool',
   description: 'Convert any image (PNG, JPG, WebP) to an uncompressed 24-bit BMP file. Free, browser-based, no upload required.',
-  keywords: ['image to bmp', 'convert to bmp', 'png to bmp', 'jpg to bmp', 'bmp converter'],
+  keywords: ['image to bmp', 'convert to bmp', 'png to bmp', 'jpg to bmp', 'bmp converter', 'webp to bmp', 'free bmp converter online', 'convert image to bitmap', 'bmp file format converter', 'how to convert image to bmp', 'uncompressed image converter', 'bitmap image online'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-bmp' },
   openGraph: {
     title: 'Image to BMP Converter — Free | Free Image Tool Hub',
     description: 'Convert any image to a BMP file instantly. Browser-based, no upload.',
     url: 'https://toolhub.vercel.app/image-to-bmp',
     images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image to BMP Converter — Free | Free Image Tool Hub',
+    description: 'Convert any image to a BMP file instantly. Browser-based, no upload.',
+    images: ['https://toolhub.vercel.app/og-default.svg'],
   },
 };
 
@@ -40,6 +46,7 @@ export default function ImageToBmpPage() {
     <ToolLayout
       title="Image to BMP Converter"
       description="Convert any image to an uncompressed 24-bit BMP file. Free, instant, no upload required."
+      url="https://toolhub.vercel.app/image-to-bmp"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

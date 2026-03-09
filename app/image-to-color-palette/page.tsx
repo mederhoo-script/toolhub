@@ -6,13 +6,19 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Image Color Palette Extractor — Free Online Tool',
   description: 'Extract the dominant colours from any image. View colour swatches, copy HEX codes to clipboard. Free, browser-based, no upload required.',
-  keywords: ['image color palette', 'extract colors from image', 'dominant colors', 'color picker', 'image palette extractor'],
+  keywords: ['image color palette', 'extract colors from image', 'dominant colors', 'color picker', 'image palette extractor', 'get colors from image online', 'photo color palette generator', 'hex color extractor', 'image color picker online free', 'find colors in image', 'dominant color detector', 'color scheme from image'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-color-palette' },
   openGraph: {
     title: 'Image Color Palette Extractor — Free | Free Image Tool Hub',
     description: 'Find the dominant colors in any image. Copy HEX values instantly.',
     url: 'https://toolhub.vercel.app/image-to-color-palette',
     images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image Color Palette Extractor — Free | Free Image Tool Hub',
+    description: 'Find the dominant colors in any image. Copy HEX values instantly.',
+    images: ['https://toolhub.vercel.app/og-default.svg'],
   },
 };
 
@@ -40,6 +46,7 @@ export default function ImageToColorPalettePage() {
     <ToolLayout
       title="Image Color Palette Extractor"
       description="Extract the dominant colors from any image and copy HEX codes with one click. Free, instant, no upload required."
+      url="https://toolhub.vercel.app/image-to-color-palette"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">

@@ -6,13 +6,19 @@ import { FAQ } from '@/types';
 export const metadata: Metadata = {
   title: 'Image to HTML Converter — Free Online Tool',
   description: 'Export any image as a self-contained HTML file. Embed as a Base64 <img> tag or export ASCII art HTML. Free, browser-based, no upload required.',
-  keywords: ['image to html', 'embed image html', 'base64 image html', 'image html snippet', 'ascii art html'],
+  keywords: ['image to html', 'embed image html', 'base64 image html', 'image html snippet', 'ascii art html', 'convert image to html page', 'image html embed code', 'base64 html image generator', 'self contained html image', 'how to embed image in html', 'inline image html code', 'html image export tool'],
   alternates: { canonical: 'https://toolhub.vercel.app/image-to-html' },
   openGraph: {
     title: 'Image to HTML Converter — Free | Free Image Tool Hub',
     description: 'Export image as HTML: Base64 embed or ASCII art HTML. Browser-based, instant.',
     url: 'https://toolhub.vercel.app/image-to-html',
     images: [{ url: 'https://toolhub.vercel.app/og-default.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image to HTML Converter — Free | Free Image Tool Hub',
+    description: 'Export image as HTML: Base64 embed or ASCII art HTML. Browser-based, instant.',
+    images: ['https://toolhub.vercel.app/og-default.svg'],
   },
 };
 
@@ -40,6 +46,7 @@ export default function ImageToHtmlPage() {
     <ToolLayout
       title="Image to HTML Converter"
       description="Export any image as a self-contained HTML file. Choose Base64 embed mode or ASCII art HTML export. Free and instant."
+      url="https://toolhub.vercel.app/image-to-html"
       faqs={faqs}
     >
       <h2 className="text-xl font-semibold text-neutral-800 mb-4">
