@@ -1,8 +1,13 @@
 import { ImageResponse } from 'next/og';
+import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-export function GET() {
+export function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const title = searchParams.get('title') ?? 'Free Image Tool Hub';
+  const isToolPage = searchParams.has('title');
+
   return new ImageResponse(
     (
       <div
@@ -38,29 +43,39 @@ export function GET() {
         {/* Headline */}
         <div
           style={{
-            fontSize: '68px',
+            fontSize: isToolPage ? '56px' : '68px',
             fontWeight: '800',
             color: '#0f172a',
             textAlign: 'center',
             lineHeight: 1.1,
             marginBottom: '20px',
+            maxWidth: '960px',
+            padding: '0 40px',
           }}
         >
-          Free Image{' '}
-          <span style={{ color: '#2563eb' }}>Tool Hub</span>
+          {isToolPage ? (
+            title
+          ) : (
+            <>
+              Free Image{' '}
+              <span style={{ color: '#2563eb' }}>Tool Hub</span>
+            </>
+          )}
         </div>
 
         {/* Sub-headline */}
         <div
           style={{
-            fontSize: '30px',
+            fontSize: '28px',
             color: '#475569',
             textAlign: 'center',
             maxWidth: '860px',
             marginBottom: '36px',
           }}
         >
-          20 free online image tools — compress, convert, resize &amp; more
+          {isToolPage
+            ? 'Free Image Tool Hub — free, private, no sign-up'
+            : '20 free online image tools — compress, convert, resize & more'}
         </div>
 
         {/* Badges */}

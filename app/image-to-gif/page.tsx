@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToGifClient from './ImageToGifClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Image to GIF Converter — Free | Free Image Tool Hub',
     description: 'Convert any image to GIF format instantly. Browser-based, no upload.',
     url: 'https://allimagetools.vercel.app/image-to-gif',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Image to GIF Converter — Free Online Tool')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Image to GIF Converter — Free | Free Image Tool Hub',
     description: 'Convert any image to GIF format instantly. Browser-based, no upload.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Image to GIF Converter — Free Online Tool').url],
   },
 };
 

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 interface Tool {
@@ -19,9 +20,24 @@ interface HomeSearchProps {
 const CATEGORIES = ['All', 'Convert', 'Optimize', 'Extract', 'Generate', 'Export'] as const;
 type Category = (typeof CATEGORIES)[number];
 
-export default function HomeSearch({ tools }: HomeSearchProps) {
-  const [query, setQuery] = useState('');
+function HomeSearchInner({ tools }: HomeSearchProps) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // URL is the source of truth for the search query — enables the SearchAction
+  const query = searchParams.get('q') ?? '';
   const [activeCategory, setActiveCategory] = useState<Category>('All');
+
+  const handleSearch = (value: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (value) {
+      params.set('q', value);
+    } else {
+      params.delete('q');
+    }
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   const isSearching = query.trim().length > 0;
 
@@ -60,7 +76,7 @@ export default function HomeSearch({ tools }: HomeSearchProps) {
             type="search"
             placeholder="Search tools…"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => handleSearch(e.target.value)}
             className="w-full pl-12 pr-4 py-3.5 border border-neutral-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white shadow-sm placeholder:text-neutral-400"
           />
         </div>
@@ -138,5 +154,13 @@ export default function HomeSearch({ tools }: HomeSearchProps) {
         </ul>
       )}
     </>
+  );
+}
+
+export default function HomeSearch({ tools }: HomeSearchProps) {
+  return (
+    <Suspense fallback={null}>
+      <HomeSearchInner tools={tools} />
+    </Suspense>
   );
 }

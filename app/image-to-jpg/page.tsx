@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToJpgClient from './ImageToJpgClient';
 import { FAQ } from '@/types';
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Convert Image to JPG — Free | Free Image Tool Hub',
     description: 'Convert any image to JPG with custom quality settings. 100% browser-based.',
     url: 'https://allimagetools.vercel.app/image-to-jpg',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Convert Image to JPG — Free Online Converter')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Convert Image to JPG — Free | Free Image Tool Hub',
     description: 'Convert any image to JPG with custom quality settings. 100% browser-based.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Convert Image to JPG — Free Online Converter').url],
   },
 };
 

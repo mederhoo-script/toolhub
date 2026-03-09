@@ -264,7 +264,10 @@ const websiteSchema = {
     'Free Image Tool Hub: free online image tools to compress, convert, resize, and transform images in your browser.',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://allimagetools.vercel.app/?q={search_term_string}',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://allimagetools.vercel.app/?q={search_term_string}',
+    },
     'query-input': 'required name=search_term_string',
   },
 };

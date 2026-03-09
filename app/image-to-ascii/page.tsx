@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToAsciiClient from './ImageToAsciiClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Image to ASCII Art Converter — Free | Free Image Tool Hub',
     description: 'Turn any image into ASCII art. Download .txt or .html instantly.',
     url: 'https://allimagetools.vercel.app/image-to-ascii',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Image to ASCII Art Converter — Free Online Tool')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Image to ASCII Art Converter — Free | Free Image Tool Hub',
     description: 'Turn any image into ASCII art. Download .txt or .html instantly.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Image to ASCII Art Converter — Free Online Tool').url],
   },
 };
 

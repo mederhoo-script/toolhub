@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ImageToZipClient from './ImageToZipClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Images to ZIP — Batch Download | Free Image Tool Hub',
     description: 'Package multiple images into a ZIP archive instantly. Browser-based, no upload.',
     url: 'https://allimagetools.vercel.app/image-to-zip',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Images to ZIP — Batch Download Free Online Tool')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Images to ZIP — Batch Download | Free Image Tool Hub',
     description: 'Package multiple images into a ZIP archive instantly. Browser-based, no upload.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Images to ZIP — Batch Download Free Online Tool').url],
   },
 };
 

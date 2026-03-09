@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { toolOgImage } from '@/lib/ogImage';
 import ToolLayout from '@/components/ToolLayout';
 import ResizeImageClient from './ResizeImageClient';
 import { FAQ } from '@/types';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Resize Image Online — Free | Free Image Tool Hub',
     description: 'Resize images to any dimension with optional aspect ratio lock. 100% browser-based.',
     url: 'https://allimagetools.vercel.app/resize-image',
-    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    images: [toolOgImage('Resize Image Online — Free Image Resizer')],
     siteName: 'Free Image Tool Hub',
     locale: 'en_US',
     type: 'website',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Resize Image Online — Free | Free Image Tool Hub',
     description: 'Resize images to any dimension with optional aspect ratio lock. 100% browser-based.',
-    images: ['https://allimagetools.vercel.app/og'],
+    images: [toolOgImage('Resize Image Online — Free Image Resizer').url],
   },
 };
 
