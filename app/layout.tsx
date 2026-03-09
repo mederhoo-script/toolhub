@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import ServiceWorkerRegistration from "./ServiceWorkerRegistration";
 
 export const metadata: Metadata = {
   title: {
@@ -9,6 +10,15 @@ export const metadata: Metadata = {
   description:
     "Free Image Tool Hub: compress, convert, resize, and transform images instantly in your browser. No uploads, no sign-up required.",
   metadataBase: new URL("https://toolhub.vercel.app"),
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "ToolHub",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -20,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased bg-white text-neutral-900 min-h-screen font-sans">
         {children}
+        <ServiceWorkerRegistration />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Free Image Tool Hub logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="th-title">
+  <title id="th-title">Free Image Tool Hub — by mederhoo tech</title>
   <defs>
     <linearGradient id="th-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#3b82f6"/>
@@ -27,7 +28,12 @@
   <polygon points="27,43.5  41.5,26  56,43.5"
            fill="white" clip-path="url(#th-scene)"/>
 
-  <!-- ④ "Tools" indicator — two stacked pill lines below the frame -->
-  <rect x="11" y="49" width="42" height="3"   rx="1.5" fill="white" fill-opacity="0.9"/>
-  <rect x="18" y="55.5" width="28" height="3" rx="1.5" fill="white" fill-opacity="0.6"/>
+  <!-- ④ "Tools" indicator — pill line below the frame -->
+  <rect x="11" y="49" width="42" height="3" rx="1.5" fill="white" fill-opacity="0.9"/>
+
+  <!-- ⑤ Brand name -->
+  <text x="32" y="60.5"
+        font-family="system-ui,-apple-system,sans-serif"
+        font-size="5.5" font-weight="600" letter-spacing="0.3"
+        text-anchor="middle" fill="white" fill-opacity="0.75">mederhoo tech</text>
 </svg>
