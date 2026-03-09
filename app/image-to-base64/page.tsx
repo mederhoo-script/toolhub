@@ -12,13 +12,16 @@ export const metadata: Metadata = {
     title: 'Image to Base64 Encoder — Free | Free Image Tool Hub',
     description: 'Encode any image as a Base64 data URL. Copy and use in HTML, CSS, or JSON.',
     url: 'https://allimagetools.vercel.app/image-to-base64',
-    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Image to Base64 Encoder — Free | Free Image Tool Hub',
     description: 'Encode any image as a Base64 data URL. Copy and use in HTML, CSS, or JSON.',
-    images: ['https://allimagetools.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 

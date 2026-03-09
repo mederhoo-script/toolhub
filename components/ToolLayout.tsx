@@ -25,16 +25,44 @@ export default function ToolLayout({
     name: title,
     description,
     applicationCategory: 'MultimediaApplication',
+    applicationSubCategory: 'ImageApplication',
     operatingSystem: 'Any',
+    datePublished: '2024-01-01',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
     },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Free Image Tool Hub',
+      url: 'https://allimagetools.vercel.app',
+    },
   };
   if (url) {
     softwareSchema.url = url;
   }
+
+  const breadcrumbSchema = url
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://allimagetools.vercel.app',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: title,
+            item: url,
+          },
+        ],
+      }
+    : null;
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -42,6 +70,12 @@ export default function ToolLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-neutral-200 px-4 py-3 shadow-sm">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
@@ -79,6 +113,21 @@ export default function ToolLayout({
         <AdBanner variant="leaderboard" />
 
         <div className="mt-8">
+          {/* Breadcrumb nav */}
+          <nav aria-label="Breadcrumb" className="mb-4">
+            <ol className="flex items-center gap-1.5 text-sm text-neutral-500">
+              <li>
+                <Link href="/" className="hover:text-primary-600 transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-neutral-300">›</li>
+              <li className="text-neutral-700 font-medium" aria-current="page">
+                {title}
+              </li>
+            </ol>
+          </nav>
+
           {/* Page title block */}
           <div className="mb-6">
             <h1 className="text-3xl font-bold text-neutral-900 leading-tight">{title}</h1>

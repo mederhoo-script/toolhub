@@ -12,13 +12,16 @@ export const metadata: Metadata = {
     title: 'Convert Image to Grayscale — Free | Free Image Tool Hub',
     description: 'Remove colour from any image instantly. Browser-based, no upload required.',
     url: 'https://allimagetools.vercel.app/image-to-grayscale',
-    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Convert Image to Grayscale — Free | Free Image Tool Hub',
     description: 'Remove colour from any image instantly. Browser-based, no upload required.',
-    images: ['https://allimagetools.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 

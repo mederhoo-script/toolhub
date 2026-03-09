@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Free Image Tool Hub — Free Online Image Tools",
     description:
       "20 free online image tools: compress, convert, resize, and transform images in your browser. No uploads, no sign-up.",
-    images: ["https://allimagetools.vercel.app/og-default.svg"],
+    images: ["https://allimagetools.vercel.app/og"],
   },
   appleWebApp: {
     capable: true,

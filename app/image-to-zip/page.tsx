@@ -12,13 +12,16 @@ export const metadata: Metadata = {
     title: 'Images to ZIP — Batch Download | Free Image Tool Hub',
     description: 'Package multiple images into a ZIP archive instantly. Browser-based, no upload.',
     url: 'https://allimagetools.vercel.app/image-to-zip',
-    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Images to ZIP — Batch Download | Free Image Tool Hub',
     description: 'Package multiple images into a ZIP archive instantly. Browser-based, no upload.',
-    images: ['https://allimagetools.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 

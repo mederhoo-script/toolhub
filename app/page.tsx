@@ -55,15 +55,17 @@ export const metadata: Metadata = {
     description:
     'Free Image Tool Hub: convert, compress, resize, and transform images instantly in your browser. Free, private, no sign-up.',
     url: 'https://allimagetools.vercel.app',
-    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
     type: 'website',
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Free Image Tool Hub — Free Online Image Tools',
     description:
       '20 free online image tools: compress, convert, resize, and transform images instantly in your browser. No uploads, no sign-up.',
-    images: ['https://allimagetools.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
@@ -267,12 +269,46 @@ const websiteSchema = {
   },
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Free Image Tool Hub',
+  url: 'https://allimagetools.vercel.app',
+  logo: 'https://allimagetools.vercel.app/logo.svg',
+  description:
+    'Free Image Tool Hub provides 20 free browser-based image tools including compression, conversion, resizing, OCR, and more.',
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Free Online Image Tools',
+  description: 'A collection of 20 free browser-based image processing tools.',
+  url: 'https://allimagetools.vercel.app',
+  numberOfItems: tools.length,
+  itemListElement: tools.map((tool, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: tool.name,
+    description: tool.description,
+    url: `https://allimagetools.vercel.app${tool.href}`,
+  })),
+};
+
 export default function HomePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
 
       <div className="min-h-screen bg-neutral-50">

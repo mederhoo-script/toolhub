@@ -12,13 +12,16 @@ export const metadata: Metadata = {
     title: 'Image to HTML Converter — Free | Free Image Tool Hub',
     description: 'Export image as HTML: Base64 embed or ASCII art HTML. Browser-based, instant.',
     url: 'https://allimagetools.vercel.app/image-to-html',
-    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Image to HTML Converter — Free | Free Image Tool Hub',
     description: 'Export image as HTML: Base64 embed or ASCII art HTML. Browser-based, instant.',
-    images: ['https://allimagetools.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 

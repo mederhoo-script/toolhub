@@ -27,14 +27,17 @@ export const metadata: Metadata = {
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
     url: 'https://allimagetools.vercel.app/compress-image',
-    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Compress Image Online — Free | Free Image Tool Hub',
     description:
       'Reduce image file size to 50 KB, 100 KB, 200 KB or a custom target — all in your browser.',
-    images: ['https://allimagetools.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 

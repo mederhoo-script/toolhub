@@ -27,14 +27,17 @@ export const metadata: Metadata = {
     description:
       'Convert JPG, PNG, WebP and other images to PDF instantly. Client-side processing — your files never leave your device.',
     url: 'https://allimagetools.vercel.app/image-to-pdf',
-    images: [{ url: 'https://allimagetools.vercel.app/og-default.svg' }],
+    images: [{ url: 'https://allimagetools.vercel.app/og', width: 1200, height: 630, alt: 'Free Image Tool Hub' }],
+    siteName: 'Free Image Tool Hub',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Image to PDF — Free Online Converter | Free Image Tool Hub',
     description:
       'Convert JPG, PNG, WebP and other images to PDF instantly. Client-side processing — your files never leave your device.',
-    images: ['https://allimagetools.vercel.app/og-default.svg'],
+    images: ['https://allimagetools.vercel.app/og'],
   },
 };
 
