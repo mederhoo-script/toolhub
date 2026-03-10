@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { SEO_PAGES } from '@/lib/seoKeywords';
 
 const BASE_URL = 'https://allimagetools.vercel.app';
 
@@ -43,5 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [home, ...toolRoutes];
+  const keywordRoutes: MetadataRoute.Sitemap = SEO_PAGES.map((page) => ({
+    url: page.canonical,
+    lastModified: LAST_UPDATED,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [home, ...toolRoutes, ...keywordRoutes];
 }
