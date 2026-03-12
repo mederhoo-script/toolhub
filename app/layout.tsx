@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ServiceWorkerRegistration from "./ServiceWorkerRegistration";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
@@ -75,8 +76,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script>(function(s){s.dataset.zone='10718146',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-      </head>
+  <Script
+    id="ad-network"
+    strategy="beforeInteractive"
+    dangerouslySetInnerHTML={{
+      __html: `(function(s){
+        s.dataset.zone='10718176';
+        s.src='https://nap5k.com/tag.min.js';
+      })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));`
+    }}
+  />
+</head>
       <body className="antialiased bg-white text-neutral-900 min-h-screen font-sans">
         {children}
         <ServiceWorkerRegistration />
