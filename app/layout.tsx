@@ -75,20 +75,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-  <Script
-    id="ad-network"
-    strategy="beforeInteractive"
-    dangerouslySetInnerHTML={{
-      __html: `(function(s){
-        s.dataset.zone='10718176';
-        s.src='https://nap5k.com/tag.min.js';
-      })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));`
-    }}
-  />
-</head>
+      
       <body className="antialiased bg-white text-neutral-900 min-h-screen font-sans">
         {children}
+        <Script
+  id="propeller-ads"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `(function(s){
+      s.dataset.zone='10718176';
+      s.src='https://nap5k.com/tag.min.js';
+    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));`
+  }}
+/>
         <ServiceWorkerRegistration />
       </body>
     </html>
